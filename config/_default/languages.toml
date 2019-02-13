@@ -10,7 +10,6 @@
   languageCode = "es"
   contentDir = "content/es"
 
-
 # Uncomment the lines below to configure your website in a second language.
 #[zh]
 #  languageCode = "zh-Hans"

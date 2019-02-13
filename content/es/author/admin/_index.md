@@ -13,14 +13,15 @@ role = "Estudiante de la Facultad de Ciencias"
 organizations = [ { name = "Universidad Nacional de Ingeniería", url = "" } ]
 
 # Short bio (displayed in user profile at end of posts)
-bio = "My research interests include distributed robotics, mobile computing and programmable matter."
+bio = "Trabajo de investigación del curso de Introducción a la Estadística y la Probabilidad CM--274 A."
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email = ""
 
 # List (academic) interests or hobbies
 interests = [
-  "Artificial Intelligence"
+  "Función Gamma",
+  "Autómata celular"
 ]
 
 # List qualifications (such as academic degrees)
@@ -44,20 +45,50 @@ interests = [
   icon_pack = "fas"
   link = "#contact"  # For a direct email link, use "mailto:test@example.org".
 
-[[social]]
-  icon = "twitter"
-  icon_pack = "fab"
-  link = "https://twitter.com/GeorgeCushen"
+#[[social]]
+#  icon = "twitter"
+#  icon_pack = "fab"
+#  link = "https://twitter.com/GeorgeCushen"
 
 [[social]]
   icon = "google-scholar"
   icon_pack = "ai"
-  link = "https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ"
+  link = "https://scholar.google.com"
+
+[[social]]
+  icon = "springer"
+  icon_pack = "ai"
+  link = "https://www.springer.com/la"
+  
+[[social]]
+  icon = "doi"
+  icon_pack = "ai"
+  link = "https://www.doi.org/"
+
+[[social]]
+  icon = "researchgate"
+  icon_pack = "ai"
+  link = "https://www.researchgate.com/"
+
+[[social]]
+  icon = "orcid"
+  icon_pack = "ai"
+  link = "https://orcid.org/"
+
+[[social]]
+  icon = "mathoverflow"
+  icon_pack = "ai"
+  link = "https://mathoverflow.net/"
+
+[[social]]
+  icon = "arxiv"
+  icon_pack = "ai"
+  link = "https://arxiv.org/"
 
 [[social]]
   icon = "github"
   icon_pack = "fab"
-  link = "https://github.com/gcushen"
+  link = "https://github.com/C-Lara/Curso-Probabilidad"
 
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
@@ -68,4 +99,4 @@ interests = [
 
 +++
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Laboratorio de Estadística y Probabilidad. Algunos temas son distribución normal, teorema del límite central.
