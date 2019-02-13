@@ -4,38 +4,38 @@
 #   The weight parameter defines the order that the links will appear in.
 
 [[main]]
-  name = "Home"
+  name = "Inicio"
   url = "#about"
   weight = 1
 
 [[main]]
-  name = "Publications"
+  name = "Publicaciones"
   url = "#publications_featured"
   weight = 2
 
 [[main]]
-  name = "Posts"
+  name = "Entradas"
   url = "#posts"
   weight = 3
 
 [[main]]
-  name = "Projects"
+  name = "Proyectos"
   url = "#projects"
   weight = 4
 
 [[main]]
-  name = "Tutorials"
+  name = "Tutoriales"
   url = "/tutorial/"
   weight = 5
 
 [[main]]
-  name = "Contact"
+  name = "Contacto"
   url = "#contact"
   weight = 6
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# [[main]]
-#    name = "CV"
-#    url = "files/cv.pdf"
-#    weight = 7
+ [[main]]
+    name = "CV"
+    url = "files/cv.pdf"
+    weight = 7
