@@ -89,5 +89,8 @@ $$f(k;p\_0^\*) = \begin{cases} p\_0^\* & \text{if }k=1, \\\\\\
 
 {{< gallery >}}
 
-$$\left [ – \frac{\hbar^2}{2 m} \frac{\partial^2}{\partial x^2} + V \right ] \Psi = i \hbar \frac{\partial}{\partial t} \Psi$$
+$$
+f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}}
+e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }
+$$
 
