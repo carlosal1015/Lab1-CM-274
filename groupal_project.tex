@@ -1,0 +1,164 @@
+\documentclass[12pt,answers,addpoints,a4paper]{exam}%,cancelspace
+\usepackage[T1]{fontenc}
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage[scaled=.92]{sourcesanspro}
+\usepackage[scaled=.78]{beramono}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[spanish, es-sloppy]{babel}%\spanishdatedel
+\usepackage{dsfont}
+\usepackage{color}
+\usepackage[demo]{graphicx}
+\usepackage{caption}
+\usepackage{ragged2e}
+\usepackage[ddmmyyyy]{datetime}
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheader{FC--UNI}{Introducción a la Estadística y las Probabilidades}{\today}
+\runningheader{CM--274 A}
+{Introducción a la Estadística y las Probabilidades}
+{Grupo E}
+\firstpageheadrule
+\firstpagefootrule
+\firstpagefooter{Facultad de Ciencias}{Página \thepage\ de \numpages.}{}
+%\runningfooter{Facultad de Ciencias}{Página \thepage\ de \numpages.}{Grupo E}
+\footer{FC--UNI}
+{\iflastpage{Fin del proyecto}{Por favor continúe en la siguiente página\ldots}}
+{Página \thepage\ de \numpages.}
+\runningfootrule
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución}\par\noindent}
+
+\definecolor{SolutionColor}{rgb}{0.2,0.9,1}
+\colorsolutionboxes
+\definecolor{SolutionBoxColor}{rgb}{0.2,0.9,1}
+
+\hqword{Pregunta}
+\hpword{Puntos}
+\hsword{Puntaje}
+\begin{document}
+
+\begin{coverpages}
+	A
+\end{coverpages}
+
+%\shadedsolutions
+
+\begin{center}
+	\fbox{\fbox{\parbox{5.5in}{\centering
+		Datos de los integrantes del Grupo E:\\
+		Eduardo Sarria Palacios\hfill 20162720C\\
+		Alex Steve Chung Alvarez\hfill 20162720C\\
+		Stefany Briguitte Maquera de la Cruz\hfill 20162720C\\
+		Carlos Alonso Aznarán Laos \hfill 20162720C
+}}}
+\end{center}
+\vspace{0.1in}
+\makebox[\textwidth]{Nombre del instructor:\enspace Lic. José Fernando Zamudio Peves.\hfill}
+
+\begin{questions}
+
+	\question%[10]
+	Cinco numeros distintos se distribuyen aleatoriamente entre los jugadores del $1$ al $5$. Cuando dos jugadores comparan sus numeros, el que tiene el más alto es declarado ganador. Inicialmente, los jugadores $1$ y $2$ comparan sus  
+	números; el ganador se compara con el jugador $3$, y así sucesivamente. Sea $X$ el numero de veces que el jugador $1$ es un ganador. Encuentra $\mathds{P}[X = i]$, $i = 0, 1, 2, 3, 4$.
+	
+	\ifprintanswers
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=7cm]{example-image-a}
+		\caption{This is a lovely figure}
+		\label{fig:lovely}
+	\end{figure}
+	\fi
+	\begin{solutionorbox}
+		A
+	\end{solutionorbox}
+	
+	\question%[15]
+	Un sistema satelital consta de $n$ componentes y funciona en un día cualquiera si al menos $k$ de los $n$ componentes	funcionan ese día. En un día lluvioso, cada uno de los componentes funciona independientemente con probabilidad $p_1$, mientras que en un día seco cada uno funciona independientemente con probabilidad $p_2$. Si la probabilidad de
+	que llueva manana es de $\alpha$, ¿cual es la probabilidad de que el sistema satelital funcione?
+	\begin{solutionorlines}
+	Hola
+	
+	\includegraphics[width=7cm]{example-image-b}
+	\centering
+	\captionof{figure}{This is a lovely figure}
+	\label{fig:lovely}
+	\justifying
+	Hola
+	\end{solutionorlines}
+	\question%[10]
+	Supuesto que el numero de accidentes que ocurren en una autopista cada día es una V.A de Poisson con parametro $\lambda=3$.
+	
+	\begin{parts}
+		\part Calcular la probabilidad que $3$ o más accidentes ocurran hoy.\label{part:a}
+		\part Responder (\ref{part:a}) bajo el supuesto que al menos un accidente ocurrio hoy.
+	\end{parts}
+	\begin{solutionordottedlines}
+	A
+	\end{solutionordottedlines}
+	\nocolorsolutionboxes
+	\question%[10]
+	Supuesto que el número de ventas que ocurren en un tiempo específico es una V.A de Poisson con parametro $\lambda$. Si cada evento es contado con probabilidad $p$, independiente un evento de otro evento, mostrar que el numero de eventos que son contados es una V.A de Poisson con parametro $\lambda p$. También, dar un argumemnto intuitivo de porqué
+	esto debería ser así. Como una aplicacion del parágrafo anterior, suponer que el número de los distintos depósitos de Uranio en un área dada es una V.A de Poisson con parámetro $\lambda=10$. Si en un periodo de tiempo fijado, cada depósito es descubierto independientemente con probabilidad $\tfrac{1}{50}$, calcular la probabilidad que \begin{parts}\part exactamente $1$\part Al menos $1$\part A lo más $1$ depósito son descubiertos durante aquel tiempo.\end{parts}
+	\begin{solutionorgrid}
+	A
+	\end{solutionorgrid}
+
+\framedsolutions
+	\question%[10]
+	Probar que
+	\begin{equation*}
+	\sum_{i=0}^{n}e^{-\lambda}\frac{\lambda^{i}}{i!}=\frac{1}{n}\int_{\lambda}^{\infty}e^{-x}x^{n}\,\mathrm{d}x
+	\end{equation*}
+	
+	\question Si $X$ es una V.A geometrica, mostrar analíticamente que
+	\begin{equation*}
+	\mathds{P}[X=n+k\mid X>n]=\mathds{P}[X=k]
+	\end{equation*}
+	Dar un argumento verbal usando la interpretacion de una V.A geométrica en cuanto a porqué la ecuación anterior es verdadera.
+	
+	\begin{solutionorbox}
+		A
+	\end{solutionorbox}
+	
+	\unframedsolutions
+	
+	
+	\question Sea $X$ una V.A binomial negativa con parámetros $r$ y $p$, y sea $Y$ una V.A binomial con parámetros $n$ y $p$. Mostrar que
+	\begin{equation*}
+	\mathds{P}[X>n]=\mathds{P}[Y<r]
+	\end{equation*}
+	Sugerencia: La prueba analítica anterior, es equivalente a probar la siguiente identidad
+	\begin{equation*}
+	\sum_{i=0}^{\infty}\binom{i-1}{i+1}p^{r}{(1-p)}^{i-r}=\sum_{i=0}^{r-1}\binom{n}{i}p^{i}{(1-p)}^{n-i}
+	\end{equation*}
+	o se podría intentar una prueba que utilice la interpretacion probabilística de estas V.A. Es decir, en el ultimo caso, comience considerando una secuencia de ensayos independientes que tienen una probabilidad de éxito com ún $p$.	Luego, trate de expresar los eventos $\{X > n\}$ y $\{Y < n\}$ en términos de los resultados de esta secuencia.
+	
+	\begin{solutionorbox}
+		A
+	\end{solutionorbox}
+	
+	\question Una persona arroja una moneda hasta que aparezca sello por primera vez. Si el sello sale en el $n$-ésimo lanzamiento, la persona gana $2^{n}$ dolares. Si $X$ denota lo ganado por el jugador. Mostrar que $\mathds{E}[X]= +\infty$. Este problema es conocido como la paradoja de San Petersburgo.
+	
+	\begin{parts}
+		\part ¿Estaría dispuesto a pagar \$1 millón para jugar este juego una vez?
+		\part ¿Estaría dispuesto a pagar \$1 millon por cada juego si pudiera jugar durante el tiempo que quisiera y solo tendría que conformarse cuando dejó de jugar?
+	\end{parts}
+
+	\begin{solutionorbox}
+	A
+	\end{solutionorbox}
+
+	\question Supongamos que cuando están en vuelo, los motores del avión
+	fallarán con probabilidad $(1-p)$ independientemente de motor a motor. Si un avión necesita la mayoría de sus motores operativos para realizar un vuelo exitoso,
+
+¿para que valores de $p$ es preferible un avion de $5$ motores a un avión de $3$ motores?
+\end{questions}
+
+\begin{center}
+	\settabletotalpoints{20}
+	\gradetable[h][questions]
+\end{center}
+
+\end{document}
