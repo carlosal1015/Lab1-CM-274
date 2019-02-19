@@ -1,20 +1,35 @@
-\documentclass[12pt,answers,addpoints,a4paper]{exam}%,cancelspace
+% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
+% arara: xelatex: { shell: yes}
+% arara: biber
+% arara: xelatex: { shell: yes}
+% arara: xelatex: { shell: yes}
+% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
+\RequirePackage{etex} % Increase the number of tokens up tp 2^15.
+\documentclass[11pt,answers,addpoints,a4paper,tittlepage=true,DIV=15,headsepline]{kommaexam}%,cancelspace
 \usepackage[T1]{fontenc}
+\usepackage{wallpaper}
 \usepackage{libertine}
-\usepackage[libertine]{newtxmath}
+\usepackage[lite]{mtpro2}
+\usepackage{amsthm}
+\usepackage[libertine,scaled=1.1]{newtxmath}
 \usepackage[scaled=.92]{sourcesanspro}
 \usepackage[scaled=.78]{beramono}
-\usepackage[protrusion=true,expansion=true]{microtype}
-\usepackage[spanish, es-sloppy]{babel}%\spanishdatedel
+\usepackage[protrusion=true,expansion=false]{microtype} % IMPORTANT expansion = false for XeTeX engine!!
+%\usepackage[spanish, es-sloppy]{babel}%\spanishdatedel
 \usepackage{dsfont}
+%\usepackage{eucal}
 \usepackage{color}
-\usepackage[demo]{graphicx}
+\usepackage{graphicx}
 \usepackage{caption}
+\usepackage[shortlabels]{enumitem}
 \usepackage{ragged2e}
-\usepackage[ddmmyyyy]{datetime}
+%\usepackage[ddmmyyyy]{datetime}
+\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+\addbibresource{bib.bib}
+
 \pagestyle{headandfoot}
 \runningheadrule
-\firstpageheader{FC--UNI}{Introducción a la Estadística y las Probabilidades}{\today}
+\firstpageheader{CM--274 A}{Introducción a la Estadística y las Probabilidades}{2018--3}
 \runningheader{CM--274 A}
 {Introducción a la Estadística y las Probabilidades}
 {Grupo E}
@@ -36,31 +51,103 @@
 \hqword{Pregunta}
 \hpword{Puntos}
 \hsword{Puntaje}
+
+\setkomafont{title}{\huge\sffamily\bfseries}
+\setkomafont{subtitle}{\normalfont\large}
+
+\newcommand{\theinstitute}{\\[3\baselineskip]\Large
+	Escuela Profesional de Matemática\\
+	de la Facultad de Ciencias\\Universidad Nacional de Ingeniería
+}
+\newcommand{\thethesistype}{}
+\newcommand{\thereviewerone}{}
+\newcommand{\thereviewertwo}{}
+\newcommand{\theeditstart}{}
+\newcommand{\theeditend}{}
+
+%% formatting commands for titlepage
+\newcommand{\thesistype}[1]{\subtitle{\vskip3em #1 por los alumnos}%
+	\renewcommand{\thethesistype}{#1}}
+\newcommand{\myinstitute}[1]{\renewcommand{\theinstitute}{#1}}
+\newcommand{\reviewerone}[1]{\renewcommand{\thereviewerone}{#1}}
+\newcommand{\reviewertwo}[1]{\renewcommand{\thereviewertwo}{#1}}
+
+\newcommand{\editingtime}[2]{%
+	\renewcommand{\theeditstart}{#1}%
+	\renewcommand{\theeditend}{#2}%
+	%% do not show the date
+	\date{}
+}
+
+\newcommand{\settitle}{%
+	\publishers{%
+		\large
+		\vskip4em
+		\begin{tabular}{l l}
+		Profesor de teoría: & \thereviewerone\\
+		Profesor de Laboratorio: & \thereviewertwo
+		\end{tabular}
+		\theinstitute\\[4em]
+		\vskip4em
+		\theeditstart{} -- \theeditend
+	}
+}
+
+\titlehead{%
+	\centering\hspace*{-0.55cm}\includegraphics[height=2.5cm]{1}
+	\ThisCenterWallPaper{1}{title-background.pdf}
+}
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolario}
+
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}
+\makeatother
+
+\author{
+	Sarria Palacios Eduardo David\quad\hfill 20141445C\\
+	Maquera de la Cruz Stefany Briguitte		\quad\hfill 20162254B\\
+	Chung Alvarez Alex Steve	\quad\hfill 20164552C\\
+	Aznarán Laos Carlos Alonso	\quad\hfill 20162720C\\
+}
+\title{Primer proyecto\\
+	Introducción a la Estadística y las Probabilidades\\
+	CM-274 A}
+
+\thesistype{Informe matemático del grupo E conformado}
+
+%% The reviewers are the professors that grade your thesis
+\reviewerone{Ph.D Ángel Enrique Ramírez Gutiérrez.}
+\reviewertwo{Lic. José Fernando Zamudio Peves.}
+
+\settitle
+%% Please enter the start end end time of your thesis
+\editingtime{12 de febrero del 2019}{19 de febrero del 2019}
+
 \begin{document}
 
 \begin{coverpages}
-	A
+\clearpage\maketitle
+\thispagestyle{empty}
 \end{coverpages}
 
 %\shadedsolutions
 
 \begin{center}
 	\fbox{\fbox{\parbox{5.5in}{\centering
-		Datos de los integrantes del Grupo E:\\
-		Eduardo Sarria Palacios\hfill 20162720C\\
-		Alex Steve Chung Alvarez\hfill 20162720C\\
-		Stefany Briguitte Maquera de la Cruz\hfill 20162720C\\
-		Carlos Alonso Aznarán Laos \hfill 20162720C
+		Datos de los integrantes del Grupo E:
 }}}
 \end{center}
-\vspace{0.1in}
-\makebox[\textwidth]{Nombre del instructor:\enspace Lic. José Fernando Zamudio Peves.\hfill}
+%\vspace{0.1in}
+%\makebox[\textwidth]{Nombre del instructor:\enspace Lic. José Fernando Zamudio Peves.\hfill}
 
 \begin{questions}
 
 	\question%[10]
-	Cinco numeros distintos se distribuyen aleatoriamente entre los jugadores del $1$ al $5$. Cuando dos jugadores comparan sus numeros, el que tiene el más alto es declarado ganador. Inicialmente, los jugadores $1$ y $2$ comparan sus  
-	números; el ganador se compara con el jugador $3$, y así sucesivamente. Sea $X$ el numero de veces que el jugador $1$ es un ganador. Encuentra $\mathds{P}[X = i]$, $i = 0, 1, 2, 3, 4$.
+	Cinco números distintos se distribuyen aleatoriamente entre los jugadores del $1$ al $5$. Cuando dos jugadores comparan sus números, el que tiene el más alto es declarado ganador. Inicialmente, los jugadores $1$ y $2$ comparan sus números; el ganador se compara con el jugador $3$, y así sucesivamente. Sea $X$ el numero de veces que el jugador $1$ es un ganador. Encuentra $\mathds{P}[X = i]$, $i = 0, 1, 2, 3, 4$.
 	
 	\ifprintanswers
 	\begin{figure}[!ht]
@@ -71,12 +158,27 @@
 	\end{figure}
 	\fi
 	\begin{solutionorbox}
-		A
+	Sea $X$ una variable aleatoria cuyos valores de $x$ están en $\left\{1,2,3,4,5\right\}$. Ahora
+	\begin{align*}
+	f(1) &= \mathds{P}\left(X=1\right)=\frac{}{}, & 	f(2) &= \mathds{P}\left(X=2\right)=\frac{}{}, \\
+	f(3) &= \mathds{P}\left(X=3\right)=\frac{}{}, & 	f(4) &= \mathds{P}\left(X=4\right)=\frac{}{}, \\
+	f(5) &= \mathds{P}\left(X=5\right)=\frac{}{}, & 			 &
+	\end{align*}
+	
+	Por lo tanto, la distribución de probabilidad de $X$ es
+	
+	\centering
+	\begin{tabular}{c|ccccc}
+		$x$ 	& 1 & 2 & 3 & 4 & 5 \\
+		\hline
+		$f(x)$& 1 & 2 & 3 & 4 & 5
+	\end{tabular}
+
 	\end{solutionorbox}
 	
 	\question%[15]
-	Un sistema satelital consta de $n$ componentes y funciona en un día cualquiera si al menos $k$ de los $n$ componentes	funcionan ese día. En un día lluvioso, cada uno de los componentes funciona independientemente con probabilidad $p_1$, mientras que en un día seco cada uno funciona independientemente con probabilidad $p_2$. Si la probabilidad de
-	que llueva manana es de $\alpha$, ¿cual es la probabilidad de que el sistema satelital funcione?
+	Un sistema satelital consta de $n$ componentes y funciona en un día cualquiera si al menos $k$ de los $n$ componentes funcionan ese día. En un día lluvioso, cada uno de los componentes funciona independientemente con probabilidad $p_1$, mientras que en un día seco cada uno funciona independientemente con probabilidad $p_2$. Si la probabilidad de
+	que llueva mañana es de $\alpha$, ¿cual es la probabilidad de que el sistema satelital funcione?
 	\begin{solutionorlines}
 	Hola
 	
@@ -88,8 +190,7 @@
 	Hola
 	\end{solutionorlines}
 	\question%[10]
-	Supuesto que el numero de accidentes que ocurren en una autopista cada día es una V.A de Poisson con parametro $\lambda=3$.
-	
+	Supuesto que el número de accidentes que ocurren en una autopista cada día es una variable aleatoria de \emph{Poisson} con parámetro $\lambda=3$.
 	\begin{parts}
 		\part Calcular la probabilidad que $3$ o más accidentes ocurran hoy.\label{part:a}
 		\part Responder (\ref{part:a}) bajo el supuesto que al menos un accidente ocurrio hoy.
@@ -99,8 +200,12 @@
 	\end{solutionordottedlines}
 	\nocolorsolutionboxes
 	\question%[10]
-	Supuesto que el número de ventas que ocurren en un tiempo específico es una V.A de Poisson con parametro $\lambda$. Si cada evento es contado con probabilidad $p$, independiente un evento de otro evento, mostrar que el numero de eventos que son contados es una V.A de Poisson con parametro $\lambda p$. También, dar un argumemnto intuitivo de porqué
-	esto debería ser así. Como una aplicacion del parágrafo anterior, suponer que el número de los distintos depósitos de Uranio en un área dada es una V.A de Poisson con parámetro $\lambda=10$. Si en un periodo de tiempo fijado, cada depósito es descubierto independientemente con probabilidad $\tfrac{1}{50}$, calcular la probabilidad que \begin{parts}\part exactamente $1$\part Al menos $1$\part A lo más $1$ depósito son descubiertos durante aquel tiempo.\end{parts}
+	Supuesto que el número de ventas que ocurren en un tiempo específico es una variable aleatoria de Poisson con parámetro $\lambda$. Si cada evento es contado con probabilidad $p$, independiente un evento de otro evento, mostrar que el numero de eventos que son contados es una V.A de Poisson con parámetro $\lambda p$. También, dar un argumento intuitivo de porqué esto debería ser así. Como una aplicación del párrafo anterior, suponer que el número de los distintos depósitos de uranio en un área dada es una variable aleatoria de Poisson con parámetro $\lambda=10$. Si en un periodo de tiempo fijado, cada depósito es descubierto independientemente con probabilidad $\tfrac{1}{50}$, calcular la probabilidad que sea
+	\begin{parts}
+		\part exactamente $1$.
+		\part Al menos $1$
+		\part A lo más $1$ depósito son descubiertos durante aquel tiempo.
+	\end{parts}
 	\begin{solutionorgrid}
 	A
 	\end{solutionorgrid}
@@ -112,11 +217,11 @@
 	\sum_{i=0}^{n}e^{-\lambda}\frac{\lambda^{i}}{i!}=\frac{1}{n}\int_{\lambda}^{\infty}e^{-x}x^{n}\,\mathrm{d}x
 	\end{equation*}
 	
-	\question Si $X$ es una V.A geometrica, mostrar analíticamente que
+	\question Si $X$ es una variable aleatoria geométrica, mostrar analíticamente que
 	\begin{equation*}
 	\mathds{P}[X=n+k\mid X>n]=\mathds{P}[X=k]
 	\end{equation*}
-	Dar un argumento verbal usando la interpretacion de una V.A geométrica en cuanto a porqué la ecuación anterior es verdadera.
+	Dar un argumento verbal usando la interpretación de una variable aleatoria geométrica en cuanto a porqué la ecuación anterior es verdadera.
 	
 	\begin{solutionorbox}
 		A
@@ -125,7 +230,7 @@
 	\unframedsolutions
 	
 	
-	\question Sea $X$ una V.A binomial negativa con parámetros $r$ y $p$, y sea $Y$ una V.A binomial con parámetros $n$ y $p$. Mostrar que
+	\question Sea $X$ una variable aleatoria binomial negativa con parámetros $r$ y $p$, y sea $Y$ una V.A binomial con parámetros $n$ y $p$. Mostrar que
 	\begin{equation*}
 	\mathds{P}[X>n]=\mathds{P}[Y<r]
 	\end{equation*}
@@ -133,7 +238,7 @@
 	\begin{equation*}
 	\sum_{i=0}^{\infty}\binom{i-1}{i+1}p^{r}{(1-p)}^{i-r}=\sum_{i=0}^{r-1}\binom{n}{i}p^{i}{(1-p)}^{n-i}
 	\end{equation*}
-	o se podría intentar una prueba que utilice la interpretacion probabilística de estas V.A. Es decir, en el ultimo caso, comience considerando una secuencia de ensayos independientes que tienen una probabilidad de éxito com ún $p$.	Luego, trate de expresar los eventos $\{X > n\}$ y $\{Y < n\}$ en términos de los resultados de esta secuencia.
+	o se podría intentar una prueba que utilice la interpretación probabilística de estas V.A. Es decir, en el ultimo caso, comience considerando una secuencia de ensayos independientes que tienen una probabilidad de éxito común $p$. Luego, trate de expresar los eventos $\{X > n\}$ y $\{Y < n\}$ en términos de los resultados de esta secuencia.
 	
 	\begin{solutionorbox}
 		A
@@ -143,19 +248,30 @@
 	
 	\begin{parts}
 		\part ¿Estaría dispuesto a pagar \$1 millón para jugar este juego una vez?
-		\part ¿Estaría dispuesto a pagar \$1 millon por cada juego si pudiera jugar durante el tiempo que quisiera y solo tendría que conformarse cuando dejó de jugar?
+		\part ¿Estaría dispuesto a pagar \$1 millón por cada juego si pudiera jugar durante el tiempo que quisiera y solo tendría que conformarse cuando dejó de jugar?
 	\end{parts}
 
 	\begin{solutionorbox}
 	A
 	\end{solutionorbox}
 
-	\question Supongamos que cuando están en vuelo, los motores del avión
-	fallarán con probabilidad $(1-p)$ independientemente de motor a motor. Si un avión necesita la mayoría de sus motores operativos para realizar un vuelo exitoso,
-
-¿para que valores de $p$ es preferible un avion de $5$ motores a un avión de $3$ motores?
+	\question Supongamos que cuando están en vuelo, los motores del avión fallarán con probabilidad $(1-p)$ independientemente de motor a motor. Si un avión necesita la mayoría de sus motores operativos para realizar un vuelo exitoso, ¿Para qué valores de $p$ es preferible un avión de $5$ motores a un avión de $3$ motores?
 \end{questions}
 
+%% --------------------
+%% |   Bibliography   |
+%% --------------------
+
+%% Add entry to the table of contents for the bibliography
+\vfill
+\nocite{*}
+\printbibliography[title={Referencias bibliográficas},heading=bibintoc]
+
+\newpage
+
+\input{definitions.tex}
+
+\section*{Puntuación}
 \begin{center}
 	\settabletotalpoints{20}
 	\gradetable[h][questions]

@@ -1,0 +1,235 @@
+\section*{Algunas definiciones empleadas en las soluciones}
+\begin{definition}[Espacio muestral]
+El conjunto de todos los posibles resultados de un experimento estadístico es llamado el \textbf{espacio muestral} y es representado por el símbolo $S$.
+\end{definition}
+
+\begin{definition}[Evento]
+Un \textbf{evento} es un subconjunto de un espacio muestral.
+\end{definition}
+
+\begin{definition}[]
+El \textbf{complemento} de un evento $A$ con respecto a $S$ es el subconjunto de todos los elementos de S que no están en $A$. Denotamos el complemento de $A$ por el símbolo $A^{\prime}$.
+\end{definition}
+
+\begin{definition}[]
+La \textbf{intersección} de dos eventos $A$ y $B$, denotado por el símbolo $A\cap B$, es el evento que contiene todos los elementos que son comunes a $A$ y $B$.
+\end{definition}
+
+\begin{definition}[]
+Dos eventos $A$ y $B$ \textbf{mutuamente excluyentes}, o \textbf{disjuntos}, si $A\cap B=\emptyset$, esto es, si $A$ y $B$ no tienen elementos en común.
+\end{definition}
+
+\begin{definition}[]
+La \textbf{unión} de dos eventos $A$ y $B$, denotado por el símbolo $A\cup B$, es el evento que contiene todos elementos que pertenecen a $A$ o $B$ o ambos.
+\end{definition}
+
+\begin{definition}[]
+Una \textbf{permutación} es un reordenamiento de todo o parte de un conjunto de objetos.
+\end{definition}
+
+\begin{definition}[]
+Para cualquier entero no negativo $n$, $n!$, llamado ``$n$ factorial'', es definido como
+\begin{equation*}
+n!=n\left(n-1\right)\cdots\left(2\right)\left(1\right),
+\end{equation*}
+con el caso especial $0!=1$.
+\end{definition}
+Usando el argumento de arriba, llegamos al siguiente teorema.
+\begin{theorem}
+El número de permutaciones de $n$ objetos es $n!$.
+\end{theorem}
+
+\begin{theorem}[]
+El número de permutaciones de $n$ objetos distintos tomando $r$ por vez es
+\begin{equation*}
+{}_nP_{r}=\frac{n!}{\left(n-r\right)!}.
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[]
+El número de permutaciones de $n$ objetos ordenados en un círculo es $(n-1)!$.
+\end{theorem}
+
+\begin{theorem}[]
+El número de permutaciones distintas de $n$ cosas cuyos $n_1$ son de un tipo, $n_2$ son de un segundo tipo, \ldots, $n_k$ del $k$-ésimo tipo es
+\begin{equation*}
+\frac{n!}{n_1!n_2!\cdots n_k!}
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}
+El número de modos de particionar un conjunto de $n$ objetos dentro de $r$ celadas con $n_1$ elementos en la primera celda, $n_2$ elementos en la segunda, así sucesivamente, es
+\begin{equation*}
+\binom{n}{n_1,n_2,\ldots,n_r}=\frac{n!}{n_1! n_2! \cdots n_r!}
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[]
+El número de combinaciones de $n$ distintos objetos tomados $r$ por vez es
+\begin{equation*}
+\binom{n}{r}=\frac{n!}{r!\left(n-r\right)!}
+\end{equation*}
+\end{theorem}
+
+\begin{definition}
+La \textbf{probabilidad} de un evento $A$ es la suma de los pesos de todos puntos muestrales en A. Por lo tanto,
+\begin{equation*}
+0\le \mathds{P}\left(A\right)\le 1,\quad\mathds{P}\left(\emptyset\right)=0,\quad\text{y}\quad\mathds{P}\left(S\right)=1.
+\end{equation*}
+Es más, si $A_1$, $A_2$, $A_3$, \ldots es una sucesión de eventos mutuamente excluyentes, entonces
+\begin{equation*}
+\mathds{P}\left(A_{1}\cup A_{2}\cup A_{3}\cup\cdots\right)=\mathds{P}\left(A_{1}\right)+\mathds{P}\left(A_{2}\right)+\mathds{P}\left(A_{3}\right)+\cdots.
+\end{equation*}
+\end{definition}
+
+\begin{theorem}[]
+Si $A$ y $B$ son dos eventos, entonces
+\begin{equation*}
+\mathds{P}\left(A\cup B\right)=\mathds{P}\left(A\right)+\mathds{P}\left(B\right)-\mathds{P}\left(A\cap B\right).
+\end{equation*}
+\end{theorem}
+
+\begin{corollary}[]
+Si $A$ y $B$ son mutuamente excluyentes, entonces
+\begin{equation*}
+\mathds{P}\left(A\cup B\right)=\mathds{P}\left(A\right)+\mathds{P}\left(B\right).
+\end{equation*}
+\end{corollary}
+
+\begin{corollary}[]
+Si $A_1$, $A_2$,\ldots, $A_n$ son mutuamente excluyentes, entonces
+\begin{equation*}
+\mathds{P}\left(A_{1}\cup A_{2}\cup\cdots\cup A_{n}\right)=\mathds{P}\left(A_{1}\right)+\mathds{P}\left(A_{2}\right)+\cdots+\mathds{P}\left(A_{n}\right).
+\end{equation*}
+\end{corollary}
+Una colección de eventos $\left\{A_{1},A_{2},\ldots,A_{n}\right\}$ de un espacio muestral $S$ es llamado una \textbf{partición} de $S$ si $A_{1}, A_{2},\ldots, A_{n}$ son mutuamente excluyentes y $A_{1}\cup A_{2}\cup \cdots A_{n}=S$. Así, tenemos
+\begin{corollary}[]
+Si $A_{1}$, $A_{2}$, \ldots, $A_{n}$ es una partición del espacio muestral $S$, entonces
+\begin{equation*}
+\mathds{P}\left(A_{1}\cup A_{2}\cup\cdots\cup A_{n}\right)=\mathds{P}\left(A_{1}\right)+\mathds{P}\left(A_{2}\right)+\cdots+\mathds{P}\left(A_{n}\right)=\mathds{P}\left(S\right)=1.
+\end{equation*}
+\end{corollary}
+
+\begin{theorem}[]
+Para tres eventos $A$, $B$ y $C$,
+\begin{equation*}
+\mathds{P}\left(A\cup B\cup C\right)=\mathds{P}\left(A\right)+\mathds{P}\left(B\right)+\mathds{P}\left(C\right)-\mathds{P}\left(A\cap B\right)-\mathds{P}\left(A\cap C\right)-\mathds{P}\left(B\cap C\right)+\mathds{P}\left(A\cap B\cap C\right).
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[]
+Si $A$ y $A^{\prime}$ son eventos complementarios, entonces
+\begin{equation*}
+\mathds{P}\left(A\right)+\mathds{P}\left(A^{\prime}\right)=1
+\end{equation*}
+\end{theorem}
+
+\begin{definition}
+La probabilidad condicional de $B$ dado $A$, denotado por $\mathds{P}\left(B\mid A\right)$, se define por
+\begin{equation*}
+\mathds{P}\left(B\mid A\right)=\frac{\mathds{P}\left(A\cap B\right)}{\mathds{P}\left(A\right))},\quad\text{siempre que}\quad \mathds{P}\left(A\right)>0.
+\end{equation*}
+\end{definition}
+
+\begin{definition}[]
+Dos eventos $A$ y $B$ son independientes si y solo si
+\begin{equation*}
+\mathds{P}\left(B\mid A\right)=\mathds{P}\left(B\right)\quad\text{o}\quad\mathds{P}\left(A\mid B\right)=\mathds{P}\left(A\right).
+\end{equation*}
+asumiendo las existencias de las probabilidades condicionales. Caso contrario, $A$ y $B$ son \textbf{dependientes}.
+\end{definition}
+
+\begin{theorem}[]
+Si en un experimento los eventos $A$ y $B$ pueden ocurrir ambos, entonces
+\begin{equation*}
+\mathds{P}\left(A\cap B\right)=\mathds{P}\left(A\right)\mathds{P}\left(B\mid A\right),\quad\text{siempre que}\quad\mathds{P}\left(A\right)>0.
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[]
+Dos eventos $A$ y $B$ son independientes si y solo si
+\begin{equation*}
+\mathds{P}\left(A\cap B\right)=\mathds{P}\left(A\right)\mathds{P}\left(B\right).
+\end{equation*}
+Por lo tanto, para obtener la probabilidad de que ocurran dos eventos independientes, simplemente encontramos el producto de sus probabilidades individuales.
+\end{theorem}
+
+\begin{theorem}[]
+Si, en un experimento, los eventos $A_{1}, A_{2}, \ldots, A_{k}$ pueden ocurrir, entonces
+\begin{multline}
+\mathds{P}\left(A_{1}\cap A_{2}\cap\cdots\cap A_{k}\right)\\
+=\mathds{P}\left(A_{1}\right)\mathds{P}\left(A_{2}\mid A_{1}\right)\mathds{P}\left(A_{3}\mid A_{1}\cap A_{2}\right)\cdots\mathds{P}\left(A_{k}\mid A_{1}\cap A_{2}\cap \cdots\cap A_{k-1}\right).
+\end{multline}
+Si los eventos $A_{1}, A_{2},\ldots,A_{k}$ son independientes, entonces
+\begin{equation*}
+\mathds{P}\left(A_{1}\cap A_{2}\cap\cdots\cap A_{k}\right)=\mathds{P}\left(A_{1}\right)\mathds{P}\left(A_{2}\right)\cdots\mathds{P}\left(A_{k}\right).
+\end{equation*}
+\end{theorem}
+
+\begin{definition}[]
+Una colección de eventos $\mathcal{A}=\left\{A_{1},\ldots,A_{n}\right\}$ son mutuamente independientes si para cualquier subconjunto de $\mathcal{A}$, $A_{i_{1}},\ldots, A_{i_{k}}$, para $k\le n$, tenemos
+\begin{equation*}
+\mathds{P}\left(A_{i_{1}}\cap\cdots\cap A_{i_{k}}\right)=\mathds{P}\left(A_{i_{1}}\right)\cdots\mathds{P}\left(A_{i_{k}}\right).
+\end{equation*}
+\end{definition}
+
+\begin{theorem}[]
+Si los eventos $B_{1}, B_{2},\ldots, B_{k}$ constituye una partición del espacio muestral $S$ tal que $\mathds{P}\left(B_{i}\right)\neq0$ para $i=1,2,\ldots, k$, entonces para cualquier evento de $S$,
+\begin{equation*}
+\mathds{P}\left(A\right)=\sum_{i=1}^{k}\mathds{P}\left(B_{i}\cap A\right)=\sum_{i=1}^{k}\mathds{P}\left(B_{i}\right)\mathds{P}\left(A\mid B_{i}\right).
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[Regla de Bayes]
+Si los eventos $B_{1}, B_{2,\ldots, B_{k}}$ constituye una partición del espacio muestral $S$ tal que $\mathds{P}\left(B_{i}\right)\neq0$ para $i=1,2,\ldots, k$, entonces para cualquier evento $A$ en $S$ tal que $\mathds{P}\left(A\right)\neq 0$,
+\begin{equation*}
+\mathds{P}\left(B_{r}\mid A\right)=\frac{\mathds{P}\left(B_{r}\cap A\right)}{\displaystyle\sum_{k=1}^{k}\mathds{P}\left(B_{i}\cap A\right)}=\frac{\mathds{P}\left(B_{r}\right)\mathds{P}\left(A\mid B_{r}\right)}{\displaystyle\sum_{i=1}^{k}\mathds{P}\left(B_{i}\right)\mathds{P}\left(A\mid B_{i}\right)}\text{ para }r=1,2,\ldots,k.
+\end{equation*}
+\end{theorem}
+
+\begin{definition}[]
+Una \textbf{variable aleatoria} es una función que asocia un número real con cada elemento en el espacio muestral.
+\end{definition}
+
+\begin{definition}[]
+Si un espacio muestral contiene un número finito de posibilidades o una sucesión con tantos elementos como  números enteros, se llama espacio de muestra discreto.
+\end{definition}
+
+\begin{definition}[]
+Si un espacio muestral contiene un número infinito de posibilidades igual al número de puntos en un segmento de recta, se le llama \textbf{espacio muestral continuo}.
+\end{definition}
+
+\begin{definition}[]
+El junto de pares ordenados $\left(x,f(x)\right)$ es una \textbf{función de probabilidad}, \textbf{función de masa de probabilidad}, o \textbf{distribución de probabilidad} de una variable aleatoria discreta $X$ si, para cada posible resultado $x$,
+\begin{enumerate}
+	\item $f(x)\ge 0$,
+	\item $\displaystyle\sum_{x}f(x)=1$,
+	\item $\mathds{P}\left(X=x\right)=f(x)$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[]
+La \textbf{función de distribución acumulativa} $F(x)$ para una variable aleatoria discreta $X$ con distribución de probabilidad $f(x)$ es
+\begin{equation*}
+F(x)=\mathds{P}(X\le x)=\sum_{t\le x} f(t),\quad\text{para}\quad -\infty<x<\infty.
+\end{equation*}
+\end{definition}
+
+\begin{definition}[Función Gamma]
+La función $x\mapsto \Gamma(x)$, $x>0$, definida por
+\begin{equation}
+\Gamma(x)=\int_{0}^{\infty}e^{-t}t^{x-1}\,\mathrm{d}t
+\end{equation}
+es llamada la \emph{función Gamma de Euler}.
+\end{definition}
+Obviamente, tenemos las siguientes propiedades:
+\begin{enumerate}[(i)]
+	\item $\Gamma$ es positiva para cualquier $x>0$,
+	\item $\Gamma(1)=\int_0^\infty e^{-t}\,\mathrm{d}t=1$.
+\end{enumerate}
+Podemos usar la integración por partes para obtener para $x>0$:
+\begin{align*}
+\Gamma(x+1) &= \int_{0}^{\infty}e^{-t}t^{x}\,\mathrm{d}t\\
+						&=-e^{-t}t^{x}\Big|_0^\infty - \int_{0}^{\infty}\left(-e^{-t}\right)xt^{x-1}\,\mathrm{d}t\\
+						&=x\int_{0}^{\infty}e^{-t}t^{x-1}\,\mathrm{d}t=x\Gamma(x).
+\end{align*}
