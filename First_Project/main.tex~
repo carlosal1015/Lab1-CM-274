@@ -1,11 +1,12 @@
 % arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
-% arara: xelatex: { shell: yes}
+% arara: xelatex: {shell: yes}
+% arara: xelatex: {shell: yes}
 % arara: biber
-% arara: xelatex: { shell: yes}
-% arara: xelatex: { shell: yes}
+% arara: xelatex: {shell: yes}
+% arara: xelatex: {shell: yes}
 % arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
 \RequirePackage{etex} % Increase the number of tokens up tp 2^15.
-\documentclass[11pt,answers,addpoints,a4paper,tittlepage=true,DIV=15,headsepline]{kommaexam}%,cancelspace
+\documentclass[11pt,answers,addpoints,a4paper,tittlepage,DIV=15,headsepline]{kommaexam}%,cancelspace
 \usepackage[T1]{fontenc}
 \usepackage{wallpaper}
 \usepackage{libertine}
@@ -20,13 +21,14 @@
 %\usepackage{eucal}
 \usepackage{color}
 \usepackage{graphicx}
+\graphicspath{ {./images/} }
 \usepackage{caption}
 \usepackage[shortlabels]{enumitem}
 \usepackage{ragged2e}
 %\usepackage[ddmmyyyy]{datetime}
 \usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
-\addbibresource{bib.bib}
-
+\addbibresource{./bibliography/bib.bib}
+\renewcommand{\figurename}{Figura}
 \pagestyle{headandfoot}
 \runningheadrule
 \firstpageheader{CM--274 A}{Introducción a la Estadística y las Probabilidades}{2018--3}
@@ -138,7 +140,7 @@
 
 \begin{center}
 	\fbox{\fbox{\parbox{5.5in}{\centering
-		Datos de los integrantes del Grupo E:
+	Responda las preguntas en los espacios provistos en las hojas de preguntas. Si se queda sin espacio para una respuesta, continúe en la parte posterior de la página.
 }}}
 \end{center}
 %\vspace{0.1in}
@@ -146,15 +148,15 @@
 
 \begin{questions}
 
-	\question%[10]
-	Cinco números distintos se distribuyen aleatoriamente entre los jugadores del $1$ al $5$. Cuando dos jugadores comparan sus números, el que tiene el más alto es declarado ganador. Inicialmente, los jugadores $1$ y $2$ comparan sus números; el ganador se compara con el jugador $3$, y así sucesivamente. Sea $X$ el numero de veces que el jugador $1$ es un ganador. Encuentra $\mathds{P}[X = i]$, $i = 0, 1, 2, 3, 4$.
+	\question\label{q:1}%[10]
+	Cinco números distintos se distribuyen aleatoriamente entre los jugadores del $1$ al $5$. Cuando dos jugadores comparan sus números, el que tiene el más alto es declarado ganador. Inicialmente, los jugadores $1$ y $2$ comparan sus números; el ganador se compara con el jugador $3$, y así sucesivamente. Sea $X$ el número de veces que el jugador $1$ es un ganador. Encuentra $\mathds{P}[X = i]$, $i = 0, 1, 2, 3, 4$.
 	
 	\ifprintanswers
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[width=7cm]{example-image-a}
-		\caption{This is a lovely figure}
-		\label{fig:lovely}
+		\includegraphics[width=.5\textwidth]{fig1.pdf}
+		\caption{Diagrama de árbol de las rondas del juego de la pregunta~\ref{q:1}.}
+		\label{fig:1}
 	\end{figure}
 	\fi
 	\begin{solutionorbox}
@@ -185,7 +187,7 @@
 	\includegraphics[width=7cm]{example-image-b}
 	\centering
 	\captionof{figure}{This is a lovely figure}
-	\label{fig:lovely}
+	\label{fig:2}
 	\justifying
 	Hola
 	\end{solutionorlines}
@@ -258,18 +260,11 @@
 	\question Supongamos que cuando están en vuelo, los motores del avión fallarán con probabilidad $(1-p)$ independientemente de motor a motor. Si un avión necesita la mayoría de sus motores operativos para realizar un vuelo exitoso, ¿Para qué valores de $p$ es preferible un avión de $5$ motores a un avión de $3$ motores?
 \end{questions}
 
-%% --------------------
-%% |   Bibliography   |
-%% --------------------
-
-%% Add entry to the table of contents for the bibliography
-\vfill
-\nocite{*}
-\printbibliography[title={Referencias bibliográficas},heading=bibintoc]
-
 \newpage
 
-\input{definitions.tex}
+\input{./sections/bibliography.tex}
+
+\input{./sections/definitions.tex}
 
 \section*{Puntuación}
 \begin{center}

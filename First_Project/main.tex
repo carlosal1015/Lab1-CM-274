@@ -1,0 +1,87 @@
+% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
+% arara: xelatex: {shell: yes}
+% arara: xelatex: {shell: yes}
+% arara: biber
+% arara: xelatex: {shell: yes}
+% arara: xelatex: {shell: yes}
+% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
+\RequirePackage{etex} % Increase the number of tokens up tp 2^15.
+\documentclass[11pt,answers,addpoints,a4paper,tittlepage,DIV=15,headsepline]{kommaexam}%,cancelspace
+\usepackage[T1]{fontenc}
+\usepackage{wallpaper}
+\usepackage{libertine}
+\usepackage[lite]{mtpro2}
+\usepackage{amsthm}
+\usepackage[libertine,scaled=1.1]{newtxmath}
+\usepackage[scaled=.92]{sourcesanspro}
+\usepackage[scaled=.78]{beramono}
+\usepackage[protrusion=true,expansion=false]{microtype} % IMPORTANT expansion = false for XeTeX engine!!
+\usepackage{dsfont}
+\usepackage{color}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{caption}
+\usepackage[shortlabels]{enumitem}
+\usepackage{ragged2e}
+\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+
+\input{commands.tex}
+
+\begin{document}
+
+	\begin{coverpages}
+		\clearpage\maketitle
+		\thispagestyle{empty}
+	\end{coverpages}
+
+%\shadedsolutions
+
+\begin{center}
+	\fbox{\fbox{\parbox{5.5in}{\centering
+	Responda las preguntas en los espacios provistos en las hojas de preguntas. Si se queda sin espacio para una respuesta, continúe en la parte posterior de la página.
+}}}
+\end{center}
+%\vspace{0.1in}
+%\makebox[\textwidth]{Nombre del instructor:\enspace Lic. José Fernando Zamudio Peves.\hfill}
+
+\begin{questions}
+
+	\input{./sections/1.tex}
+
+	\input{./sections/2.tex}
+
+	\input{./sections/3.tex}
+
+	\nocolorsolutionboxes
+
+	\input{./sections/4.tex}
+
+	\framedsolutions
+
+	\input{./sections/5.tex}
+
+	\input{./sections/6.tex}
+
+	\unframedsolutions
+
+	\input{./sections/7.tex}
+
+	\input{./sections/8.tex}
+
+	\input{./sections/9.tex}
+
+\end{questions}
+
+\newpage
+
+\input{./sections/bibliography.tex}
+
+\input{./sections/definitions.tex}
+
+\section*{Puntuación}
+\begin{center}
+  \settabletotalpoints{20}
+  \gradetable[h][questions]
+\end{center}
+
+\end{document}

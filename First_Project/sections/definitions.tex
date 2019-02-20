@@ -1,0 +1,515 @@
+\section*{Algunas definiciones empleadas en las soluciones}
+\begin{definition}[Espacio muestral]
+El conjunto de todos los posibles resultados de un experimento estadístico es llamado el \textbf{espacio muestral} y es representado por el símbolo $S$.
+\end{definition}
+
+\begin{definition}[Evento]
+Un \textbf{evento} es un subconjunto de un espacio muestral.
+\end{definition}
+
+\begin{definition}[]
+El \textbf{complemento} de un evento $A$ con respecto a $S$ es el subconjunto de todos los elementos de S que no están en $A$. Denotamos el complemento de $A$ por el símbolo $A^{\prime}$.
+\end{definition}
+
+\begin{definition}[]
+La \textbf{intersección} de dos eventos $A$ y $B$, denotado por el símbolo $A\cap B$, es el evento que contiene todos los elementos que son comunes a $A$ y $B$.
+\end{definition}
+
+\begin{definition}[]
+Dos eventos $A$ y $B$ \textbf{mutuamente excluyentes}, o \textbf{disjuntos}, si $A\cap B=\emptyset$, esto es, si $A$ y $B$ no tienen elementos en común.
+\end{definition}
+
+\begin{definition}[]
+La \textbf{unión} de dos eventos $A$ y $B$, denotado por el símbolo $A\cup B$, es el evento que contiene todos elementos que pertenecen a $A$ o $B$ o ambos.
+\end{definition}
+
+\begin{definition}[]
+Una \textbf{permutación} es un reordenamiento de todo o parte de un conjunto de objetos.
+\end{definition}
+
+\begin{definition}[]
+Para cualquier entero no negativo $n$, $n!$, llamado ``$n$ factorial'', es definido como
+\begin{equation*}
+n!=n\left(n-1\right)\cdots\left(2\right)\left(1\right),
+\end{equation*}
+con el caso especial $0!=1$.
+\end{definition}
+Usando el argumento de arriba, llegamos al siguiente teorema.
+\begin{theorem}
+El número de permutaciones de $n$ objetos es $n!$.
+\end{theorem}
+
+\begin{theorem}[]
+El número de permutaciones de $n$ objetos distintos tomando $r$ por vez es
+\begin{equation*}
+{}_nP_{r}=\frac{n!}{\left(n-r\right)!}.
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[]
+El número de permutaciones de $n$ objetos ordenados en un círculo es $(n-1)!$.
+\end{theorem}
+
+\begin{theorem}[]
+El número de permutaciones distintas de $n$ cosas cuyos $n_1$ son de un tipo, $n_2$ son de un segundo tipo, \ldots, $n_k$ del $k$-ésimo tipo es
+\begin{equation*}
+\frac{n!}{n_1!n_2!\cdots n_k!}
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}
+El número de modos de particionar un conjunto de $n$ objetos dentro de $r$ celadas con $n_1$ elementos en la primera celda, $n_2$ elementos en la segunda, así sucesivamente, es
+\begin{equation*}
+\binom{n}{n_1,n_2,\ldots,n_r}=\frac{n!}{n_1! n_2! \cdots n_r!}
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[]
+El número de combinaciones de $n$ distintos objetos tomados $r$ por vez es
+\begin{equation*}
+\binom{n}{r}=\frac{n!}{r!\left(n-r\right)!}
+\end{equation*}
+\end{theorem}
+
+\begin{definition}
+La \textbf{probabilidad} de un evento $A$ es la suma de los pesos de todos puntos muestrales en A. Por lo tanto,
+\begin{equation*}
+0\le \mathds{P}\left(A\right)\le 1,\quad\mathds{P}\left(\emptyset\right)=0,\quad\text{y}\quad\mathds{P}\left(S\right)=1.
+\end{equation*}
+Es más, si $A_1$, $A_2$, $A_3$, \ldots es una sucesión de eventos mutuamente excluyentes, entonces
+\begin{equation*}
+\mathds{P}\left(A_{1}\cup A_{2}\cup A_{3}\cup\cdots\right)=\mathds{P}\left(A_{1}\right)+\mathds{P}\left(A_{2}\right)+\mathds{P}\left(A_{3}\right)+\cdots.
+\end{equation*}
+\end{definition}
+
+\begin{theorem}[]
+Si $A$ y $B$ son dos eventos, entonces
+\begin{equation*}
+\mathds{P}\left(A\cup B\right)=\mathds{P}\left(A\right)+\mathds{P}\left(B\right)-\mathds{P}\left(A\cap B\right).
+\end{equation*}
+\end{theorem}
+
+\begin{corollary}[]
+Si $A$ y $B$ son mutuamente excluyentes, entonces
+\begin{equation*}
+\mathds{P}\left(A\cup B\right)=\mathds{P}\left(A\right)+\mathds{P}\left(B\right).
+\end{equation*}
+\end{corollary}
+
+\begin{corollary}[]
+Si $A_1$, $A_2$,\ldots, $A_n$ son mutuamente excluyentes, entonces
+\begin{equation*}
+\mathds{P}\left(A_{1}\cup A_{2}\cup\cdots\cup A_{n}\right)=\mathds{P}\left(A_{1}\right)+\mathds{P}\left(A_{2}\right)+\cdots+\mathds{P}\left(A_{n}\right).
+\end{equation*}
+\end{corollary}
+Una colección de eventos $\left\{A_{1},A_{2},\ldots,A_{n}\right\}$ de un espacio muestral $S$ es llamado una \textbf{partición} de $S$ si $A_{1}, A_{2},\ldots, A_{n}$ son mutuamente excluyentes y $A_{1}\cup A_{2}\cup \cdots A_{n}=S$. Así, tenemos
+\begin{corollary}[]
+Si $A_{1}$, $A_{2}$, \ldots, $A_{n}$ es una partición del espacio muestral $S$, entonces
+\begin{equation*}
+\mathds{P}\left(A_{1}\cup A_{2}\cup\cdots\cup A_{n}\right)=\mathds{P}\left(A_{1}\right)+\mathds{P}\left(A_{2}\right)+\cdots+\mathds{P}\left(A_{n}\right)=\mathds{P}\left(S\right)=1.
+\end{equation*}
+\end{corollary}
+
+\begin{theorem}[]
+Para tres eventos $A$, $B$ y $C$,
+\begin{equation*}
+\mathds{P}\left(A\cup B\cup C\right)=\mathds{P}\left(A\right)+\mathds{P}\left(B\right)+\mathds{P}\left(C\right)-\mathds{P}\left(A\cap B\right)-\mathds{P}\left(A\cap C\right)-\mathds{P}\left(B\cap C\right)+\mathds{P}\left(A\cap B\cap C\right).
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[]
+Si $A$ y $A^{\prime}$ son eventos complementarios, entonces
+\begin{equation*}
+\mathds{P}\left(A\right)+\mathds{P}\left(A^{\prime}\right)=1
+\end{equation*}
+\end{theorem}
+
+\begin{definition}
+La probabilidad condicional de $B$ dado $A$, denotado por $\mathds{P}\left(B\mid A\right)$, se define por
+\begin{equation*}
+\mathds{P}\left(B\mid A\right)=\frac{\mathds{P}\left(A\cap B\right)}{\mathds{P}\left(A\right))},\quad\text{siempre que}\quad \mathds{P}\left(A\right)>0.
+\end{equation*}
+\end{definition}
+
+\begin{definition}[]
+Dos eventos $A$ y $B$ son independientes si y solo si
+\begin{equation*}
+\mathds{P}\left(B\mid A\right)=\mathds{P}\left(B\right)\quad\text{o}\quad\mathds{P}\left(A\mid B\right)=\mathds{P}\left(A\right).
+\end{equation*}
+asumiendo las existencias de las probabilidades condicionales. Caso contrario, $A$ y $B$ son \textbf{dependientes}.
+\end{definition}
+
+\begin{theorem}[]
+Si en un experimento los eventos $A$ y $B$ pueden ocurrir ambos, entonces
+\begin{equation*}
+\mathds{P}\left(A\cap B\right)=\mathds{P}\left(A\right)\mathds{P}\left(B\mid A\right),\quad\text{siempre que}\quad\mathds{P}\left(A\right)>0.
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[]
+Dos eventos $A$ y $B$ son independientes si y solo si
+\begin{equation*}
+\mathds{P}\left(A\cap B\right)=\mathds{P}\left(A\right)\mathds{P}\left(B\right).
+\end{equation*}
+Por lo tanto, para obtener la probabilidad de que ocurran dos eventos independientes, simplemente encontramos el producto de sus probabilidades individuales.
+\end{theorem}
+
+\begin{theorem}[]
+Si, en un experimento, los eventos $A_{1}, A_{2}, \ldots, A_{k}$ pueden ocurrir, entonces
+\begin{multline}
+\mathds{P}\left(A_{1}\cap A_{2}\cap\cdots\cap A_{k}\right)\\
+=\mathds{P}\left(A_{1}\right)\mathds{P}\left(A_{2}\mid A_{1}\right)\mathds{P}\left(A_{3}\mid A_{1}\cap A_{2}\right)\cdots\mathds{P}\left(A_{k}\mid A_{1}\cap A_{2}\cap \cdots\cap A_{k-1}\right).
+\end{multline}
+Si los eventos $A_{1}, A_{2},\ldots,A_{k}$ son independientes, entonces
+\begin{equation*}
+\mathds{P}\left(A_{1}\cap A_{2}\cap\cdots\cap A_{k}\right)=\mathds{P}\left(A_{1}\right)\mathds{P}\left(A_{2}\right)\cdots\mathds{P}\left(A_{k}\right).
+\end{equation*}
+\end{theorem}
+
+\begin{definition}[]
+Una colección de eventos $\mathcal{A}=\left\{A_{1},\ldots,A_{n}\right\}$ son mutuamente independientes si para cualquier subconjunto de $\mathcal{A}$, $A_{i_{1}},\ldots, A_{i_{k}}$, para $k\le n$, tenemos
+\begin{equation*}
+\mathds{P}\left(A_{i_{1}}\cap\cdots\cap A_{i_{k}}\right)=\mathds{P}\left(A_{i_{1}}\right)\cdots\mathds{P}\left(A_{i_{k}}\right).
+\end{equation*}
+\end{definition}
+
+\begin{theorem}[]
+Si los eventos $B_{1}, B_{2},\ldots, B_{k}$ constituye una partición del espacio muestral $S$ tal que $\mathds{P}\left(B_{i}\right)\neq0$ para $i=1,2,\ldots, k$, entonces para cualquier evento de $S$,
+\begin{equation*}
+\mathds{P}\left(A\right)=\sum_{i=1}^{k}\mathds{P}\left(B_{i}\cap A\right)=\sum_{i=1}^{k}\mathds{P}\left(B_{i}\right)\mathds{P}\left(A\mid B_{i}\right).
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[Regla de Bayes]
+Si los eventos $B_{1}, B_{2,\ldots, B_{k}}$ constituye una partición del espacio muestral $S$ tal que $\mathds{P}\left(B_{i}\right)\neq0$ para $i=1,2,\ldots, k$, entonces para cualquier evento $A$ en $S$ tal que $\mathds{P}\left(A\right)\neq 0$,
+\begin{equation*}
+\mathds{P}\left(B_{r}\mid A\right)=\frac{\mathds{P}\left(B_{r}\cap A\right)}{\displaystyle\sum_{k=1}^{k}\mathds{P}\left(B_{i}\cap A\right)}=\frac{\mathds{P}\left(B_{r}\right)\mathds{P}\left(A\mid B_{r}\right)}{\displaystyle\sum_{i=1}^{k}\mathds{P}\left(B_{i}\right)\mathds{P}\left(A\mid B_{i}\right)}\text{ para }r=1,2,\ldots,k.
+\end{equation*}
+\end{theorem}
+
+\begin{definition}[]
+Una \textbf{variable aleatoria} es una función que asocia un número real con cada elemento en el espacio muestral.
+\end{definition}
+
+\begin{definition}[]
+Si un espacio muestral contiene un número finito de posibilidades o una sucesión con tantos elementos como  números enteros, se llama espacio de muestra discreto.
+\end{definition}
+
+\begin{definition}[]
+Si un espacio muestral contiene un número infinito de posibilidades igual al número de puntos en un segmento de recta, se le llama \textbf{espacio muestral continuo}.
+\end{definition}
+
+\begin{definition}[]
+El junto de pares ordenados $\left(x,f(x)\right)$ es una \textbf{función de probabilidad}, \textbf{función de masa de probabilidad}, o \textbf{distribución de probabilidad} de una variable aleatoria discreta $X$ si, para cada posible resultado $x$,
+\begin{enumerate}
+	\item $f(x)\ge 0$,
+	\item $\displaystyle\sum_{x}f(x)=1$,
+	\item $\mathds{P}\left(X=x\right)=f(x)$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[]
+La \textbf{función de distribución acumulativa} $F(x)$ para una variable aleatoria discreta $X$ con distribución de probabilidad $f(x)$ es
+\begin{equation*}
+F(x)=\mathds{P}(X\le x)=\sum_{t\le x} f(t),\quad\text{para}\quad -\infty<x<\infty.
+\end{equation*}
+\end{definition}
+
+\begin{definition}[]
+La función $f(x)$ es una \textbf{función de densidad de probabilidad} (fdp) para la variable aleatoria continua $X$, definida sobre el conjunto de los números reales, si
+\begin{enumerate}
+	\item $f(x)\ge 0$, para todo $x\in\mathds{R}$.
+	\item $\int_{-\infty}^{\infty}f(x)\,\mathrm{d}x=1$.
+	\item $\mathds{P}\left(a<X<b\right)=\int_{a}^{b}f(x)\,\mathrm{d}x$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[]
+La \textbf{función de distribución acumulativa} $F(x)$ de una variable aleatoria continua con función de densidad $f(x)$ es
+\begin{equation*}
+F(x)=\mathds{P}\left(X\le x\right)=\int_{-\infty}^{x}f(t)\,\mathrm{d}t,\quad\text{para}\quad-\infty<x<\infty.
+\end{equation*}
+\end{definition}
+
+\begin{definition}[]
+La función $f(x,y)$ es una \textbf{distribución de probabilidad conjunta} o \textbf{función de distribución de masa} de las variables aleatorias $X$ e $Y$ si
+\begin{enumerate}
+	\item $f(x,y)\ge 0$ para todo $\left(x,y\right)$,
+	\item $\displaystyle\sum_{x}\sum_{y}f\left(x,y\right)=1$,
+	\item $\mathds{P}\left(X=x, Y=y\right)=f\left(x,y\right)$.
+\end{enumerate}
+Para cualquier región $A$ en el plano $xy$, $\mathds{P}\left[\left(X,Y\right)\in A\right]=\displaystyle\sum\sum_{A}f\left(x,y\right)$.
+\end{definition}
+
+\begin{definition}[]
+La función $f\left(x,y\right)$ es una \textbf{función de densidad conjunta} de las variables aleatorias $X$ e $Y$ si
+\begin{enumerate}
+	\item $f\left(x,y\right)>0$, para todo $\left(x,y\right)$,
+	\item $\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f\left(x,y\right)\,\mathrm{d}x\,\mathrm{d}y=1$,
+	\item $\mathds{P}\left[\left(X,Y\right)\in A\right]=\int\int_{A}f\left(x,y\right)\,\mathrm{d}x\,\mathrm{d}y$, para cualquier región $A$ en el plano $xy$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[]
+Las \textbf{distribuciones marginales} de solo $X$ y solo $Y$ son
+\begin{align*}
+g(x)=\sum_{y}f\left(x,y\right)\quad\text{y}\quad h(y)=\sum_{x}f\left(x,y\right)\\
+\intertext{para el caso discreto, y}\\
+g(x)=\int_{-\infty}^{\infty}f\left(x,y\right)\,\mathrm{d}y\quad\text{y}\quad h(y)=\int_{-\infty}^{\infty}f\left(x,y\right)\,\mathrm{d}x\\
+\intertext{para el caso continuo.}
+\end{align*}
+\end{definition}
+
+\begin{definition}[]
+Sean $X$ e $Y$ dos variables aleatorias, discretas o continuas. La \textbf{distribución condicional} de la variable aleatoria $Y$ dado que $X=x$ es
+\begin{equation*}
+f\left(y\mid x\right)=\frac{f\left(x,y\right)}{g(x)},\quad\text{siempre que}\quad g(x)>0.
+\end{equation*}
+Similarmente, la distribución condicional de $X$ dado que $Y=y$ es
+\begin{equation*}
+f\left(x\mid y\right)=\frac{f\left(x,y\right)}{h(y)},\quad\text{siempre que}\quad h(y)>0.
+\end{equation*}
+\end{definition}
+
+\begin{definition}[]
+Sean $X$ e $Y$ dos variables aleatorias, discretas o continuas, con distribuciones de probabilidad conjuntas $f(x,y)$ y distribuciones marginales $g(x)$ y $h(y)$, respectivamente. Las variables aleatorias $X$ e $Y$ se dice que son \textbf{estadísticamente independientes} si y solo si
+\begin{equation*}
+f\left(x,y\right)=g(x)h(y)
+\end{equation*}
+para todo $\left(x,y\right)$ dentro de su rango.
+\end{definition}
+
+\begin{definition}[]
+Sean $n$ variables aleatorias $X_{1}, X_{2},\ldots, X_{n}$, discretas o continuas, con distribución de probabilidad conjunta $f\left(x_{1},x_{2},\ldots,x_{n}\right)$ y distribución marginal $f_{1}\left(x_{1}\right), f_{2}\left(x_{2}\right),\ldots,f_{n}\left(x_{n}\right)$, respectivamente. Las variables aleatorias $X_{1}, X_{2}, \ldots, X_{n}$ se dice que son \textbf{estadísticamente independientes} si y solo si
+\begin{equation*}
+f\left(x_{1},x_{2},\ldots,x_{n}\right)=f_{1}\left(x_{1}\right)f_{2}\left(x_{2}\right)\cdots f_{n}\left(x_{n}\right)
+\end{equation*}
+para todo $\left(x_{1},x_{2},\ldots, x_{n}\right)$ dentro de su rango.
+\end{definition}
+
+\begin{definition}[]
+Sea $X$ una variable aleatoria con distribución de probabilidad $f(x)$. La \textbf{media}, o \textbf{valor esperado}, de $X$ es
+\begin{equation*}
+\mu=\mathds{E}\left(X\right)=\sum_{X}xf(x)
+\end{equation*}
+si $X$ es discreta, y
+\begin{equation*}
+\mu=\mathds{E}\left(X\right)=\int_{-\infty}^{\infty}xf(x)\,\mathrm{d}x
+\end{equation*}
+si $X$ es continua.
+\end{definition}
+
+\begin{theorem}[]
+Sea $X$ una variable aleatoria con distribución de probabilidad $f(x)$. El valor esperado de la variable aleatoria $g(X)$ es
+\begin{equation*}
+\mu_{g\left(X\right)}=\mathds{E}\left[g\left(X\right)\right]=\sum_{x}g(x)f(x)
+\end{equation*}
+si $X$ es discreto, y
+\begin{equation*}
+\mu_{g\left(X\right)}=\mathds{E}\left[g\left(X\right)\right]=\int_{-\infty}^{\infty}g(x)f(x)\,\mathrm{d}x
+\end{equation*}
+si $X$ es continua.
+\end{theorem}
+
+\begin{definition}[]
+Sean $X$ e $Y$ variables aleatorias con distribución de probabilidad conjunta $f\left(x,y\right)$. La media, o valor esperado, de la variable aleatoria $g\left(X,Y\right)$ es
+\begin{equation*}
+\mu_{g\left(X,Y\right)}=\mathds{E}\left[g\left(X,Y\right)\right]=\sum_{x}\sum_{y}g\left(x,y\right)f\left(x,y\right)
+\end{equation*}
+si $X$ e $Y$ son discretas, y
+\begin{equation*}
+\mu_{g\left(X,Y\right)}=\mathds{E}\left[g\left(X,Y\right)\right]=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}g\left(x,y\right)f\left(x,y\right)\,\mathrm{d}x\mathrm{d}y
+\end{equation*}
+si $X$ e $Y$ son continuas.
+\end{definition}
+
+\begin{definition}[]
+Sea $X$ una variable aleatoria con distribución de probabilidad $f(x)$ y media $\mu$. La varianza de $X$ es
+\begin{align*}
+\sigma^{2}&=\mathds{E}\left[{\left(X-\mu\right)}^{2}\right]=\sum_{x}{\left(x-\mu\right)}^{2}f(x),\quad\text{si }X\text{ es discreta, y}\\
+\sigma^{2}&=\mathds{E}\left[{\left(X-\mu\right)}^{2}\right]=\int_{-\infty}^{\infty}{\left(x-\mu\right)}^{2}f(x)\,\mathrm{d}x,\quad\text{si }X\text{ es continua}\\
+\end{align*}
+La raiz cuadrado positiva de la varianza, $\sigma$, es llamada la \textbf{desviación estándar} de $X$.
+\end{definition}
+
+\begin{theorem}[]
+La varianza de una variable aleatoria $X$ es
+\begin{equation*}
+\sigma^{2}=\mathds{E}\left(X^{2}\right)-\mu^{2}
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[]
+Sea $X$ una variable aleatoria con distribución de probabilidad $f(x)$. La varianza de la variable aleatoria $g\left(X\right)$ es
+\begin{equation*}
+\sigma^{2}_{g\left(X\right)}=\mathds{E}\left\{{\left[g\left(X\right)-\mu_{g\left(X\right)}\right]}^{2}\right\}=\sum_{x}{\left[g(x)-\mu_{g\left(X\right)}\right]}^{2}f(x)
+\end{equation*}
+si $X$ es discreta, y
+\begin{equation*}
+\sigma^{2}_{g\left(X\right)}=\mathds{E}\left\{{\left[g\left(X\right)-\mu_{g\left(X\right)}\right]}^{2}\right\}=\int_{-\infty}^{\infty}{\left[g(x)-\mu_{g\left(X\right)}\right]}^{2}f(x)
+\end{equation*}
+si $X$ es continua.
+\end{theorem}
+
+\begin{definition}[]
+Sea $X$ e $Y$ una variable aleatoria con distribución de probabilidad conjunta $f(x,y)$. La covarianza de $X$ e $Y$ es
+\begin{equation*}
+\sigma_{XY}=\mathds{E}\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right]=\sum_{x}\sum_{y}\left(x-\mu_{X}\right)\left(y-\mu_{Y}\right)f\left(x,y\right)
+\end{equation*}
+si $X$ e $Y$ son discretas y
+\begin{equation*}
+\sigma_{XY}=\mathds{E}\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right]=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\left(x-\mu_{X}\right)\left(y-\mu_{Y}\right)f\left(x,y\right)\,\mathrm{d}x\mathrm{d}y
+\end{equation*}
+si $X$ e $Y$ son continuas.
+\end{definition}
+
+\begin{theorem}
+La covarianza de dos variables aleatorias $X$ e $Y$ con medias $\mu_{X}$ y $\mu_{Y}$, respectivamente, es dado por
+\begin{equation*}
+\sigma_{XY}=\mathds{E}\left(XY\right)-\mu_{X}\mu_{Y}.
+\end{equation*}
+\end{theorem}
+
+\begin{definition}[]
+Sean $X$ e $Y$ dos variables aleatorias con covarianza $\sigma_{XY}$ y desviación estándar $\sigma_{X}$ y $\sigma_{Y}$, respectivamente. El coeficiente de correlación de $X$ y $Y$ es
+\begin{equation*}
+\rho_{XY}=\frac{\sigma_{XY}}{\sigma_{X}\sigma_{Y}}
+\end{equation*}
+\end{definition}
+
+\begin{theorem}[]
+Si $a$ y $b$ son constantes, entonces
+\begin{equation*}
+\mathds{E}\left(aX+b\right)=a\mathds{E}\left(X\right)+b.
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}[]
+El valor esperado de la suma o diferencia de dos o más funciones de una variable aleatoria $X$ es la suma o diferencia de los valores esperados de las funciones. Esto es,
+\begin{align*}
+\mathds{E}\left[g(X)\pm h(X)\right]
+&=\int_{-\infty}^{\infty}\left[g(x)\pm h(x)\right]f(x)\,\mathrm{d}x \\
+&=\int_{-\infty}^{\infty}g(x)f(x)\,\mathrm{d}x\pm \int_{-\infty}^{\infty}h(x)f(x)\,\mathrm{d}x\\
+&=\mathds{E}\left[g(X)\right]\pm \mathds{E}\left[h(X)\right].
+\end{align*}
+\end{theorem}
+
+
+\begin{theorem}[]
+El valor esperado de la suma o diferencia de dos o más funciones de las variables aleatorias $X$ e $Y$ es la suma o diferencia de los valores esperados de las funciones. Esto es,
+\begin{equation*}
+\mathds{E}\left[g\left(X,Y\right)\pm h\left(X,Y\right)\right]=\mathds{E}\left[g\left(X,Y\right)\right]\pm\mathds{E}\left[h\left(X,Y\right)\right].
+\end{equation*}
+\end{theorem}
+
+\begin{corollary}[]
+Haciendo $g\left(X,Y\right)=g(X)$ y $h\left(X,Y\right)=h(Y)$, vemos que
+\begin{equation*}
+\mathds{E}\left[g\left(X\right)\pm h\left(Y\right)\right]=\mathds{E}\left[g\left(X\right)\right]\pm\mathds{E}\left[h\left(Y\right)\right].
+\end{equation*}
+\end{corollary}
+
+\begin{corollary}[]
+Haciendo $g\left(X,Y\right)=X$ y $h\left(X,Y\right)=Y$, vemos que
+\begin{equation*}
+\mathds{E}\left[X\pm Y\right]=\mathds{E}\left[X\right]\pm\mathds{E}\left[Y\right].
+\end{equation*}
+\end{corollary}
+
+\begin{theorem}[]
+Sean $X$ e $Y$ dos variables aleatorias independientes. Entonces
+\begin{equation*}
+\mathds{E}\left(XY\right)=\mathds{E}\left(X\right)\mathds{E}\left(Y\right).
+\end{equation*}
+\end{theorem}
+
+\begin{corollary}[]
+Sean $X$ e $Y$ dos variables aleatorias independientes. Entonces $\sigma_{XY}=0$.
+\end{corollary}
+
+\begin{theorem}[]
+Si $X$ e $Y$ son variables aleatorias con distribución de probabilidad conjunta $f\left(x,y\right)$ y $a$, $b$ y $c$ son constantes, entonces
+\begin{equation*}
+\sigma^{2}_{aX+bY+c}=a^{2}\sigma^{2}_{X}+b^{2}\sigma^{2}_{Y}+2ab\sigma_{XY}.
+\end{equation*}
+\end{theorem}
+
+\begin{corollary}[]
+Si $X$ e $Y$ son variables aleatorias independientes, entonces
+\begin{equation*}
+\sigma^{2}_{aX+bY}=a^{2}\sigma^{2}_{X}+b^{2}\sigma^{2}_{Y}.
+\end{equation*}
+\end{corollary}
+
+\begin{corollary}[]
+Si $X_{1}, X_{2},\ldots, X_{n}$ son variables aleatorias independientes, entonces
+\begin{equation*}
+\sigma^{2}_{a_{1}X_{1}+a_{2}X_{2}+\cdots+a_{n}X_{n}}=a^{2}_{1}\sigma^{2}_{X_{1}}+a^{2}_{2}\sigma^{2}_{X_{2}}+\cdots+a^{2}_{n}\sigma^{2}_{X_{n}}.
+\end{equation*}
+\end{corollary}
+
+\begin{theorem}[Chebyshev]
+La probabilidad que cualquier variable aleatoria $X$ que tenga un valor con desviación estándar $k$ de la media es por lo menos $1-\tfrac{1}{k^{2}}$. Esto es,
+\begin{equation*}
+\mathds{P}\left(\mu-k\sigma<X<\mu+k\sigma\right)\ge 1-\frac{1}{k^{2}}.
+\end{equation*}
+\end{theorem}
+
+\subsection*{Proceso de Bernoulli}
+
+Estrictamente hablando, el proceso de Bernoulli debe poseer las siguientes propiedades:
+\begin{enumerate}
+	\item Le experimento consiste de ensayos repetidas.
+	\item Cada resultado del ensayo es un resultado que podría ser clasificado como éxito o fracaso.
+	\item La probabilidad de éxito, denotado por $p$, permanece constante desde un ensayo a otro.
+	\item Los ensayos repetidos son independientes.
+\end{enumerate}
+
+\subsection*{Distribución de Bernoulli}
+
+El número $X$ de sucesos en $n$ ensayos de Bernoulli es llamado \textbf{variable aleatoria binomial}. La distribución de probabilidad de esta variable aleatoria discreta es llamada \textbf{distribución binomial}, y sus valores son denotados por $b\left(x;n,p\right)$ dado dependen del número de ensayos y la probabilidad de éxito en un ensayo dado. Así, para la distribución de probabilidad de $X$, el número de fracasos es
+\begin{equation*}[]
+\mathds{P}\left(X=2\right)=f(2)=b\left(2;3,\frac{1}{4}\right)=\frac{9}{64}.
+\end{equation*}
+
+\begin{definition}[]
+Un ensayo de Bernoulli puede resultar en éxito con una probabilidad $p$ y de fracaso con una probabilidad $q=1-p$. Entonces, la distribución de probabilidad  de la variable aleatoria binomial $X$, es el número de éxitos en $n$ ensayos independientes, es
+\begin{equation*}
+b\left(x;n,p\right)=\binom{n}{x}p^{x}q^{n-x},\quad x=0,1,2,\ldots,n.
+\end{equation*}
+\end{definition}
+
+%Frecuentemente, estamos interesados en problemas donde es necesario conocer $\mathds{P}\left(X<r\right)$ o $\mathds{P}\left(a\le X\le b\right)$. La sumatoria binomial
+\begin{equation*}
+B\left(r;n,p\right)=\sum_{x=0}^{r}b\left(x;n,p\right)
+\end{equation*}
+
+\begin{theorem}[]
+La media y la varianza de la distribución binomial $b\left(x;n,p\right)$ son
+\begin{equation*}
+\mu=np\quad\text{y}\quad\sigma^{2}=npq.
+\end{equation*}
+\end{theorem}
+
+\subsection*{Experimentos multinomiales y la distribución multinomial}
+
+El experimento binomial se convierte en un \textbf{experimento multinomial} si dejamos que cada ensayo tenga más de dos posibles resultados. La clasificación de un producto manufacturado es siendo como ligero, pesado o aceptable y el registro de accidentes en cierta intersección de acuerdo al día de la semana constituyen experimentos multinomiales. El dibujar una tarjeta desde
+
+\begin{definition}[Función Gamma]
+La función $x\mapsto \Gamma(x)$, $x>0$, definida por
+\begin{equation}
+\Gamma(x)=\int_{0}^{\infty}e^{-t}t^{x-1}\,\mathrm{d}t
+\end{equation}
+es llamada la \emph{función Gamma de Euler}.
+\end{definition}
+Obviamente, tenemos las siguientes propiedades:
+\begin{enumerate}[(i)]
+	\item $\Gamma$ es positiva para cualquier $x>0$,
+	\item $\Gamma(1)=\int_0^\infty e^{-t}\,\mathrm{d}t=1$.
+\end{enumerate}
+Podemos usar la integración por partes para obtener para $x>0$:
+\begin{align*}
+\Gamma(x+1) &= \int_{0}^{\infty}e^{-t}t^{x}\,\mathrm{d}t\\
+						&=-e^{-t}t^{x}\Big|_0^\infty - \int_{0}^{\infty}\left(-e^{-t}\right)xt^{x-1}\,\mathrm{d}t\\
+						&=x\int_{0}^{\infty}e^{-t}t^{x-1}\,\mathrm{d}t=x\Gamma(x).
+\end{align*}
