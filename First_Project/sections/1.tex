@@ -11,6 +11,9 @@
 	\fi
 	
 	\begin{solutionorbox}
+		Asumiré que los números se asignan a los jugadores al azar, con cada permutación de los números con la misma probabilidad.
+		
+		Sea $E_n$ el evento en el que el jugador $1$ tenga el número más alto entre los jugadores desde el $1$ hasta $n$. Entonces $\mathds{P}\left(E_{n}\right)=\tfrac{1}{n}$. Además $E_{n+1}\subseteq E_{n}$, y por lo tanto $\mathds{P}\left(E_{n}\setminus E_{n+1}\right)=\mathds{P}\left(E_{n}\right)-\mathds{P}\left(E_{n+1}\right)=\tfrac{1}{n}-\frac{1}{n+1}=\tfrac{1}{n\left(n+1\right)}$. Como $E_{n}\setminus E_{n+1}$ es el evento $X=n-1$, tenemos $\mathds{P}\left(X=n\right)=\tfrac{1}{\left(n+1\right)\left(n+2\right)}$. Esto se mantiene para $0\le n\le 5$. Para $n=4$, no hay más rondas para ganar, por lo que la probabilidad de ganar $4$ rondas es solo $\mathds{P}\left(E_{5}\right)=\tfrac{1}{5}$. Así, las probabilidades deseas son
 		Una variable aleatoria $X$ que asume los valores $1,2,3,4,5$ es llamado una variable aleatoria discreta.
 
 		Sea $X$ una variable aleatoria cuyos valores de $x$ están en $\left\{1,2,3,4,5\right\}$. Ahora
@@ -22,8 +25,17 @@
 		Por lo tanto, la distribución de probabilidad de $X$ es	
 		\centering
 		\begin{tabular}{c|ccccc}
-			$x$ 	& 1 & 2 & 3 & 4 & 5 \\
+			$x$ 	& $0$ & $1$ & $2$ & $3$ & $44 \\
 			\hline
-			$f(x)$& 1 & 2 & 3 & 4 & 5
+			$$f(x)$& $\dfrac{1}{2}$ & $\dfrac{1}{6}$ & $\dfrac{1}{12}$ & $\dfrac{1}{20}$ & $\dfrac{1}{5}$
 		\end{tabular}
+	
+	El jugador 1 es (a priori) igualmente probable que obtenga cualquiera de los cinco números.
+	\begin{itemize}
+		\item Si obtienen un $1$, están seguros de ganar $0$ rondas.
+		\item Si obtienen un $2$, ganan $0$ rondas o $1$ ronda. ¿Cuál es la única circunstancia bajo la cual ganan $1$ vuelta?
+		\item Si obtienen un $3$, hay dos números más altos (llamémoslos $H$, ya que no necesitamos distinguir entre $4$ y $5$) y dos números más bajos (llamémoslos $L$). ¿Cuántas permutaciones diferentes hay de $HHLL$? Una pareja son $HLHL$ y $LHLH$. ¿Qué otros hay? (¿De hecho son igualmente probables?) ¿En qué casos el Jugador 1 gana $0$, $1$ o $2$ rondas? Por ejemplo, $HHLL$ lleva a ganar $0$ rondas. (Este es el caso menos simple, por lo que es posible que desee abordar a los demás primero).
+		\item Si obtienen un $4$, ganan de $0$ a $3$ rondas. Depende solo de donde se encuentre el $5$.
+		\item Si obtienen un $5$, están seguros de ganar las $4$ rondas.
+	\end{itemize}
 	\end{solutionorbox}

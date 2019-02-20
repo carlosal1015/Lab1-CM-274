@@ -1,11 +1,26 @@
 \question%[15]
 	Un sistema satelital consta de $n$ componentes y funciona en un día cualquiera si al menos $k$ de los $n$ componentes funcionan ese día. En un día lluvioso, cada uno de los componentes funciona independientemente con probabilidad $p_1$, mientras que en un día seco cada uno funciona independientemente con probabilidad $p_2$. Si la probabilidad de que llueva mañana es de $\alpha$, ¿cual es la probabilidad de que el sistema satelital funcione?
 	\begin{solutionorlines}
-		Hola
+		Sea $k$ el número de componentes en funcionamiento en un día determinado. Primero, aplique la ley de probabilidad total al condicionar en seco/lluvioso:
+		\begin{equation*}
+		\mathds{P}\left(X\ge k\right)=\mathds{P}\left(X\ge k\mid\text{día lluvioso}\right)+\mathds{P}\left(X\ge k\mid\text{día seco}\right)
+		\end{equation*}
+		Ahora tome por ejemplo $\mathds{P}\left(X\ge k\mid \textbf{día seco}\right)$. Esto es
+		\begin{equation*}
+		\mathds{P}\left(X\ge k\mid\text{día seco}\right)=\mathds{P}\left(X=k\mid\text{d
+		ia seco}\right)+\cdots+\mathds{P}\left(X=n\mid\text{d
+		ia seco}\right)
+		\end{equation*}
+		donde
+		\begin{equation*}
+		\mathds{P}\left(X\mid\text{día seco}\right)\sim\mathrm{binomial}\left(n,p_2\right)
+		\end{equation*}
+		%\stackrel{H_0}{\sim}
 		\includegraphics[width=7cm]{example-image-b}
 		\centering
 		\captionof{figure}{This is a lovely figure}
 		\label{fig:2}
 		\justifying
-		Hola
+		Si un equipo de béisbol juega 162 juegos en una temporada y tiene una probabilidad de 50-50 de ganar cualquier juego, entonces la probabilidad de que ese equipo gane más de 100 juegos en una temporada es:
+		%https://www.mathworks.com/help/stats/binocdf.html
 	\end{solutionorlines}
