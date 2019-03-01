@@ -52,3 +52,10 @@ Integrantes:
 └── Second_project
 5 directories, 23 files
 ```
+
+# Segundo proyecto
+
+Integrantes:
+* Aznarán Laos Carlos Alonso
+* Janampa Bautista Edgar Joel
+* Paz Diaz Rodrigo Alonso

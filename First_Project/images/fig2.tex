@@ -1,64 +1,67 @@
-\documentclass{standalone}
-\usepackage{tikz}
-\usetikzlibrary{positioning, calc}
+\documentclass[tikz,border=5pt,10pt]{standalone}
+\usepackage{amsmath}
+\usepackage{forest}
+\usetikzlibrary{arrows.meta}
 
 \begin{document}
-\begin{tikzpicture}
-\tikzset{
-    myrectangle/.style={
-        draw=black,
-        minimum width=4cm,
-        minimum height=2cm,
+
+\newcounter{bag}
+\forestset{
+  bag/.style 2 args= {
+    text width=4em,
+    text centered,
+    if n=1{
+      content = {$\frac{#1}{\pgfmathsetmacro\totalinbag{int(#1+#2)}\totalinbag}$},
+    }{
+      content = {$\frac{#2}{\pgfmathsetmacro\totalinbag{int(#1+#2)}\totalinbag}$},
     },
-    B/.style={
-        draw=blue,
+    before typesetting nodes={
+      content/.wrap pgfmath arg = {Día ##1 #1LL, #2S}{int(level()+1)},
     },
-    A/.style={
-        draw=green,
+    for children={
+      if n=1{
+        branch label={\text{Seco}}{#1}{\pgfmathsetmacro\totalinbag{int(#1+#2)}\totalinbag},
+      }{
+        branch label={\text{Lluvioso}}{#2}{\pgfmathsetmacro\totalinbag{int(#1+#2)}\totalinbag},
+      }
     },
-    >=stealth,
-    node distance=1cm and 1cm,
+  },
+  terminus/.style = {
+    align=left,
+    child anchor=west,
+    for parent={s sep=10mm},
+    edge path={
+      \noexpand\path [draw, -{Circle[]}, \forestoption{edge}] (!u.parent anchor) -- (.child anchor)\forestoption{edge label};
+    },
+    delay={
+      content/.wrap 3 pgfmath args = {$P(##3)=$##2$\cdot$##1}{content("!u")}{content("!uu")}{content()}
+    },
+  },
+  branch label/.style n args = 3{
+    edge label={node [above, midway, sloped] {$#1$} node [below, midway, sloped] {$\frac{#2}{#3}$}},
+  },
 }
 
-    \node[myrectangle] (left) {};
-    \node[myrectangle] (right) [right=of left] {};
-    \path (left.south east) -- coordinate (tmp) (right.south west);
-    \node[myrectangle] (bottom) [below=of tmp] {};
-
-    % "contents" of left node
-    \path (left.west) -- node[pos=.25] {B1} (left.east);
-    \path (left.west) -- node[pos=.5] {B2} (left.east);
-    \path (left.west) -- node[pos=.75] {B3} (left.east);
-
-    \draw[B] ($(left.north west) ! .4 ! (left.north east)$) -- ($(left.south west) ! .35 ! (left.south east)$);
-    \draw[B] ($(left.north west) ! .6 ! (left.north east)$) -- ($(left.south west) ! .66 ! (left.south east)$);
-
-    % "contents" of right node
-    \draw[A] (right.center) ellipse [x radius=1cm, y radius=.5cm] node {A};
-
-    % "contents" of bottom node
-    \path (bottom.west) -- node[pos=.25] {A1} (bottom.east);
-    \path (bottom.west) -- node[pos=.5] {A2} (bottom.east);
-    \path (bottom.west) -- node[pos=.75] {A3} (bottom.east);
-
-    \draw[B] ($(bottom.north west) ! .4 ! (bottom.north east)$) -- ($(bottom.south west) ! .35 ! (bottom.south east)$);
-    \draw[B] ($(bottom.north west) ! .6 ! (bottom.north east)$) -- ($(bottom.south west) ! .66 ! (bottom.south east)$);
-
-    \draw[A] (bottom.center) ellipse [x radius=1cm, y radius=.5cm];
-
-    % arrows
-    \begin{scope}[
-        shorten >=.2cm,
-        shorten <=.2cm,
+  \begin{forest}
+    for tree={
+      if n children=0{terminus}{},
+      grow=0,
+      l sep=15mm,
+    }
+    [,bag={2}{3}
+      [,bag={2}{4}
+        [{S_1\cap S_2}
+        ]
+        [{S_1\cap {LL}_2}
+        ]
+      ]
+      [,bag={2}{4}
+        [{{LL}_1\cap S_2}
+        ]
+        [{{LL}_1\cap {LL}_2}
+        ]
+      ]
     ]
-        \draw[->, black] (left) -- (bottom);
-        \draw[->, black] (right) -- (bottom);
-    \end{scope}
+  \end{forest}
 
-    % labels on top
-    \node at (left.north east) [anchor=south east] {S};
-    \node at (right.north east) [anchor=south east] {S};
-    \node at (bottom.north east) [anchor=south east] {S};
-
-\end{tikzpicture}
 \end{document}

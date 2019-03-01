@@ -1,0 +1,128 @@
+\documentclass[10pt,twoside=false,twocolumn=false,BCOR=12mm,DIV=calc]{scrartcl} %,headlines=2.1,footlines=2.1
+%\usepackage[paper=a4,pagesize]{typearea} %headinclude=false,footinclude=false
+\usepackage[onehalfspacing]{setspace}
+\AfterTOCHead{\singlespacing}
+\KOMAoptions{DIV=last}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-sloppy]{babel}
+\spanishdatedel
+\usepackage{libertine}
+\usepackage[lite]{mtpro2}
+\usepackage{amsthm}
+\usepackage[libertine,scaled=1.1]{newtxmath}
+\usepackage[ISO]{diffcoeff}
+% \providecommand{\dt}{\mathrm{d}t}
+\usepackage{dsfont}
+\usepackage{siunitx}
+
+\theoremstyle{definition}
+\newtheorem{definition}[section]{Definición}
+\newtheorem{theorem}[section]{Teorema}
+
+\setlength{\marginparwidth}{1.5\marginparwidth}
+
+\begin{document}
+
+\begin{titlepage}
+  \extratitle{\textbf{\LARGE Traducción del artículo\\[\baselineskip] \textit{Las variaciones de la probabilidad en la distribución de partículas $\alpha$}}}
+  \title{Sobre la distribución de probabilidad de las partículas $\alpha$}
+  \author{H. Bateman}
+  \begin{spacing}{1}
+    \maketitle
+  \end{spacing}
+  \thispagestyle{empty}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+\section{Una nota}
+\label{sec:note}
+
+
+Sea $\lambda t$ la probabilidad que una partícula $\alpha$ golpee la pantalla en un intervalo de tiempo $\dl t$. Si los intervalos de tiempo bajo la consideración son pequeños comparados con el período de tiempo de la sustancia radiactiva, podemos asumir que $\lambda$ de $t$. Ahora, sea $W_n(t)$ la probabilidad que $n$ partículas $\alpha$ golpeen la pantalla en un intervalo de tiempo $t$, entonces la probabilidad que $(n+1)$ partículas golpeen la pantalla en un intervalo $t+\mathrm{d}t$ es la suma de las dos probabilidades. En primer lugar, las $n+1$ partículas $\alpha$ pueden golpear la pantalla en el intervalo $t$ y ninguno en el intervalo $\mathrm{d}t$. La probabilidad de que esto pueda ocurrir es $(1-\lambda t\mathrm{d}t)W_{n+1}(t)$. En segundo lugar, $n$ partículas $\alpha$ podrían golpear la pantalla en el intervalo $t$ y una partícula en el intervalo $\mathrm{d}t$; la probabilidad de que esto ocurra es $\lambda\mathrm{d}t W_n(t)$. Por lo tanto
+\begin{equation*}
+  W_{n+1}\left(t+\mathrm{d}t\right)=\left(1-\lambda\mathrm{d}t\right)W_{n+1}(t)+\lambda\mathrm{d}t W_n\left(t\right).
+\end{equation*}
+Procediendo al límite, tenemos
+\begin{equation*}
+  \frac{\mathrm{d}W_{n+1}}{\mathrm{d}t}=\lambda\left(W_n-W_{n+1}\right).
+\end{equation*}
+Poniendo $n=0,1,2,\ldots$ en una sucecsión tenemos el sistema de ecuaciones:
+%\begin{align*}
+%  \frac{\mathrm{}}{}
+   %  \end{align*}
+\newpage
+
+\section{Definiciones}
+\label{sec:defi}
+
+
+\subsection{Distribución uniforme}
+
+\begin{definition}
+  Una variable aleatoria continua tiene \textit{distribución uniforme} en el intervalo $\left[a,b\right]$ si su función de densidad de probabilidad $f$ es dado por $f(x)=0$ si $x$ no está en $\left[a,b\right]$ y
+  \begin{equation*}
+    f(x)=\frac{1}{\beta-\alpha}\quad\text{para }\alpha \le x\le \beta.
+  \end{equation*}
+ Denotamos esta distribución por $U\left(\alpha,\beta\right)$.
+\end{definition}
+
+\subsection{La fórmula del cambio de variable}
+\label{sec:change}
+
+Con frecuencia no queremos calcular el valor esperado de una variable aleatoria $X$, pero %TODO
+de una función $X$, como, por ejemplo, $X^2$. Entonces necesitamos determinar la distribución $Y=X^2$, por ejemplo para calcular la función de distribución $F_Y$ de $Y$ (este es un ejemplo del problema general de cómo las distribuciones bajo las transformaciones -- este tópico es es tema del capitulo 8). Para un ejemplo concreto, suponga un arquitecto quiere maximizar %TODO  Page 94
+en el tamaño de los edificios: estos deben ser el mismo ancho y profunidad $X$, pero $X$ es uniformemente distribuido entre $0$ y $10$ metros. ¿Cuál es la distribución del área $X^2$ de un edificio? En particular, ¿será esta distribución (cualquier próxima a la) uniforme? Calculemos $F_Y$, para $0\le a\le 100$:
+\begin{equation*}
+  F_Y(a)=\mathds{P}\left(X^2\le a\right)=\mathds{P}\left(X\le\sqrt{a}\right)=\frac{\sqrt{a}}{10}.
+\end{equation*}
+Así, la función de densidad de probabilidad $f_Y$ para el área es, para $0<y<199$ metros cuadrados %TODO usar el paquete siunitx
+, dado por
+\begin{equation*}
+  f_Y(y)=\diff{F_Y(y)}{y}=\diff{\sqrt{y}}{y}=\frac{1}{20\sqrt{y}}.
+\end{equation*}
+Esto significa que los edificios con áreas pequeñas son %TODO
+, porque $f_Y$ explota cerca de 0--vea también la %TODO singularidad
+, en el cual %TODO
+$f_Y$.
+
+Sorpresivamente, esto no es muy visible en %TODO
+, un ejemplo donde debemos crear en nuestros cálculos más que en nuestros ojos. En la figura las ubicaciones de los edificios son generados por el proceso de Poisson, el tema del capítulo 12.
+
+Suponga que un %TODO
+tiene que hacer una ofera en el precio de las %TODO
+de los edificios. El monto concreto que neceistará será proporcional al área $X^2$ de un edificio. Asi, su problema es: ¿cuál es el área esperada de un edificio? Con $f_Y$ de %TODO \eqref{7.1}
+él encuentra
+\begin{equation*}
+  \mathds{E}\left[X^2\right]=\mathds{E}\left[Y\right]=\int_{0}^{199}\! y\cdot\frac{1}{20\sqrt{y}}\dl y=\int_{0}^{100}\frac{\sqrt{y}}{20}\dl y={\left[\frac{1}{20}\frac{2}{3}y^{\tfrac{3}{2}}\right]}_{0}^{100}=33\tfrac{1}{3}\mathrm{m}^2.
+\end{equation*}
+   %    ODO GRaficar con R la función dada.
+La densidad de probabilidad del cuadrado de una variable aleatoria $U\left(0,10\right)$.
+
+Es interesante notar que \emph{realmente} necesitamos hacer este cálculo, porque el valor esperado \emph{no} es simplemente el producto del ancho esperado y la profundidad esperada, que es % \SI{25}{\metre\per\square}
+
+Sin embargo, existe una manera mucho más fácil en el cual el %TODO constructor
+puede obtener este resultado. El podría tener el argumento que el valor del \emph{área} es $x^2$ cuando $x$ es el ancho, y que él debería tomar el peso  promedio de \emph{esos} valores, donde el peso de cada ancho $x$ es dado por el valor $f_X(x)$ de la densidad de probabilidad de $X$. Entonces él podría tener calculado
+\begin{equation*}
+  \mathds{E}\left[X^2\right]=\int_{-\infty}^{\infty}x^2f_X(x)\dl x=\int_{0}^{10}x^2\cdot\frac{1}{10}\dl x={\left[\frac{1}{30}x^3\right]}_{0}^{10}=33\tfrac{1}{3}%TODO.
+\end{equation*}
+Esto de hecho es un teorema matemático que esto es \emph{siempre} una manera correcta de calcular los valores esperados de funciones de variables aleatorias.
+
+\begin{theorem}[La fórmula del cambio de variable]
+  Sea $X$ una variable aleatoria, y sea $g\colon\mathds{R}\rightarrow\mathds{R}$ una función.
+
+  Si $X$ es discreta, tomando los valores $a_1, a_2, \ldots$, entonces
+  \begin{equation*}
+    \mathds{E}\left[g\left(\\right]
+  \end{equation*}
+\end{theorem}
+
+   %    TODO agregar defincion de dsitriucion  gamma
+
+% TODO Justificar que la fincion exponencial se puede expresar como -1-lambda que tiene distribucion expoencial.
+
+\end{document}
+https://stackoverflow.com/questions/2199463/emacs-auctex-run-command-on-file-that-is-not-currently-open
+
+\begin{lem}[Alinhac-Lerner {\cite[p.~37]{a-l}}]
+ith the output

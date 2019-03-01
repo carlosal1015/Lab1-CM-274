@@ -468,7 +468,7 @@ Estrictamente hablando, el proceso de Bernoulli debe poseer las siguientes propi
 \subsection*{Distribución de Bernoulli}
 
 El número $X$ de sucesos en $n$ ensayos de Bernoulli es llamado \textbf{variable aleatoria binomial}. La distribución de probabilidad de esta variable aleatoria discreta es llamada \textbf{distribución binomial}, y sus valores son denotados por $b\left(x;n,p\right)$ dado dependen del número de ensayos y la probabilidad de éxito en un ensayo dado. Así, para la distribución de probabilidad de $X$, el número de fracasos es
-\begin{equation*}[]
+\begin{equation*}
 \mathds{P}\left(X=2\right)=f(2)=b\left(2;3,\frac{1}{4}\right)=\frac{9}{64}.
 \end{equation*}
 
@@ -479,7 +479,7 @@ b\left(x;n,p\right)=\binom{n}{x}p^{x}q^{n-x},\quad x=0,1,2,\ldots,n.
 \end{equation*}
 \end{definition}
 
-%Frecuentemente, estamos interesados en problemas donde es necesario conocer $\mathds{P}\left(X<r\right)$ o $\mathds{P}\left(a\le X\le b\right)$. La sumatoria binomial
+Frecuentemente, estamos interesados en problemas donde es necesario conocer $\mathds{P}\left(X<r\right)$ o $\mathds{P}\left(a\le X\le b\right)$. La sumatoria binomial
 \begin{equation*}
 B\left(r;n,p\right)=\sum_{x=0}^{r}b\left(x;n,p\right)
 \end{equation*}
@@ -494,6 +494,25 @@ La media y la varianza de la distribución binomial $b\left(x;n,p\right)$ son
 \subsection*{Experimentos multinomiales y la distribución multinomial}
 
 El experimento binomial se convierte en un \textbf{experimento multinomial} si dejamos que cada ensayo tenga más de dos posibles resultados. La clasificación de un producto manufacturado es siendo como ligero, pesado o aceptable y el registro de accidentes en cierta intersección de acuerdo al día de la semana constituyen experimentos multinomiales. El dibujar una tarjeta desde
+
+\subsection*{Propiedades del proceso de Poisson}
+
+\begin{enumerate}
+	\item El número de resultados que ocurren en un intervalo de tiempo o región específica del espacio es independiente del número que se produce en cualquier otro intervalo de tiempo o región disjunta. En este sentido decimos que el proceso de Poisson no tiene memoria.
+	\item La probabilidad de que ocurra un solo resultado durante un intervalo de tiempo muy corto o en una pequeña región es proporcional a la duración del intervalo de tiempo o el tamaño de la región y no depende del número de resultados ocurridos fuera de este intervalo de tiempo o región.
+	\item La probabilidad de que ocurra más de un resultado en tan poco intervalo de tiempo o en una región tan pequeña es despreciable.
+\end{enumerate}
+
+El número $X$ de resultados que se producen durante un experimento de Poisson se denomina \textbf{Variable aleatoria de Poisson} y su distribución de probabilidad se llama \textbf{distribución de Poisson}.
+
+\begin{definition}[]
+La distribución de probabilidad de la variable aleatoria $X$ de Poisson, que representa el número de resultados que ocurren en un intervalo de tiempo dado o en una región específica es denotado por $t$, es
+\begin{equation*}
+p\left(x;\lambda t\right)=\frac{e^{-\lambda t}{\left(\lambda t\right)}^{x}}{x!},\quad x=0,1,2,\ldots,
+\end{equation*}
+donde $\lambda$ es el número medio de resultados por unidad de tiempo, distancia, área o volumen y $e=2.71828$\ldots.
+\end{definition}
+
 
 \begin{definition}[Función Gamma]
 La función $x\mapsto \Gamma(x)$, $x>0$, definida por

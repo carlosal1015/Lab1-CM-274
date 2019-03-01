@@ -1,0 +1,71 @@
+---
+title: "El proceso de Poisson"
+author: "Carlos Aznarán,  Luis Janampa y Rodrigo Paz"
+date: "Febrero, 2019"
+output:
+  slidy_presentation:
+    incremental: yes
+  beamer_presentation:
+    colortheme: MUW
+    includes:
+      in_header: header.tex
+    incremental: yes
+    keep_tex: no
+    theme: MUW
+institute: "| Facultad de Ciencias \n| Universidad Nacional de Ingeniería\n"
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(dplyr)
+library(knitr)
+```
+
+# Introduction
+
+Your introduction goes here!
+
+- Puntos aleatorios y ejemplos de meteoritos o experiencia de Geiger
+- Construcción matemática
+  - En una dimensión
+  - En varias dimensiones
+- Ejercicios
+  - Ejercicio 1 dimensión más su solución en R
+  - Ejercicio 2 dimensiones más su solución en R
+
+# Figures
+
+![Caption for figure](Images/image.png){width=80%}
+
+# Figures
+You can still use \\includegraphics for a finer control
+\includegraphics[width=0.5\linewidth]{Images/image.png}
+
+
+# Plots
+
+```{r echo=FALSE, fig.height=3, fig.width=3, fig.align='center'}
+data(cars)
+plot(cars$speed, cars$dist)
+```
+
+# Tables
+
+You can easily include R code and results
+
+```{r}
+head(cars) %>%
+  kable(caption = "A sample table")
+```
+
+# Readable Mathematics
+
+Formulas can be entered in-line, as in $\overline{X}=\frac{1}{N}\sum_i^N X_i$; or also 
+in a a new paragraph:
+
+\[\overline{X}=\frac{1}{N}\sum_i^N X_i\]
+
+-----
+
+\begin{center}
+\Huge Thanks!
+\end{center}

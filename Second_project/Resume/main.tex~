@@ -1,0 +1,15 @@
+\documentclass[BCOR=12mm,DIV=calc,a4paper,twoside]{scrartcl}
+
+\usepackage[onehalfspacing]{setspace}
+\AfterTOCHead{\singlespacing}
+\KOMAoptions{DIV=last}
+%\usepackage{bookman}
+
+\title{Recherches sur la probabilité des jugements en matière criminelle et en matière civile, précédées des règles générales du calcul des probabilités. Poisson, Siméon-Denis, 1781-1840.}
+\author{Oromion \and Joel \and Paz}
+
+
+\begin{document}
+\maketitle[2]
+
+\end{document}

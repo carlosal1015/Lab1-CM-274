@@ -11,31 +11,34 @@
 	\fi
 	
 	\begin{solutionorbox}
-		Asumiré que los números se asignan a los jugadores al azar, con cada permutación de los números con la misma probabilidad.
-		
-		Sea $E_n$ el evento en el que el jugador $1$ tenga el número más alto entre los jugadores desde el $1$ hasta $n$. Entonces $\mathds{P}\left(E_{n}\right)=\tfrac{1}{n}$. Además $E_{n+1}\subseteq E_{n}$, y por lo tanto $\mathds{P}\left(E_{n}\setminus E_{n+1}\right)=\mathds{P}\left(E_{n}\right)-\mathds{P}\left(E_{n+1}\right)=\tfrac{1}{n}-\frac{1}{n+1}=\tfrac{1}{n\left(n+1\right)}$. Como $E_{n}\setminus E_{n+1}$ es el evento $X=n-1$, tenemos $\mathds{P}\left(X=n\right)=\tfrac{1}{\left(n+1\right)\left(n+2\right)}$. Esto se mantiene para $0\le n\le 5$. Para $n=4$, no hay más rondas para ganar, por lo que la probabilidad de ganar $4$ rondas es solo $\mathds{P}\left(E_{5}\right)=\tfrac{1}{5}$. Así, las probabilidades deseas son
-		Una variable aleatoria $X$ que asume los valores $1,2,3,4,5$ es llamado una variable aleatoria discreta.
+		Sea $X$ una variable aleatoria discreta cuyos valores de $x$ están en $\left\{0,1,2,3,4\right\}$ que representa el número de rondas que gana el Jugador $1$ durante el torneo. Se asumirá que los números son asignados a los jugadores al azar, con cada permutación de los números con la misma probabilidad.
 
-		Sea $X$ una variable aleatoria cuyos valores de $x$ están en $\left\{1,2,3,4,5\right\}$. Ahora
+		El jugador 1 es (a priori) igualmente probable que obtenga cualquiera de los cinco números.
+		\begin{itemize}
+			\item Si obtienen un $1$, están seguros de ganar $0$ rondas.
+			\item Si obtienen un $2$, ganan $0$ rondas o $1$ ronda. ¿Cuál es la única circunstancia bajo la cual ganan $1$ vuelta?
+			\item Si obtienen un $3$, hay dos números más altos ($A$, ya que no necesitamos distinguir entre $4$ y $5$) y dos números más bajos (llamémoslos $B$). ¿Cuántas permutaciones diferentes hay de $AABB$? Una pareja son $ABAB$ y $BABA$. ¿En qué casos el Jugador 1 gana $0$, $1$ o $2$ rondas? Por ejemplo, $AABB$ lleva a ganar $0$ rondas.
+			\item Si obtienen un $4$, ganan de $0$ a $3$ rondas. Depende solo de donde se encuentre el $5$.
+			\item Si obtienen un $5$, están seguros de ganar las $4$ rondas.
+		\end{itemize}
+
+		Sea $E_n$ el evento en el que el jugador $1$ tenga el número más alto entre los jugadores desde el $1$ hasta $n$. Entonces $\mathds{P}\left(E_{n}\right)=\tfrac{1}{n}$. Además $E_{n+1}\subseteq E_{n}$, y por lo tanto
+		\begin{equation*}
+			\mathds{P}\left(E_{n}\setminus E_{n+1}\right)=\mathds{P}\left(E_{n}\right)-\mathds{P}\left(E_{n+1}\right)=\frac{1}{n}-\frac{1}{n+1}=\frac{1}{n\left(n+1\right)}.
+		\end{equation*}
+		
+		Como $E_{n}\setminus E_{n+1}$ es el evento $X=n-1$, tenemos $\mathds{P}\left(X=n\right)=\tfrac{1}{\left(n+1\right)\left(n+2\right)}$. Esto se mantiene para $0\le n< 4$. Para $n=4$, no hay más rondas para ganar, por lo que la probabilidad de ganar $4$ rondas es solo $\mathds{P}\left(E_{5}\right)=\tfrac{1}{5}$. Ahora, las probabilidades develadas son 
 		\begin{align*}
-			f(1) &= \mathds{P}\left(X=1\right)=\frac{}{}, & 	f(2) &= \mathds{P}\left(X=2\right)=\frac{}{}, \\
-			f(3) &= \mathds{P}\left(X=3\right)=\frac{}{}, & 	f(4) &= \mathds{P}\left(X=4\right)=\frac{}{}, \\
-			f(5) &= \mathds{P}\left(X=5\right)=\frac{}{}, & 	&
+			f(X=0) &= \mathds{P}\left(X=0\right)=\frac{1}{2},	& 	f(X=1)	&= \mathds{P}\left(X=1\right)=\frac{1}{6}, \\
+			f(X=2) &= \mathds{P}\left(X=2\right)=\frac{1}{12},& 	f(X=3)	&= \mathds{P}\left(X=3\right)=\frac{1}{20}, \\
+			f(X=4) &= \mathds{P}\left(X=4\right)=\frac{1}{5}.	&						&
 		\end{align*}
-		Por lo tanto, la distribución de probabilidad de $X$ es	
+		Por lo tanto, la distribución de probabilidad de $X$ es
+
 		\centering
 		\begin{tabular}{c|ccccc}
-			$x$ 	& $0$ & $1$ & $2$ & $3$ & $44 \\
+			$x$ 	& $0$ & $1$ & $2$ & $3$ & $4$ \\
 			\hline
-			$$f(x)$& $\dfrac{1}{2}$ & $\dfrac{1}{6}$ & $\dfrac{1}{12}$ & $\dfrac{1}{20}$ & $\dfrac{1}{5}$
-		\end{tabular}
-	
-	El jugador 1 es (a priori) igualmente probable que obtenga cualquiera de los cinco números.
-	\begin{itemize}
-		\item Si obtienen un $1$, están seguros de ganar $0$ rondas.
-		\item Si obtienen un $2$, ganan $0$ rondas o $1$ ronda. ¿Cuál es la única circunstancia bajo la cual ganan $1$ vuelta?
-		\item Si obtienen un $3$, hay dos números más altos (llamémoslos $H$, ya que no necesitamos distinguir entre $4$ y $5$) y dos números más bajos (llamémoslos $L$). ¿Cuántas permutaciones diferentes hay de $HHLL$? Una pareja son $HLHL$ y $LHLH$. ¿Qué otros hay? (¿De hecho son igualmente probables?) ¿En qué casos el Jugador 1 gana $0$, $1$ o $2$ rondas? Por ejemplo, $HHLL$ lleva a ganar $0$ rondas. (Este es el caso menos simple, por lo que es posible que desee abordar a los demás primero).
-		\item Si obtienen un $4$, ganan de $0$ a $3$ rondas. Depende solo de donde se encuentre el $5$.
-		\item Si obtienen un $5$, están seguros de ganar las $4$ rondas.
-	\end{itemize}
+			$f(x)$& $\frac{1}{2}$ & $\frac{1}{6}$ & $\frac{1}{12}$ & $\frac{1}{20}$ & $\frac{1}{5}$
+		\end{tabular}\quad.
 	\end{solutionorbox}
