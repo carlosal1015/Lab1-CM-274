@@ -1,3 +1,10 @@
+% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
+% arara: xelatex: {shell: yes, synctex: yes}
+% arara: xelatex: {shell: yes, synctex: yes}
+% arara: biber
+% arara: xelatex: {shell: yes, synctex: yes}
+% arara: xelatex: {shell: yes, synctex: yes}
+% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
 \documentclass[10pt,twoside=false,twocolumn=false,BCOR=12mm,DIV=calc]{scrartcl} %,headlines=2.1,footlines=2.1
 %\usepackage[paper=a4,pagesize]{typearea} %headinclude=false,footinclude=false
 \usepackage[onehalfspacing]{setspace}
@@ -7,14 +14,18 @@
 \usepackage[spanish,es-sloppy]{babel}
 \spanishdatedel
 \usepackage{libertine}
-\usepackage[lite]{mtpro2}
+%\usepackage[lite]{mtpro2}
 \usepackage{amsthm}
 \usepackage[libertine,scaled=1.1]{newtxmath}
+\usepackage[scaled=.92]{sourcesanspro}
+\usepackage[scaled=.78]{beramono}
 \usepackage[ISO]{diffcoeff}
 % \providecommand{\dt}{\mathrm{d}t}
 \usepackage{dsfont}
 \usepackage{siunitx}
-
+\sisetup{per-mode=symbol,per-symbol = p}
+\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+\addbibresource{bib.bib}
 \theoremstyle{definition}
 \newtheorem{definition}[section]{Definición}
 \newtheorem{theorem}[section]{Teorema}
@@ -23,18 +34,18 @@
 
 \begin{document}
 
+\tableofcontents
+
 \begin{titlepage}
-  \extratitle{\textbf{\LARGE Traducción del artículo\\[\baselineskip] \textit{Las variaciones de la probabilidad en la distribución de partículas $\alpha$}}}
+  \extratitle{\textbf{\LARGE Traducción del artículo\\[\baselineskip] \textit{Las variaciones de la probabilidad en la\linebreak distribución de partículas $\alpha$}}}
   \title{Sobre la distribución de probabilidad de las partículas $\alpha$}
-  \author{H. Bateman}
+  \author{Harry Bateman}
   \begin{spacing}{1}
     \maketitle
   \end{spacing}
   \thispagestyle{empty}
 \end{titlepage}
 
-\tableofcontents
-\newpage
 \section{Una nota}
 \label{sec:note}
 
@@ -51,7 +62,23 @@ Poniendo $n=0,1,2,\ldots$ en una sucecsión tenemos el sistema de ecuaciones:
 %\begin{align*}
 %  \frac{\mathrm{}}{}
    %  \end{align*}
-\newpage
+
+
+\begin{titlepage}
+	\extratitle{
+		\textbf{\LARGE Traducción del libro
+		\\[\baselineskip]
+		\textit{Una moderna introducción a la\linebreak Estadística y la Probabilidad}
+		\\[\baselineskip]
+		Entendiendo por qué y cómo}
+	}
+	\title{El proceso de Poisson}
+	\author{F.M. Deeking}
+	\begin{spacing}{1}
+		\maketitle
+	\end{spacing}
+	\thispagestyle{empty}
+\end{titlepage}
 
 \section{Definiciones}
 \label{sec:defi}
@@ -113,13 +140,35 @@ Esto de hecho es un teorema matemático que esto es \emph{siempre} una manera co
 
   Si $X$ es discreta, tomando los valores $a_1, a_2, \ldots$, entonces
   \begin{equation*}
-    \mathds{E}\left[g\left(\\right]
+    \mathds{E}%\left[g\left(\right]
   \end{equation*}
 \end{theorem}
 
    %    TODO agregar defincion de dsitriucion  gamma
 
 % TODO Justificar que la fincion exponencial se puede expresar como -1-lambda que tiene distribucion expoencial.
+
+\subsection{Ejercicios}
+
+\begin{enumerate}
+	\item En cada uno de los siguientes ejemplos, intente indicar cuándo el proceso de Poisson sería un buen modelo.
+	\begin{enumerate}
+		\item Las veces de bancarotas de las empresas en los Estados Unidos.
+		\item Las veces que un pollo pone huevos.
+		\item Las veces que un avión se estrella en el registro mundial.
+		\item La ubicación de las palabras deletreadas en un libro.
+		\item Las veces de los accidentes de tránsito en una intersección.
+	\end{enumerate}
+	\item La cantidad de clientes que visitan un banco en un día es modelado por la distribución de Poisson. Se sabe que la probabilidad de que no haya clientes es de $0.00001$. ¿Cuál es el número esperado de clientes?
+	\item Sea $N$ una variable aleatoria con distribución $\mathrm{Poiss}(4)$. ¿Cuánto es $\mathds{P}\left(N=4\right)$?
+	\item Sea $X$ una variable aleatoria con distribución $\mathrm{Poiss}(2)$. ¿Cuánto es $\mathds{P}\left(X\le1\right)$?
+	\item El número de errores de un disco duro es modelado como una variable aleatoria de Poisson con la esperanza de un error en cada Mb, esto es
+	\SI{100}{\mega\byte\per\second}
+\end{enumerate}
+
+\vfill                                                                           
+\nocite{*}                                                                       
+\printbibliography[title={Referencias bibliográficas},heading=bibintoc]
 
 \end{document}
 https://stackoverflow.com/questions/2199463/emacs-auctex-run-command-on-file-that-is-not-currently-open
