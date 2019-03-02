@@ -1,10 +1,11 @@
 ---
 title: "El proceso de Poisson"
-author: "Carlos Aznarán,  Luis Janampa y Rodrigo Paz"
-date: "Febrero, 2019"
+author:
+- Carlos Aznarán
+- Luis Janampa
+- Rodrigo Paz
+date: "3 de marzo del 2019"
 output:
-  slidy_presentation:
-    incremental: yes
   beamer_presentation:
     colortheme: MUW
     includes:
@@ -12,6 +13,8 @@ output:
     incremental: yes
     keep_tex: no
     theme: MUW
+  slidy_presentation:
+    incremental: yes
 institute: "| Facultad de Ciencias \n| Universidad Nacional de Ingeniería\n"
 ---
 

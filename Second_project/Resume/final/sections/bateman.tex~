@@ -1,0 +1,15 @@
+\section{Una nota}
+\label{sec:note}
+
+Sea $\lambda t$ la probabilidad que una partícula $\alpha$ golpee la pantalla en un intervalo de tiempo $\dl t$. Si los intervalos de tiempo bajo la consideración son pequeños comparados con el período de tiempo de la sustancia radiactiva, podemos asumir que $\lambda$ de $t$. Ahora, sea $W_n(t)$ la probabilidad que $n$ partículas $\alpha$ golpeen la pantalla en un intervalo de tiempo $t$, entonces la probabilidad que $(n+1)$ partículas golpeen la pantalla en un intervalo $t+\mathrm{d}t$ es la suma de las dos probabilidades. En primer lugar, las $n+1$ partículas $\alpha$ pueden golpear la pantalla en el intervalo $t$ y ninguno en el intervalo $\mathrm{d}t$. La probabilidad de que esto pueda ocurrir es $(1-\lambda t\mathrm{d}t)W_{n+1}(t)$. En segundo lugar, $n$ partículas $\alpha$ podrían golpear la pantalla en el intervalo $t$ y una partícula en el intervalo $\mathrm{d}t$; la probabilidad de que esto ocurra es $\lambda\mathrm{d}t W_n(t)$. Por lo tanto
+\begin{equation*}
+  W_{n+1}\left(t+\mathrm{d}t\right)=\left(1-\lambda\mathrm{d}t\right)W_{n+1}(t)+\lambda\mathrm{d}t W_n\left(t\right).
+\end{equation*}
+Procediendo al límite, tenemos
+\begin{equation*}
+  \frac{\mathrm{d}W_{n+1}}{\mathrm{d}t}=\lambda\left(W_n-W_{n+1}\right).
+\end{equation*}
+Poniendo $n=0,1,2,\ldots$ en una sucecsión tenemos el sistema de ecuaciones:
+%\begin{align*}
+%  \frac{\mathrm{}}{}
+%  \end{align*}
