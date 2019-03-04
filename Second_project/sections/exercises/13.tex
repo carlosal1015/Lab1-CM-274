@@ -1,0 +1,22 @@
+\question
+	Al caminar por un prado encontramos dos tipos de flores, margaritas y dientes de león. Mientras caminamos en línea recta, modelamos las posiciones de las flores que encontramos con un proceso de Poisson con intensidad $\lambda$. Parece que aproximadamente una de cada cuatro flores es margarita. Olvidando los dientes de león, ¿cómo se ve el proceso de las \emph{margaritas}? Esta pregunta será respondida con los siguientes pasos:
+	\begin{parts}
+		\part Sea $N_t$ el número total de flores, $X_t$ el número de margaritas, e $Y_t$ el número de dientes de león que encontramos durante los primeros $t$ minutos de nuestro paseo. Note que $X_t+Y_t=N_t$. Suponga que cada flor es un margarita con probabilidad $1/4$, independiente de las otras flores. Argumenta que\label{12.13a}
+		\begin{equation*}
+		\mathds{P}\left(X_t=n,Y_t=m\mid N_t=n+m\right)=\binom{n+m}{n}{\left(\frac{1}{4}\right)}^n{\left(\frac{3}{4}\right)}^m.
+		\end{equation*}
+		\part Muestre que
+		\begin{equation*}
+		\mathds{P}\left(X_t=n,Y_t=m\right)=\frac{1}{n!}\frac{1}{m!}{\left(\frac{1}{4}\right)}^n{\left(\frac{3}{4}\right)}^me^{-\lambda t}{\lambda t}^{n+m},
+		\end{equation*}
+		condicionando sobre $N_t$ y usando~\ref{12.13a}.
+		\part Escribiendo $e^{-\lambda t}=e^{-\left(\lambda/4\right)t}e^{-\left(3\lambda/4\right)t}$ y sumando sobre $m$, muestre que\label{12.13c}
+		\begin{equation*}
+		\mathds{P}\left(X_t=n\right)=\frac{1}{n!}e^{-\left(\lambda/4\right)t}{\left(\frac{\lambda t}{4}\right)}^n.
+		\end{equation*}
+		Ya que está claro que los números de margaritas que encontramos en intervalos de tiempo disjuntos son independientes, podríamos concluir de~\ref{12.13c} que el proceso $\left(X_t\right)$ es de nuevo un proceso de Poisson, con intensidad $\lambda/4$. Uno dice a menudo que el proceso $\left(X_t\right)$ es obtenido por \emph{adelgazamiento} del proceso $\left(N_t\right)$. En nuestro ejemplo este corresponde a recoger todos los dientes de león.
+	\end{parts}
+
+	\begin{solutionordottedlines}
+		
+	\end{solutionordottedlines}

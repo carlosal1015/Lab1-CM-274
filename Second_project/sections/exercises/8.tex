@@ -1,0 +1,35 @@
+\question
+	Sea $X$ una variable aleatoria de Poisson con parámetro $\mu$.
+	\begin{parts}
+		\part Calcule $\mathds{E}\left[X\left(X-1\right)\right]$.\label{12.8}
+		\part Calcule $\mathrm{Var}\left(X\right)$, usando el siguiente hecho:
+		\begin{equation*}
+		\mathrm{Var}\left(X\right)=\mathds{E}\left[X\left(X-1\right)\right]+\mathds{E}\left[X\right]-{\left(\mathds{E}\left[X\right]\right)}^2.
+		\end{equation*}
+	\end{parts}
+
+	\begin{solutionordottedlines}
+		\begin{parts}
+			\part Sea $X$ una variable aleatoria de Poisson con parámetro $\mu$. Entonces
+			\begin{align*}
+				\mathds{E}\left[X\left(X=1\right)\right]
+				&\stackrel{\text{def}}{=}\sum_{k=0}^{\infty}\frac{k\left(k-1\right)e^{-\mu}\mu^{k}}{k!}\\
+				&=\sum_{k=0}^{\infty}\frac{\cancel{k}\cancel{\left(k-1\right)}e^{-\mu}\mu^{k}}{\cancel{k}\cdot\cancel{\left(k-1\right)}\cdot\left(k-2\right)!},\\
+				\intertext{ahora expandimos los dos primeros términos de la serie}
+				\mathds{E}\left[X\left(X=1\right)\right]
+				&=\cancelto{0}{\frac{0\cdot\left(-1\right)\cdot e^{-\mu}\mu^{0}}{0!}}+\cancelto{0}{\frac{1\cdot\left(0\right)\cdot e^{-\mu}\mu^{1}}{1!}}+\sum_{k=2}^{\infty}\frac{e^{-\mu}\mu^{k}}{\left(k-2\right)!}\\
+				&=\mu^{2}\sum_{k=2}^{\infty}\frac{e^{-\mu}\mu^{k-2}}{\left(k-2\right)!}.\\
+				\intertext{Ahora, cambiaremos adecuadamente el índice $k$ por $j$}
+				\mathds{E}\left[X\left(X=1\right)\right]
+				&=\mu^{2}\sum_{j=0}^{\infty}\frac{e^{-\mu}\mu^{j}}{\left(j\right)!}\\
+				&=\mu^{2}\cdot e^{-\mu}\left(\sum_{j=0}^{\infty}\frac{\mu^{j}}{\left(j\right)!}\right),\\
+				\intertext{pero, el valor entre paréntesis es $e^{\mu}$}
+				\mathds{E}\left[X\left(X=1\right)\right]
+				&=\mu^{2}\cdot \cancelto{1}{\left(e^{-\mu}\cdot e^{\mu}\right)}=\mu^{2}.
+			\end{align*}
+			\part Ya que $\mathrm{Var}\left(X\right)=\mathds{E}\left[X\left(X-1\right)\right]+\mathds{E}\left[X\right]-{\left(\mathds{E}\left[X\right]\right)}^2$, reemplazamos la expresión obtenido en la parte~\ref{12.8}
+			\begin{equation*}
+			\mathrm{Var}\left(X\right)=\cancel{\mu^{2}}+\mu-\cancel{{\left(\mu\right)}^{2}}=\mu.
+			\end{equation*}
+		\end{parts}
+	\end{solutionordottedlines}

@@ -1,0 +1,14 @@
+\question
+	Sea $X$ una variable aleatoria con distribución $\mathrm{Pois}(2)$. ¿Cuánto es $\mathds{P}\left(X\le1\right)$?
+
+	\begin{solutionordottedlines}
+		Sea $X$ una variable aleatoria de Poisson con $\lambda=2$, entonces
+		\begin{align*}
+			\mathds{P}\left(X\le1\right)
+			&\stackrel{\text{def}}{=}\mathds{P}\left(X=0\right)+\mathds{P}\left(X=1\right)\\
+			&=\frac{\lambda^{0}e^{-\lambda}}{0!}+\frac{\lambda^{1}e^{-\lambda}}{1!}\\
+			&=\frac{2^{0}e^{-2}}{0!}+\frac{2^{1}e^{-2}}{1!}\\
+			&=e^{-2}+2e^{-2}\\
+			&\approx\num{0.40600584971}.
+		\end{align*}
+	\end{solutionordottedlines}

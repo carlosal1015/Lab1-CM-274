@@ -1,0 +1,45 @@
+\question
+	Algunas veces el modelo de Poisson es empleada para estudiar el flujo del tránsito. Si el tránsito puede fluir libremente, entonces se comporta como un proceso de Poisson. Un intervalo de tiempo de \SI{20}{\minute} se divide en intervalos de tiempo de \SI{10}{\second}. En un cierto punto a lo largo de la autopista, el número de autos que pasan es registrado para cada intervalo de tiempo de \SI{10}{\second}. Sea $n_j$ el número de intervalos en las que $j$ autos han pasado para $j=0,\ldots,9$. Suponga que uno encuentra
+
+	\centering
+	\begin{tabular}{c|cccccccccc}
+		$j$ 	& $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ \\
+		\hline
+		$n_{j}	$& $19$ & $38$ & $28$ & $20$ & $7$ & $3$ & $4$ & $0$ & $0$ & $1$
+	\end{tabular}\quad.
+
+	\justifying
+	\noindent
+	Note que el número total de autos que pasan en esos $20$ minutos es $230$.
+	\begin{parts}
+	\part ¿Qué elegirías para el parámetro de intensidad $\lambda$?\label{12.7a}
+	\part Suponga que estima la probabilidad de que cero autos pasan un intervalo de tiempo de \SI{10}{\second} por $n_0$ dividido por el número total de intervalos de tiempo. ¿Eso está de acuerdo (razonablemente) con el valor que sigue desde su respuesta en~\ref{12.7a}?\label{12.7b}
+	\part ¿Qué tomarías por la probabilidad de que $10$ autos pasan en un intervalo de tiempo de \SI{10}{\second}?
+	\end{parts}
+
+	\begin{solutionordottedlines}
+		El número de intervalos de tiempo de \SI{10}{\second} durante \SI{20}{\minute} es $\sum_{j=0}^{9}n_{j}=\num{120}$.
+		\begin{parts}
+			\part El valor del parámetro $\lambda$ de un proceso de Poisson es obtenido por el siguiente cociente
+			\begin{equation*}
+				\frac{\text{número de autos}}{\text{tiempo total en segundos}}
+				=\frac{\left(19+38+28+20+7+3+4+0+0+1\right)}{\left(\SI{20}{\cancel\minute}\cdot\frac{\SI{60}{\second}}{\SI{1}{\cancel\minute}}\right)}=\frac{23}{120}.\quad
+			\end{equation*}
+			\part El parámetro de Poisson con la nueva condición de la parte~\ref{12.7b} es
+			\begin{equation*}
+				\mathds{P}\left(N=10\right)=\frac{n_{0}}{\sum_{j=0}^{9}n_{j}}=\frac{19}{120},
+			\end{equation*}
+			lo cual notamos que el valor es próximo a $\lambda$. Por lo tanto, es una aproximación razonable. Por otro lado, si $\lambda=\tfrac{23}{120}$, la probabilidad de que ningún auto pase en un intervalo de \SI{10}{\second}, esto es, $\mathds{P}\left(N\left(10\right)=0\right)$ es igual a
+			\begin{equation*}
+				\frac{{\left(\lambda\cdot\SI{10}{\second}\right)}^{0}e^{\left(-\lambda\cdot\SI{10}{\second}\right)}}{0!}
+				=\frac{{\left(\frac{23}{120}\cdot\SI{10}{\second}\right)}^{0}e^{\left(-\frac{23}{120}\cdot\SI{10}{\second}\right)}}{0!}
+				=\exp\left(-\frac{23}{12}\right)\approx\num{0.147096467}.
+			\end{equation*}
+			\part La probabilidad de que diez autos pasan en un intervalo de \SI{10}{\second} es igual a
+			\begin{equation*}
+				\frac{{\left(\lambda\cdot\SI{10}{\second}\right)}^{10}e^{\left(-\lambda\cdot\SI{10}{\second}\right)}}{10!}
+				=\frac{{\left(\frac{23}{120}\cdot\SI{10}{\second}\right)}^{10}e^{\left(-\frac{23}{120}\cdot\SI{10}{\second}\right)}}{10!}
+				\approx\num{2.712096323e-5}.
+			\end{equation*}
+		\end{parts}
+	\end{solutionordottedlines}

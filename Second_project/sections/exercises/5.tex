@@ -1,0 +1,30 @@
+\question
+	El número de errores de un disco duro es modelado como una variable aleatoria de Poisson con la esperanza de un error en cada Mb, esto es, en cada $2^{20}$ bytes.
+	\begin{parts}
+	\part ¿Cuál es la probabilidad de que haya al menos un error en un sector de \SI{512}{\byte}?
+	\part El disco duro es una unidad de disco de \SI{18.62}{\giga\byte} con \num{39054015} sectores. ¿Cuál es la probabilidad de que haya al menos un error en el disco duro?
+	\end{parts}
+
+	\begin{solutionordottedlines}
+		\begin{parts}
+			\part Modelando la cantidad de errores en los bytes del disco duro como un proceso de Poisson, con intensidad $\lambda$\SI{}{\per\byte}. Además, se tiene la siguiente relación
+			\begin{equation*}
+				\left(\frac{\lambda}{\cancel{\si{\byte}}}\right)\cdot\left(2^{20}\si[per-mode=fraction]{\cancel\byte}\right)=1,
+			\end{equation*}
+			por lo que $\lambda=2^{-20}$. Luego, la esperanza de que haya al menos un error en un sector de $\SI{512}{\byte}=2^{9}$ bytes es $\lambda\cdot2^{9}=2^{-20}\cdot2^{9}=2^{-11}=\num{0.00048828125}$.
+			\part Sea $Y$ el número de errores en el disco duro. Entonces $Y$ es una variable aleatoria con distribución de Poisson con parámetro
+			\begin{equation*}
+				\mu=\num{39054015}\times\lambda=\num{39054015}=\num{19069.34326}.
+			\end{equation*}
+			Luego, la probabilidad pedida es
+			\begin{align*}
+			\mathds{P}\left(Y\ge1\right)
+			&\stackrel{\text{def}}{=}1-\mathds{P}\left(Y=0\right)\\
+			&=1-\frac{\mu^{0}e^{-\mu}}{0!}\\
+			&=1-\cancelto{0}{e^{-\num{19069.34326}}}\\
+			&\approx 1.
+			\end{align*}
+		\end{parts}
+	\end{solutionordottedlines}
+
+%esto es \SI{100}{\mega\byte\per\second},

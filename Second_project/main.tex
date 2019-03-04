@@ -1,29 +1,40 @@
-% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
+% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml','synctex.gz']}
 % arara: xelatex: {shell: yes, synctex: yes}
 % arara: xelatex: {shell: yes, synctex: yes}
 % arara: biber
 % arara: xelatex: {shell: yes, synctex: yes}
 % arara: xelatex: {shell: yes, synctex: yes}
-% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
+% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml','synctex.gz']}
 \RequirePackage{etex} % Increase the number of tokens up tp 2^15.
 \documentclass[11pt,answers,addpoints,a4paper,tittlepage,DIV=15,headsepline]{kommaexam}%,cancelspace
-\usepackage[T1]{fontenc}
 \usepackage{wallpaper}
-\usepackage{libertine}
-\usepackage[lite]{mtpro2}
 \usepackage{amsthm}
 \usepackage[libertine,scaled=1.1]{newtxmath}
+\usepackage[lite]{mtpro2}
+\usepackage[ISO]{diffcoeff}
+\usepackage[makeroom]{cancel}
+\usepackage[no-math]{fontspec}
+\usepackage{libertine}
 \usepackage[scaled=.92]{sourcesanspro}
 \usepackage[scaled=.78]{beramono}
 \usepackage[protrusion=true,expansion=false]{microtype} % IMPORTANT expansion = false for XeTeX engine!!
 \usepackage{dsfont}
-\usepackage{color}
+\usepackage{siunitx}
+\sisetup{binary-units=true,per-mode=symbol}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 \usepackage{caption}
 \usepackage[shortlabels]{enumitem}
 \usepackage{ragged2e}
+
 \usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+
+\DeclareSymbolFont{operators}{\encodingdefault}{\familydefault}{\mddefault}{n}
+\DeclareMathAlphabet{\mathit}{\encodingdefault}{\familydefault}{\mddefault}{it}
+\DeclareMathAlphabet{\mathbf}{\encodingdefault}{\familydefault}{\bfdefault}{n}
+
+\let\oldref\ref
+\renewcommand{\ref}[1]{(\oldref{#1})}
 
 \input{commands.tex}
 
@@ -34,54 +45,58 @@
 		\thispagestyle{empty}
 	\end{coverpages}
 
-%\shadedsolutions
-
 \begin{center}
 	\fbox{\fbox{\parbox{5.5in}{\centering
 	Responda las preguntas en los espacios provistos en las hojas de preguntas. Si se queda sin espacio para una respuesta, continúe en la parte posterior de la página.
-}}}
+	}}}
 \end{center}
-%\vspace{0.1in}
-%\makebox[\textwidth]{Nombre del instructor:\enspace Lic. José Fernando Zamudio Peves.\hfill}
+
+	\input{./sections/bateman.tex}
+
+	\input{./sections/definitions.tex}
+
+	\input{./sections/poisson_process.tex}
 
 \begin{questions}
 
-	\input{./sections/1.tex}
+	\input{./sections/exercises/1.tex}
 
-	\input{./sections/2.tex}
+	\input{./sections/exercises/2.tex}
 
-	\input{./sections/3.tex}
-%
-%	\nocolorsolutionboxes
-%
-	\input{./sections/4.tex}
-%
-	\framedsolutions
-%
-	\input{./sections/5.tex}
-%
-	\input{./sections/6.tex}
-%
-	\unframedsolutions
-%
-	\input{./sections/7.tex}
-%
-	\input{./sections/8.tex}
-%
-	\input{./sections/9.tex}
+	\input{./sections/exercises/3.tex}
+
+	\input{./sections/exercises/4.tex}
+
+	\input{./sections/exercises/5.tex}
+
+	\input{./sections/exercises/6.tex}
+
+	\input{./sections/exercises/7.tex}
+
+	\input{./sections/exercises/8.tex}
+
+	\input{./sections/exercises/9.tex}
+
+	\input{./sections/exercises/10.tex}
+
+	\input{./sections/exercises/11.tex}
+
+	\input{./sections/exercises/12.tex}
+
+	\input{./sections/exercises/13.tex}
+
+	\input{./sections/exercises/14.tex}
 
 \end{questions}
 
-\newpage
+%\newpage
 
 \input{./sections/bibliography.tex}
-
-\input{./sections/definitions.tex}
 
 \section*{Puntuación}
 \begin{center}
   \settabletotalpoints{20}
-  \gradetable[h][questions]
+  \gradetable[v][questions]
 \end{center}
 
 \end{document}

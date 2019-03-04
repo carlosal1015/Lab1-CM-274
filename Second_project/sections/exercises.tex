@@ -1,0 +1,92 @@
+\subsection{Ejercicios}
+
+\begin{enumerate}
+	\item En cada uno de los siguientes ejemplos, intente indicar cuándo el proceso de Poisson sería un buen modelo.
+	\begin{enumerate}
+		\item La cantidad de bancarrotas de las empresas en los Estados Unidos.
+		\item Las  veces que un pollo pone huevos.
+		\item Las veces que un avión se estrella en un registro mundial.
+		\item Las ubicaciones de las palabras deletreadas en un libro.
+		\item Las cantidad de los accidentes de tránsito en una intersección.
+	\end{enumerate}
+	\item La cantidad de clientes que visitan un banco en un día es modelado por la distribución de Poisson. Se sabe que la probabilidad de que no haya clientes es de $0.00001$. ¿Cuál es el número esperado de clientes?
+	\item Sea $N$ una variable aleatoria con distribución $\mathrm{Poiss}(4)$. ¿Cuánto es $\mathds{P}\left(N=4\right)$?
+	\item Sea $X$ una variable aleatoria con distribución $\mathrm{Poiss}(2)$. ¿Cuánto es $\mathds{P}\left(X\le1\right)$?
+	\item El número de errores de un disco duro es modelado como una variable aleatoria de Poisson con la esperanza de un error en cada Mb, esto es \SI{100}{\mega\byte\per\second}, esto es, en cada $2^{20}$ bytes.
+	\begin{enumerate}
+		\item ¿Cuál es la probabilidad de que haya al menos un error en un sector de $512$ bytes?
+		\item El disco duro es una unidad de disco de \SI{18.62}{\giga\byte} con \num{39054015} sectores. ¿Cuál es la probabilidad de que haya al menos un error en el disco duro?
+	\end{enumerate}
+	\item Una cierta marca de alambre de cobre tiene fallas en cada \SI{40}{\centi\metre}. Modele las  ubicaciones de las fallas como un proceso de Poisson. En un intervalo de tiempo de \SI{20}{\minute} es dividido en ranuras de tiempo de \SI{10}{\second}. En un cierto punto a lo largo de la autopista, el número de autos que pasan es registrado para cada ranura de \SI{19}{\second}. Sea $n_j$ el número de ranuras en las que $j$ autos han pasado para $j=0,\ldots,9$. Suponga que uno encuentra
+	\centering
+	\begin{tabular}{c|cccccccccc}
+		$j$ 	& $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ \\
+		\hline
+		$f(x)$& $19$ & $38$ & $28$ & $20$ & $7$ & $3$ & $4$ & $0$ & $0$ & $1$
+	\end{tabular}\quad.
+
+	Note que el número total de autos que pasan en esos $20$ minutos es $230$.
+	\begin{enumerate}
+		\item ¿Qué elegirías para el parámetro de intensidad $\lambda$?\label{12.7a}
+		\item Suponga que estima la probabilidad de que cero autos pasando en una ranura de tiempo de \SI{10}{\second} por $n_0$ dividido por el número total de ranuras de tiempo. ¿Eso está de acuerdo (razonablemente) con el valor que sigue desde su respuesta en~\ref{12.7a}? %TODO dequeismo
+		\item  ¿Qué tomarías para la probabilidad que $10$ autos pasan en una ranura de tiempo de \SI{10}{\second}?
+	\end{enumerate}
+	\item Sea $X$ una variable aleatoria de Poisson con parámetro $\mu$.
+	\begin{enumerate}
+		\item Calcule $\mathds{E}\left[X\left(X-1\right)\right]$.
+		\item Calcule $\mathrm{Var}\left(X\right)$, usando el siguiente hecho:
+		\begin{equation*}
+		\mathrm{Var}\left(X\right)=\mathds{E}\left[X\left(X-1\right)\right]+\mathds{E}\left[X\right]-{\left(\mathds{E}\left[X\right]\right)}^2.
+		\end{equation*}
+	\end{enumerate}
+	\item Sea $Y_1$ y $Y_2$ dos variables aleatorias de Poisson independientes con parámetros $\mu_1$ y $\mu_2$, respectivamente. Muestre que $Y=Y_1+Y_2$ también es una distribución de Poisson. En vez de usar la regla de adicción en la Sección 11.1 como en el ejercicio 11.2, puede probar esto sin ningún cálculo considerando el número de puntos de un proceso de Poisson (con intensidad $1$) en dos intervalos disjuntos de longitud $\mu_1$ y $\mu_2$.
+	\item Sea $X$ una variable aleatorias con una distribución $\mathrm{Pois}\left(\mu\right)$. Muestre lo siguiente. Si $\mu<1$, entonces las probabilidades $\mathds{P}\left(X=k\right)$ son primero crecientes, luego decreciente (confer ). ¿Qué ocurre si $\mu=1$? %TODO Figura
+	\item Considere el proceso de Poisson unidimensional con intensidad $\lambda$. Muestre que el número de puntos en $\left[0,t\right]$, \emph{dado} que el número de puntos en $\left[0,2t\right]$ es igual a $n$, tiene una distribución $\mathrm{Bin}\left(n,\tfrac{1}{2}\right)$.
+
+	\emph{Ayuda:} escriba el evento $\left\{N\left(\left[0,s\right]\right)=k,N\left(\left[0,2s\right]\right)=n\right\}$ como la intersección de eventos (¡independientes!) $\left\{N\left(\left[0,s\right]\right)=k\right\}$ y $\left\{N\left(\left[0,2s\right]\right)=n-k\right\}$.
+	\item Consideremos el proceso de Poisson unidimensional. Suponga que para algunos $\alpha>0$ se da que hay exactamente dos puntos $\left[0,a\right]$, o en otras palabras: $N_\alpha=2$. El objetivo de este ejercicio es determinar la distribución conjunta de $X_1$ y $X_2$, las ubicaciones de los dos puntos, sujeto a $N_\alpha=2$.
+	\begin{enumerate}
+		\item Pruebe que para $0<s<t<\alpha$\label{12.12a}
+		\begin{multline*}
+			\mathds{P}\left(X_1\le X_2\le t, N_\alpha=2\right) \\
+			=\mathds{P}\left(X_2\le t, N_\alpha=2\right)-\mathds{P}\left(X_1>s,X_2\le t, N_\alpha=2\right).
+		\end{multline*}
+		\item Deduzca de~\ref{12.12a} que\label{12.12b}
+		\begin{equation*}
+			\mathds{P}\left(X_1\le s,X_2\le t,N_\alpha=2\right)=e^{-\lambda\alpha}\left(\frac{\lambda^2t^2}{2!}-\frac{\lambda^2{\left(t-s\right)}^2}{2!}\right).
+		\end{equation*}
+		\item Deduzca de~\ref{12.12b} que $0<s<t<\alpha$
+		\begin{equation*}
+			\mathds{P}\left(X_1\le s, X_2\le t\mid N_\alpha=2\right)=\frac{t^2-{\left(t-s\right)}^2}{\alpha^2}.
+		\end{equation*}
+	\end{enumerate}
+	\item Al caminar por un prado encontramos dos tipos de flores, margaritas y dientes de león. Mientras caminamos en línea recta, modelamos las posiciones de las flores que encontramos con un proceso de Poisson con intensidad $\lambda$. Parece que aproximadamente una de cada cuatro flores es margarita. Olvidando los dientes de león, ¿cómo se ve el proceso de las \emph{margaritas}? Esta pregunta será respondida con los siguientes pasos:
+	\begin{enumerate}
+		\item Sea $N_t$ el número total de flores, $X_t$ el número de margaritas, e $Y_t$ el número de dientes de león que encontramos durante los primeros $t$ minutos de nuestro paseo. Note que $X_t+Y_t=N_t$. Suponga que cada flor es un margarita con probabilidad $1/4$, independiente de las otras flores. Argumenta que\label{12.13a}
+		\begin{equation*}
+			\mathds{P}\left(X_t=n,Y_t=m\mid N_t=n+m\right)=\binom{n+m}{n}{\left(\frac{1}{4}\right)}^n{\left(\frac{3}{4}\right)}^m.
+		\end{equation*}
+		\item Muestre que
+		\begin{equation*}
+			\mathds{P}\left(X_t=n,Y_t=m\right)=\frac{1}{n!}\frac{1}{m!}{\left(\frac{1}{4}\right)}^n{\left(\frac{3}{4}\right)}^me^{-\lambda t}{\lambda t}^{n+m},
+		\end{equation*}
+		condicionando sobre $N_t$ y usando~\ref{12.13a}.
+		\item Escribiendo $e^{-\lambda t}=e^{-\left(\lambda/4\right)t}e^{-\left(3\lambda/4\right)t}$ y sumando sobre $m$, muestre que\label{12.13c}
+		\begin{equation*}
+			\mathds{P}\left(X_t=n\right)=\frac{1}{n!}e^{-\left(\lambda/4\right)t}{\left(\frac{\lambda t}{4}\right)}^n.
+		\end{equation*}
+		Ya que está claro que los números de margaritas que encontramos en intervalos de tiempo disjuntos son independientes, podríamos concluir de~\ref{12.13c} que el proceso $\left(X_t\right)$ es de nuevo un proceso de Poisson, con intensidad $\lambda/4$. Uno dice a menudo que el proceso $\left(X_t\right)$ es obtenido por \emph{adelgazamiento} del proceso $\left(N_t\right)$. En nuestro ejemplo este corresponde a recoger todos los dientes de león.
+	\end{enumerate}
+	\item En este ejercicio nos fijamos en un ejemplo simple de variables aleatorias $X_n$ que tiene la propiedad que sus distribuciones convergen a las distribuciones de una variable aleatorias $X$ cuando $n\to\infty$. Sea para $n=1,2,\ldots$ las variables aleatorias definidas por
+	\begin{equation*}
+	P\left(X_n=0\right)=1-\frac{1}{n}\quad\text{y}\quad\mathds{P}\left(X_n=7n\right)=\frac{1}{n}.
+	\end{equation*}
+	\begin{enumerate}
+		\item Sea $X$ una variable aleatorias que es igual a $0$ con probabilidad $1$. Muestre que para todo $a$, las funciones de masa de probabilidad $p_{X_m}(a)$ de $X_n$ converge a la función de probabilidad de masa $p_X(a)$ de $X$ cuando $n\to\infty$. Note que $\mathds{E}\left[X\right]=0$.
+		\item Muestre que sin embargo $\mathds{E}\left[X_n\right]=7$ para todo $n$.
+	\end{enumerate}
+\end{enumerate}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:

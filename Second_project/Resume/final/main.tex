@@ -1,7 +1,10 @@
-% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml','fls','fdb_latexmk','synctex.gz','toc']}
+% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
 % arara: xelatex: {shell: yes, synctex: yes}
 % arara: xelatex: {shell: yes, synctex: yes}
-% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml','fls','fdb_latexmk','synctex.gz','toc']}
+% arara: biber
+% arara: xelatex: {shell: yes, synctex: yes}
+% arara: xelatex: {shell: yes, synctex: yes}
+% arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml']}
 \documentclass[
 	10pt,
 	twoside=false,

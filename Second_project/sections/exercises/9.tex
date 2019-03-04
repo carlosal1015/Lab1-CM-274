@@ -1,0 +1,6 @@
+\question
+	 Sea $Y_1$ y $Y_2$ dos variables aleatorias de Poisson independientes con parámetros $\mu_1$ y $\mu_2$, respectivamente. Muestre que $Y=Y_1+Y_2$ también es una distribución de Poisson. En vez de usar la regla de adicción en la Sección 11.1 como en el ejercicio 11.2, puede probar esto sin ningún cálculo considerando el número de puntos de un proceso de Poisson (con intensidad $1$) en dos intervalos disjuntos de longitud $\mu_1$ y $\mu_2$.
+	
+	\begin{solutionordottedlines}
+		En un proceso de Poisson con intensidad $1$, el número de puntos en un intervalo de longitud $t$ tiene una distribución de Poisson con parámetro $t$. Así el número $Y_{1}$ de puntos en $\left(0,\mu_1\right)$ es una variable aleatoria con distribución $\mathrm{Pois}\left(\mu_1\right)$ y $Y_{2}$ en el intervalo $\left[\mu_1+\mu_1+\mu_2\right]$ es una variable aleatoria con distribución $\mathrm{Pois}\left(\mu_2\right)$. Pero la suma de $Y_{1}+Y_{2}$ de estos son igual al número de puntos en el intervalo $\left[0,\mu_1+\mu_2\right]$, por lo que se concluye que la variable aleatoria $Y_{1}+Y_{2}$ es otra variable aleatoria con distribución $\mathrm{Pois}\left(\mu_1+\mu_2\right)$.
+	\end{solutionordottedlines}
