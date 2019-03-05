@@ -1,0 +1,142 @@
+\subsection{Consejos para erizos o constantes pueden variar}
+
+	Este ensayo proporciona una breve introducción e historia del proceso de Poisson y consideramos un problema simple que ofrece entretenimiento analítico, junto con una prueba novedosa de resultado estándar.
+
+	Es un comentario trivial pero verdadero decir que hay dos procesos aleatorios fundamentales, uno es el proceso de Poisson y el otro es el movimiento browniano. Cada uno de ellos es fundamental de dos maneras; En primer lugar, parecen describir muy bien gran parte del mundo natural, y en segundo lugar, se aconseja al estudiante que estudie y domine a estos dos antes de analizar procesos más duros y recónditos. Esta nota ofrece una breve visión de algunos aspectos del proceso de Poisson, que técnicamente es, con mucho, el más manejable de los dos.
+
+	Primero recordamos una propiedad elemental de la distribución binomial:
+
+	\[
+		p\left(k\right)=\binom{n}{k}p^{k}{\left(1-p\right)}^{1-k}.\quad 0\le p\le 1,\quad o\le k\le n.
+	\]
+
+	Muy a menudo, en la vida real ocurre que $n$ es muy grande, y $p$ es muy pequeño, pero la media de la distribución, $\lambda=np$, está cerca de algún valor común (como $1$, o $e$ o $\sqrt{2}$ por ejemplo). Las aproximaciones a menudo son útiles en tales casos, y es un ejercicio de rutina mostrar que cuando $n\to\infty$, con $\lambda$ fijo, (de modo que $p=\lambda n^{-1}\to0$), tenemos
+	\begin{equation}\label{eq:1}
+		p\left(k\right)=\binom{n}{k}{\left(\frac{\lambda}{n}\right)}^{k}{\left(1-\frac{\lambda}{n}\right)}^{n-k}\to\frac{e^{-\lambda}\lambda^{k}}{k!},\quad k\ge 0.
+	\end{equation}
+
+	Esta es la conocida distribución de probabilidad de Poisson con el parámetro $\lambda$. Para una ilustración, suponga que tiene un gran bloque de material radiactivo, el bloque de granito que consta de Dartmoor, por ejemplo. El número de átomos activos es enorme, la posibilidad de que un átomo dado emita una partícula $\alpha$ es extremadamente pequeño, el número esperado de partículas$\alpha$ emitidas durante (por ejemplo) el lunes es moderado, y se aplica la aproximación de Poisson. Este y otros ejemplos similares sugieren otra propiedad crucial de tales procesos. Sea $N\left(s\right)$ el número de partículas emitidas durante el intervalo de tiempo $\left(0,s\right)$, de modo que $\tilde{N}=N\left(t\right)-N\left(s\right)$ es el número emitido durante $\left(s,t\right)$, donde $0<s<t$. Estas dos variables aleatorias $N\left(S\right)$ y $\tilde{N}$ obviamente se pueden asumir como independientes entre sí; empíricamente se encuentra que las partículas emitidas el lunes no afectan la cantidad emitida el martes. Estas consideraciones llevan a la siguiente definición:
+	\begin{definition}
+		El \textit{proceso de Poisson} es una colección de variables aleatorias de valores enteros no negativos $N\left(t\right), t\ge0$, tal que $N\left(0\right)=0$ y para todo positivo $s_{i}$ y $t_{i}$, con $s_{i}<t_{i}<s_{i+1}$, las variables aleatorias $\tilde{N}_{i}=N\left(t_{i}\right)-N\left(s_{i}\right)$, $1\le i\le n$ son mutuamente independientes, y $\tilde{N}_{i}$ tiene una distribución de Poisson con parámetro $\lambda\left(t_{i}-s_{i}\right)$. Escribimos
+		\begin{equation}\label{eq:2}
+		p_{n}\left(t\right)=\mathds{P}\left(N\left(t\right)=n\right)=\frac{e^{-\lambda t}{\left(\lambda t\right)}^{n}}{n!}
+		\end{equation}
+	\end{definition}
+	Se dice que el proceso tiene incrementos independientes, y se dice que los incrementos son estacionarios porque la distribución de $N\left(t+s\right)-N\left(s\right)$ es la misma que la de $N\left(t\right)$.
+
+	Es útil e importante ver que esta idea se utiliza para derivar las propiedades del proceso $N\left(t\right)$ de una manera diferente. La idea es que observemos lo que puede suceder con el proceso $N\left(t\right)$ durante un intervalo arbitrariamente pequeño $\left(t,t+\delta t\right)$. %TODO diff
+	Por lo que hemos dicho anteriormente, el incremento $N\left(t+\delta t\right)-N\left(t\right)$ será independiente de los valores del proceso $N\left(s\right)$ para $0\le s\le t$. Además, para el problema que hemos examinado, podemos suponer que la probabilidad de que se emita una partícula $\alpha$ durante $\left(t,t+\delta t\right)$ es aproximadamente $\lambda\delta t$, la probabilidad de que no se emita ninguna es aproximadamente $1-\lambda\delta t$, y la probabilidad de dos o más es menor que $c{\left(\delta t\right)}^{2}$, para alguna constante $c$. Ahora, usando la probabilidad condicional y la independencia, podemos expandir la probabilidad $p_{n\left(t+\delta t\right)}$ de la siguiente manera.
+
+	Para $n\ge 1$,
+	\begin{align*}
+		p_{n}\left(tt+\delta t\right)
+		&=\mathds{P}\left(N\left(t\right)\right)=n\text{ y } \left(N\left(t+\delta t\right) - N\left(t\right)\right)=0\\
+		&+\mathds{P}\left(N\left(t\right)=n-1\text{ y }\left(N\left(t+\delta t\right)-N\left(t\right)\right)=1\right)%TODO: phantom
+		\\
+		&+\mathds{P}\left(N\left(t\right)=n-r\text{ y }\left(N\left(t+\delta t\right)-N\left(t\right)\right)=r>1\right)\\
+		&=p_{n}\left(t\right)\left(1-\lambda\delta t\right)+p_{n-1}\left(t\right)\lambda\delta t+r\left(t\right){\left(\delta t\right)}^{2}
+	\end{align*}
+	donde $r\left(t\right)\delta t\to0$ siempre que $\delta t\to0$. Dividiendo por $\delta t$, y permitiendo que $\delta t\to0$, nos da
+	\begin{equation}\label{eq:3}
+		p^{\prime}_{n}\left(t\right)=\diff{p_{n}\left(t\right)}{t}=-\lambda p_{n}\left(t\right)+\lambda p_{n-1}\left(t\right),\qquad n\ge1,
+	\end{equation}
+	y un argumento similar cuando $n=0$ nos da
+	\begin{equation}\label{eq:4}
+		p^{\prime}_{0}\left(t\right)=-\lambda p_{0}\left(t\right).
+	\end{equation}
+	Esto es fácil de verificar que la solución de \eqref{eq:3} y \eqref{eq:4} tal que $N\left(0\right)=0$ es provista por \eqref{eq:2}.
+
+	Podemos inmediatamente deducir una propiedad importante de este proceso: las veces entre emisiones, (es decir, las veces entre instantes en el cual $N\left(t\right)$ incrementa una unidad) son variables aleatorias independientes exponencialmente distribuidas. Para ver esto, sea $X_{1}$ el time del primer salto. Así,
+
+	\[
+		N\left(t\right)=
+		\begin{cases}
+			0&,\quad t<X_{1}\\
+			1&,\quad t=X_{1}.
+		\end{cases}
+	\]
+	Entonces
+	\begin{align*}
+		\mathds{P}\left(X_{1}>t\right)
+		&=\mathds{P}\left(N\left(t\right)=9\right)\\
+		&=p_{0}\left(t\right)\\
+		&=e^{-\lambda t}.
+	\end{align*}
+
+	Así, $X_{1}$ tiene un densidad exponencial con parámetro $\lambda$. El esto de nuestro reclamo sigue del hecho que $n\left(t\right)$ tiene incrementos estacionarios independientes.
+
+	Completamos el circuito alrededor de estas caracterizaciones del proceso de Poisson por nada que si los eventos ocurren en una sucesión de veces $S_{n}=\sum_{r=1}^{n}X_{r}$, $n\ge1$, donde $X_{r}$ son variables aleatorias independientes y exponencialmente distribuidas, entonces se puede mostrar que el proceso $N\left(t\right)$ que cuenta el número de eventos en $\left[0,t\right]$ es de hecho un proceso de Poisson.
+
+	Aquí está otra notable propiedad del proceso de Poisson, que necesitamos usar más después. Suponga que para $t\ge0$ el proceso de Poisson $N\left(t\right)$ con parámetro $\lambda$ cuenta los instantes en que los mosquitos pican tu cuello, y el proceso de Poisson $M\left(t\right)$ con parámetro $\mu$ cuenta los instantes en los que las avispas aterrizan en tu cerveza. Parece razonable suponer que $M\left(t\right)$ y $N\left(t\right)$ son independientes; ¿cómo podrían colaborar? Entonces este es el caso que el proceso $K\left(t\right)=M\left(t\right)+N\left(t\right)$ que registra ambos tipos de ocurrencias, es un proceso de Poisson con parámetros $\kappa=\lambda+\mu$. Para ver esto simplemente note primero que para cualquier $t$, $K\left(t\right)$ es una variable aleatoria de Poisson con parámetro $\left(\lambda+\mu\right)$, porque
+	\begin{align*}
+		\mathds{P}\left(K\left(t\right)=k\right)
+		&=\sum_{n=0}^{k}\mathds{P}\left(M\left(t\right)+n=k, N\left(t\right)=n\right)\\
+		&=\sum_{n=0}^{k}e^{-\mu t}\frac{{\left(\mu t\right)^{k-n}}}{\left(k-n\right)!}e^{-\lambda t}\frac{{\left(\lambda t\right)}^{n}}{n!}\\
+		&=e^{-\left(\lambda+\mu\right)t}\left\{\left(\lambda+\mu\right)\right\}
+	\end{align*}
+
+	\subsection{Sobre la distribución de probabilidad de las partículas $\alpha$}\label{sec:note}
+
+	Sea $\lambda\dl t$ la probabilidad que una partícula $\alpha$ golpee la pantalla en un intervalo de tiempo $\dl t$. Si los intervalos de tiempo bajo la consideración son pequeños comparados con el período de tiempo de la sustancia radiactiva, podemos asumir que $\lambda$ es independiente de $t$. Ahora, sea $W_n(t)$ la probabilidad que $n$ partículas $\alpha$ golpeen la pantalla en un intervalo de tiempo $t$, entonces la probabilidad que $(n+1)$ partículas golpeen la pantalla en un intervalo $t+\dl t$ es la suma de dos probabilidades. En primer lugar, las $n+1$ partículas $\alpha$ pueden golpear la pantalla en el intervalo $t$ y ninguno en el intervalo $\dl t$. La probabilidad de que esto pueda ocurrir es $(1-\lambda\dl t)W_{n+1}(t)$. En segundo lugar, $n$ partículas $\alpha$ podrían golpear la pantalla en el intervalo $t$ y otra partícula $\alpha$ en el intervalo $\dl t$; la probabilidad de que esto ocurra es $\lambda\dl t W_n(t)$. Por lo tanto
+	\[
+		W_{n+1}\left(t+\dl t\right)=\left(1-\lambda\dl t\right)W_{n+1}(t)+\lambda\dl t W_n\left(t\right).
+	\]
+	Procediendo al límite, tenemos
+	\[
+		\diff{W_{n+1}}{t}=\lambda\left(W_n-W_{n+1}\right).
+	\]
+	Poniendo $n=0,1,2,\ldots$ en una sucesión tenemos el sistema de ecuaciones:
+	\begin{align*}
+		\diff{W_0}{t}&=-\lambda W_0,\\
+		\diff{W_1}{t}&=-\lambda\left(W_0-W_1\right),\\
+		\diff{W_2}{t}&=-\lambda\left(W_1-W_2\right),\\
+		\vdots\quad &=\quad\vdots\\
+	\end{align*}
+	que son exactamente de la misma forma que las que se producen en la teoría de transformaciones radiactivas, excepto que los períodos de tiempo de las transformaciones deberían suponerse que son todos iguales.
+
+	Las ecuaciones podrían ser resueltos multiplicando cada uno de ellos por $e^{\lambda t}$ e integrando. Dado que $W_0(0)=1$ y $W_n(0)=0$, tenemos una sucesión:
+	\begin{align*}
+		&& W_0&= e^{-\lambda t},\\
+		\diff{W_1e^{\lambda t}}{t}&=\lambda, & W_1&= e^{-\lambda t},\\
+		\diff{W_2e^{\lambda t}}{t}&=\lambda^2t, & W_2&=\frac{{\left(\lambda t\right)}^2}{2!}e^{-\lambda t},\\
+	\end{align*}
+	y así sucesivamente. Finalmente, tenemos
+	\[
+		W_n=\frac{{\left(\lambda t\right)}^n}{n!}e^{\lambda t}.
+	\]
+	El \emph{promedio} del número de  partículas $\alpha$ que golpean la pantalla en el intervalo $t$ es $\lambda t$. Poniendo esto igual a $x$, vemos que la probabilidad de que $n$ partículas $\alpha$ golpeen la pantalla en este intervalo es
+	\[
+		W_n=\frac{x^n}{n!}e^{-x}.
+	\]
+
+	El caso particular en el que $n=0$ se conoce desde hace tiempo. % TODO Chequear el libro Whitworth Choice and Chance 4th ed prop 51.
+
+	Si usamos la analogía de arriba con la transformación radiactiva, el teorema simplemente nos dice que la cantidad de sustancia primaria restante después de un intervalo de tiempo $t$ es $e^{-\lambda t}$ si una cantidad unitaria estaba presente en el comienzo.
+
+	El número \emph{probable} de partículas $\alpha$ que golpean la pantalla en un intervalo dado es
+	\[
+		p=\sum_{n=1}^{\infty}nW_n=xe^{-x}\sum_{n=1}^{\infty}\frac{x^{n-1}}{\left(n-1\right)!}=x.
+	\]
+	El número \emph{más probable} es obtenido por la búsqueda del valor máximo de $W_n$.
+
+	Ya que $\frac{W_n}{W_{n-1}}=\frac{x}{n}$, este radio será mayor que $1$ siempre que $n<x$. Por lo tanto, si $n\lessgtr x$,
+	\[
+		W_n\lessgtr W_{n-1}
+	\]
+	si $n=x$, $W_n=W_{n-1}$. El valor más probable de $n$ es por lo tanto el entero siguiente mayor que $x$; si, sin embargo, $x$ es un entero, los números $x-1$ y $x$ son igualmente probable, y más probable que todos los otros.
+
+	El valor de $\lambda$ que es calculado por el conteo del número total de partículas $\alpha$ que chocan la pantalla en un intervalo largo de tiempo $T$, no será generalmente el valor verdadero de $\lambda$. La desviación media desde el valor de verdad de $\lambda$ es calculado por la búsqueda de la desviación media del número total $N$ de partículas $\alpha$ observadas en el tiempo $T$ desde el número verdadero promedio $\lambda T$. Esta desviación media $D$ (error promedio) es, de acuerdo a la definición de Bessel y Gau\ss, la raíz cuadrada del valor probable del cuadrado de la diferencia $N-\lambda T$, y así es obtenido por las series % TODO Footnote de Bessel y Gauss.
+	\begin{align*}
+		D^2
+		&=\sum_{n=0}^{\infty}\left(N-\lambda T\right)^2\frac{{\left(\lambda T\right)}^N}{N!}e^{-\lambda t}\\
+		&=e^{-\lambda t}\sum_{N=0}^{\infty}\left[\frac{{\left(\lambda T\right)}^N}{\left(N-2\right)!}
+		+\frac{{\left(\lambda T\right)}^{N+1}}{\left(N-1\right)!}+\frac{{\left(\lambda T\right)}^{N+2}}{\left(N\right)!}\right]
+		=\lambda T.
+	\end{align*}
+	Así, $D=\sqrt{\lambda T}$, y la desviación media desde el valor de $\lambda$ es en consecuencia
+	\[
+		\frac{D}{T}=\sqrt{\frac{\lambda}{T}};
+	\]
+	esto es, varía inversamente como la raíz cuadrada de la longitud del intervalo de tiempo. Este resultado es de la misma forma que el clásico utilizado por E. v. Schweidler en el artículo  mencionado anteriormente.
+
+	El valor probable de $|N-\lambda T|$ (error promedio) es mucho más difícil de calcular.% TODO citar Schwediler

@@ -1,20 +1,21 @@
 \question
+
 	La cantidad de clientes que visitan un banco en un día es modelado por la distribución de Poisson. Se sabe que la probabilidad de que no haya clientes es de \num{0.00001}. ¿Cuál es el número esperado de clientes?
 
 	\begin{solutionordottedlines}
 		Sea $X$ el número de clientes que visitan un banco en un día. Dado que $\mathds{P}\left(X=0\right)=\num{1e-5}$. Pero $X$ es una variable aleatoria de Poisson, entonces
 		\begin{align*}
-		\mathds{P}\left(X=0\right)
-		&=e^{-\lambda},
-		\intertext{y si reemplamos el dato anterior}
-		\num{1e-5}
-		&=e^{-\lambda},
-		\intertext{tomando logaritmo en ambos lados de la ecuación}
-		-5\ln(10)
-		&=-\lambda.
-		\intertext{Así, el valor aproximado de}
-		\lambda
-		&\approx\num{11.512925465}.
+			\mathds{P}\left(X=0\right)
+			&=e^{-\lambda},
+			\intertext{y si reemplamos el dato anterior}
+			\num{1e-5}
+			&=e^{-\lambda},
+			\intertext{tomando logaritmo en ambos lados de la ecuación}
+			-5\ln(10)
+			&=-\lambda.
+			\intertext{Así, el valor aproximado de}
+			\lambda
+			&\approx\num{11.512925465}.
 		\end{align*}
 		Por lo tanto, el valor esperado de $X$ es $\mathds{E}\left[X\right]=\lambda\approx\num{11.512925465}$.
 	\end{solutionordottedlines}

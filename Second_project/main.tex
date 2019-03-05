@@ -6,7 +6,16 @@
 % arara: xelatex: {shell: yes, synctex: yes}
 % arara: clean: {extensions: ['log','aux','bbl','bcf','blg','run.xml','synctex.gz']}
 \RequirePackage{etex} % Increase the number of tokens up tp 2^15.
-\documentclass[11pt,answers,addpoints,a4paper,tittlepage,DIV=15,headsepline]{kommaexam}%,cancelspace
+\documentclass[
+	11pt,
+	answers,
+	addpoints,
+	a4paper,
+	tittlepage,
+	DIV=15,
+	headsepline,
+	abstract=true
+]{kommaexam}%,cancelspace
 \usepackage{wallpaper}
 \usepackage{amsthm}
 \usepackage[libertine,scaled=1.1]{newtxmath}
@@ -45,58 +54,71 @@
 		\thispagestyle{empty}
 	\end{coverpages}
 
-\begin{center}
-	\fbox{\fbox{\parbox{5.5in}{\centering
-	Responda las preguntas en los espacios provistos en las hojas de preguntas. Si se queda sin espacio para una respuesta, continúe en la parte posterior de la página.
-	}}}
-\end{center}
+	\input{./sections/abstract.tex}
 
-	\input{./sections/bateman.tex}
+	\tableofcontents
+
+	\newpage
+
+	\listoffigures
+
+	\newpage
+
+	\input{./sections/introduction.tex}
+
+	\input{./sections/examples.tex}
 
 	\input{./sections/definitions.tex}
 
 	\input{./sections/poisson_process.tex}
 
-\begin{questions}
+\newpage
 
-	\input{./sections/exercises/1.tex}
+	\begin{center}
+		\fbox{\fbox{\parbox{5.5in}{\centering
+			Responda las preguntas en los espacios provistos en las hojas de preguntas. Si se queda sin espacio para una respuesta, continúe en la parte posterior de la página.
+		}}}
+	\end{center}
 
-	\input{./sections/exercises/2.tex}
+	\begin{questions}
 
-	\input{./sections/exercises/3.tex}
+		\input{./sections/exercises/1.tex}
 
-	\input{./sections/exercises/4.tex}
+		\input{./sections/exercises/2.tex}
 
-	\input{./sections/exercises/5.tex}
+		\input{./sections/exercises/3.tex}
 
-	\input{./sections/exercises/6.tex}
+		\input{./sections/exercises/4.tex}
 
-	\input{./sections/exercises/7.tex}
+		\input{./sections/exercises/5.tex}
 
-	\input{./sections/exercises/8.tex}
+		\input{./sections/exercises/6.tex}
 
-	\input{./sections/exercises/9.tex}
+		\input{./sections/exercises/7.tex}
 
-	\input{./sections/exercises/10.tex}
+		\input{./sections/exercises/8.tex}
 
-	\input{./sections/exercises/11.tex}
+		\input{./sections/exercises/9.tex}
 
-	\input{./sections/exercises/12.tex}
+		\input{./sections/exercises/10.tex}
 
-	\input{./sections/exercises/13.tex}
+		\input{./sections/exercises/11.tex}
 
-	\input{./sections/exercises/14.tex}
+		\input{./sections/exercises/12.tex}
 
-\end{questions}
+		\input{./sections/exercises/13.tex}
 
-%\newpage
+		\input{./sections/exercises/14.tex}
 
-\input{./sections/bibliography.tex}
+	\end{questions}
 
-\section*{Puntuación}
-\begin{center}
-  \settabletotalpoints{20}
-  \gradetable[v][questions]
-\end{center}
+	\input{./sections/bibliography.tex}
+
+	\section*{Puntuación}
+	
+	\begin{center}
+		\settabletotalpoints{20}
+		\gradetable[v][questions]
+	\end{center}
 
 \end{document}

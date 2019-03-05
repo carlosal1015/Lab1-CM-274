@@ -1,11 +1,12 @@
 \question
+
 	Sea $X$ una variable aleatoria de Poisson con parámetro $\mu$.
 	\begin{parts}
 		\part Calcule $\mathds{E}\left[X\left(X-1\right)\right]$.\label{12.8}
 		\part Calcule $\mathrm{Var}\left(X\right)$, usando el siguiente hecho:
-		\begin{equation*}
-		\mathrm{Var}\left(X\right)=\mathds{E}\left[X\left(X-1\right)\right]+\mathds{E}\left[X\right]-{\left(\mathds{E}\left[X\right]\right)}^2.
-		\end{equation*}
+			\[
+			\mathrm{Var}\left(X\right)=\mathds{E}\left[X\left(X-1\right)\right]+\mathds{E}\left[X\right]-{\left(\mathds{E}\left[X\right]\right)}^2.
+			\]
 	\end{parts}
 
 	\begin{solutionordottedlines}
@@ -28,8 +29,8 @@
 				&=\mu^{2}\cdot \cancelto{1}{\left(e^{-\mu}\cdot e^{\mu}\right)}=\mu^{2}.
 			\end{align*}
 			\part Ya que $\mathrm{Var}\left(X\right)=\mathds{E}\left[X\left(X-1\right)\right]+\mathds{E}\left[X\right]-{\left(\mathds{E}\left[X\right]\right)}^2$, reemplazamos la expresión obtenido en la parte~\ref{12.8}
-			\begin{equation*}
-			\mathrm{Var}\left(X\right)=\cancel{\mu^{2}}+\mu-\cancel{{\left(\mu\right)}^{2}}=\mu.
-			\end{equation*}
+				\[
+					\mathrm{Var}\left(X\right)=\cancel{\mu^{2}}+\mu-\cancel{{\left(\mu\right)}^{2}}=\mu.
+				\]
 		\end{parts}
 	\end{solutionordottedlines}

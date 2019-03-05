@@ -1,28 +1,177 @@
-\section{El proceso de Poisson}
-\label{sec:12}
+\section{El proceso de Poisson}\label{sec:12}
 
-En varios fenómenos aleatorios encontramos, no solo uno o dos variables aleatorias que juegan un rol, sino una colección completa. En este caso frecuentemente habla de un \textit{proceso} aleatorio. El proceso de Poisson es un tipo simple de proceso aleatorio, que modela la ocurrencia de puntos aleatorios en el espacio o tiempo. Existen números formas en el que proceso de puntos aleatorios aumenta: algunos ejemplos son presentados en la primera sección. El proceso de Poisson describe en cierto sentido la \textit{forma más aleatoria} para distribuir puntos en el espacio o tiempo. Este es hecho más preciso con las nociones de homogeneidad e independencia.
+	En varios fenómenos aleatorios encontramos, no solo uno o dos variables aleatorias que juegan un rol, sino una colección completa. En este caso frecuentemente habla de un \textit{proceso} aleatorio. El proceso de Poisson es un tipo simple de proceso aleatorio, que modela la ocurrencia de puntos aleatorios en el espacio o tiempo. Existen números formas en el que proceso de puntos aleatorios aumenta: algunos ejemplos son presentados en la primera sección. El proceso de Poisson describe en cierto sentido la \textit{forma más aleatoria} para distribuir puntos en el espacio o tiempo. Este es hecho más preciso con las nociones de homogeneidad e independencia.
 
 \subsection{Los puntos aleatorios}
 
-Ejemplos típicos de la ocurrencia de puntos aleatorios son: tiempos de llegadas de mensajes de correo electrónico en un servidor, las veces en que los asteroides golpean la tierra, tiempos de llegada de materiales radiactivos en un contador Geiger\footnote{Un contador Geiger es un instrumento que permite medir la radiactividad de un objeto o lugar.}, veces en el que su computadora falla y los tiempos en que fallan los componentes electrónicos y los tiempos de llegada de personas a una bomba de agua en un oasis.
+	Ejemplos típicos de la ocurrencia de puntos aleatorios son: tiempos de llegadas de mensajes de correo electrónico en un servidor, las veces en que los asteroides golpean la tierra, tiempos de llegada de materiales radiactivos en un contador Geiger\footnote{Un contador Geiger es un instrumento que permite medir la radiactividad de un objeto o lugar.}, veces en el que su computadora falla y los tiempos en que fallan los componentes electrónicos y los tiempos de llegada de personas a una bomba de agua en un oasis.
 
-Ejemplos de la ocurrencia de los puntos aleatorios son: las ubicaciones de los impactos de asteroides con la tierra (dimensión $2$), las ubicaciones de las imperfecciones un material (dimensión $3$), y las ubicaciones de los árboles en un bosque. (dimensión $2$).
+	Ejemplos de la ocurrencia de los puntos aleatorios son: las ubicaciones de los impactos de asteroides con la tierra (dimensión $2$), las ubicaciones de las imperfecciones un material (dimensión $3$), y las ubicaciones de los árboles en un bosque. (dimensión $2$).
 
-Algunos de estos fenómenos son mejor modelados por el proceso de Poisson que por otros. De forma aproximada, uno podría decir que el proceso de Poisson se aplica con frecuentemente a situaciones donde existe una población muy grande, y cada miembro de este tiene una pequeña probabilidad de producir un punto del proceso. Esto es, por ejemplo, bien satisfecho en el ejemplo del contador Geiger donde, en una descomunal colección de átomos, solo unos pocos emitirán una partícula radiactiva. Una propiedad del proceso de Poisson--como veremos en breve--es que los puntos pueden estar arbitrariamente juntos. Por lo tanto, las ubicaciones de los árboles no están tan bien modeladas por el proceso de Poisson.
+	Algunos de estos fenómenos son mejor modelados por el proceso de Poisson que por otros. De forma aproximada, uno podría decir que el proceso de Poisson se aplica con frecuentemente a situaciones donde existe una población muy grande, y cada miembro de este tiene una pequeña probabilidad de producir un punto del proceso. Esto es, por ejemplo, bien satisfecho en el ejemplo del contador Geiger donde, en una descomunal colección de átomos, solo unos pocos emitirán una partícula radiactiva. Una propiedad del proceso de Poisson--como veremos en breve--es que los puntos pueden estar arbitrariamente juntos. Por lo tanto, las ubicaciones de los árboles no están tan bien modeladas por el proceso de Poisson.
 
-\subsection{Echando un vistazo más de cerca las llegadas aleatorias}
+\subsubsection{Echando un vistazo más de cerca las llegadas aleatorias}
 
-Un ejemplo bien conocido que es usualmente modelado por el proceso de Poisson es que las llamadas que llegan a una central telefónica--la central está conectada a un gran número de personas que hacen llamadas telefónicas de vez en cuando. Este será nuestro ejemplo principal en esta sección.
+	Un ejemplo bien conocido que es usualmente modelado por el proceso de Poisson es que las llamadas que llegan a una central telefónica--la central está conectada a un gran número de personas que hacen llamadas telefónicas de vez en cuando. Este será nuestro ejemplo principal en esta sección.
 
-Las llamadas telefónicas llegan en tiempos aleatorios $X_{1}, X_{2}, \ldots$ a la central telefónica durante el tiempo de tiempo $\left[0,t\right]$.
+	\noindent Las llamadas telefónicas llegan en tiempos aleatorios $X_{1}, X_{2}, \ldots$ a la central telefónica durante el tiempo de tiempo $\left[0,t\right]$.
 
-% TODO Agregar imagen
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=0.7\paperwidth]{img12_1a}
+		\caption*{}
+	\end{figure}
 
-Los dos supuestos básicos que hacemos en estas llamadas aleatorias son
-\begin{description}
-	\item[Homogeneidad] La tasa $\lambda$ a la que se producen las llamadas es constante a través del tiempo: en un subintervalo de longitud $u$ la esperanza del número de llamadas telefónicas es $\lambda u$.
-	\item[Independencia] El número de llegadas en intervalos de tiempo disjuntos son variables aleatorias independientes.
-\end{description}
+	\noindent Los dos supuestos básicos que hacemos en estas llamadas aleatorias son
+	\begin{description}
+		\item[Homogeneidad] La tasa $\lambda$ a la que se producen las llamadas es constante a través del tiempo: en un subintervalo de longitud $u$ la esperanza del número de llamadas telefónicas es $\lambda u$.
+		\item[Independencia] El número de llegadas en intervalos de tiempo disjuntos son variables aleatorias independientes.
+	\end{description}
 
-La homogeneidad es también llamado \textit{}
+	La homogeneidad es también llamado \textit{estacionario débil}. Denotamos el número total de llamadas en un intervalo $I$ por $N\left(I\right)$, abreviando $N\left(\left[0,t\right]\right)$ por $N_{t}$. Entonces, la homogeneidad implica que requerimos
+	\[
+		\mathds{E}\left[N_{t}\right]=\lambda t.
+	\]
+
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=0.7\paperwidth]{img12_1b}
+		\caption*{}
+	\end{figure}
+
+	\noindent Para obtener la distribución de $N_{t}$, dividimos el intervalo $\left[0,t\right]$ en $n$ intervalos de longitud $\tfrac{t}{n}$. Cuando $n$ es lo suficientemente grande, cada intervalo $I_{j,n}=\left(\tfrac{\left(j-1\right)t}{n},\tfrac{jt}{n}\right]$ contendrá $0$ o $1$ llegada: Para un $n$ tan grande (que también satisface $n>\lambda t$), sea $R_{j}$ el número de llegadas en el intervalo de tiempo $I_{j,n}$. Como $R_{j}$ es $0$0 o $1$, $R_{j}$ tiene una distribución $\mathrm{Ber}\left(p_{j}\right)$ para algunos $p_{j}$. Recuerde que para una variable aleatoria de Bernoulli, $\mathds{E}\left[R_{j}\right]=0\cdot\left(1-p_{j}\right)+1\cdot p_{j}=p_{j}$. Por el supuesto de homogeneidad, para cada $j$
+	\[
+		p_{j}=\lambda\cdot\text{longitud de }I_{j,n}=\frac{\lambda t}{n}.
+	\]
+	Sumando el número de llamadas en los intervalos nos da el número total de llamadas, así
+	\[
+		N_{t}=R_{1}+R_{2}+\cdots+R_{n}.
+	\]
+	Por el supuesto de independencia, los $R_{j}$ son variables aleatorias independientes, por lo tanto, $N_{t}$ tiene una distribución $\mathrm{Bin}\left(n,p\right)$ con $p=\tfrac{\lambda t}{n}$.
+
+	\begin{definition}
+		Una variable aleatoria discreta $X$ tiene una \textit{distribución de Poisson} con parámetro $\mu$, donde $\mu>0$ si su función de masa de probabilidad $p$ es dado por
+	\[
+		p\left(k\right)=\mathds{P}\left(X=k\right)=\frac{\mu^{k}e^{-\mu}}{k!}\quad\text{para }k=0,1,2,\ldots.
+	\]
+	Denotamos esta distribución por $\mathrm{Pois}\left(\mu\right)$.
+	\end{definition}
+
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=0.7\paperwidth]{img12_1}
+		\caption*{Las funciones de masa de probabilidad de $\mathrm{Pois}\left(\num{0.9}\right)$ y las distribución $\mathrm{Pois}\left(\num{5}\right)$.}
+	\end{figure}
+
+	\begin{theorem}[\textsc{La esperanza y la varianza de una distribución de Poisson}]
+		Sea $X$ una variable aleatoria con distribución de Poisson con parámetro $\mu$, entonces
+		\[
+			\mathds{E}\left[X\right]=\mu\quad\text{y}\quad\mathrm{Var}\left(X\right)=\mu.
+		\]
+	\end{theorem}
+
+\subsection{El proceso de Poisson unidimensional}
+
+	Derivaremos algunas propiedades de la sucesión de puntos aleatorios $X_{1},X_{2},\ldots$ que hemos considerado en la sección anterior. Lo que derivamos hasta ahora es que para cualquier intervalo $\left(s,s+t\right]$ el número $N\left(\left(s,s+t\right]\right)$ de puntos $X_{i}$ en ese intervalo es una variable aleatoria con una distribución $\mathrm{Pois}\left(\lambda t\right)$.
+
+\subsubsection{Tiempos de llegada}
+
+	Las diferencias
+	\[
+		T_{i}=X_{i}-X_{i-1}
+	\]
+	se llaman tiempos de llegada. Aquí definimos $T_{1}=X_{1}$, el tiempo de la primera llegada. Para determinar la distribución de probabilidad de $T_{1}$, observamos que el evento $\left\{T_{1}>t\right\}$ que la primera llamada de llegada después del tiempo $t$ es el mismo que el evento $\left\{N_{t}=0\right\}$ que no se ha realizado ninguna llamada en $\left[0,t\right]$. Pero esto implica que
+	\[
+		\mathds{P}\left(T_{1}\le t\right)=1-\mathds{P}\left(T_{1}>t\right)=1-\mathds{P}\left(N_{t}=0\right)=1-e^{-\lambda t}.
+	\]
+	Por lo tanto, $T_{1}$ tiene una distribución exponencial con parámetro $\lambda$.
+
+	Para calcular la distribución conjunta de $T_{1}$ y $T_{2}$, consideramos la probabilidad condicional de que $T_{2}>t$, dado que $T_{1}=s$, y usamos la propiedad de que las llegadas en intervalos diferentes son independientes:
+	\begin{align*}
+		\mathds{P}\left(T_{2}>t\mid T_{1}=s\right)
+		&=\mathds{P}\left(\text{ninguna llegada en }\left(s,s+t\right]\mid T_{1}=s\right)\\
+		&=\mathds{P}\left(\text{ninguna llegada en }\left(s,s+t\right]\right)\\
+		&=\mathds{P}\left(N\left(\left(s,s+t\right]\right)=0\right)=e^{-\lambda t}.
+	\end{align*}
+	Como esta respuesta no depende de $s$, concluimos que $T_{1}$ y $T_{2}$ son independientes, y
+	\[
+		\mathds{P}\left(T_{2}>t\right)=e^{-\lambda t},
+	\]
+	es decir, $T_{2}$ también es una distribución exponencial con parámetro $\lambda$. En realidad, aunque la conclusión es correcta, el método para derivarlo no lo es, porque condicionamos el evento $\left\{T_{1}=s\right\}$ que tiene probabilidad cero, Este problema puede evitarse condicionando el hecho de que el evento $T_{1}$ se encuentra en un pequeño intervalo, pero eso no se hará aquí. Análogamente, se puede mostrar que los $T_{i}$ son independientes y que tienen una distribución $\mathrm{Exp}\left(\lambda\right)$.. Esta bonita propiedad permite dar una definición simple del proceso de Poisson unidimensional.
+	\begin{definition}
+		El \textit{proceso de Poisson} unidimensional con intensidad $\lambda$ es una sucesión de variables aleatorias $X_{1},X_{2},X_{3},\ldots$ son variables aleatorias independientes, cada una con una distribución de $\mathrm{Exp}\left(\lambda\right)$.
+	\end{definition}
+	Tenga en cuenta que la conexión con $N_{t}$ es la siguiente: $N_{t}$ es igual al número de $X_{1}$ que son menores (o igual) que $t$.
+	\begin{definition}[\textsc{Los puntos del proceso de Poisson}]
+		Para $i=1,2,\ldots$ la variable aleatoria $X_{i}$ tiene una distribución $\mathrm{Gam}\left(i,\lambda\right)$.
+	\end{definition}
+
+\subsubsection{La distribución de los puntos}
+
+	Otra interesante pregunta es: si sabemos que $n$ puntos se generan en un intervalo, ¿dónde se encuentran estos puntos? Dado que la distribución del número de puntos solo depende de la longitud del intervalo, y no de su ubicación, basta con determinar esto para un intervalo que comience en $0$. Sea este $\left[0,a\right]$ un intervalo. Comenzamos con el caso más simple, donde existe un solo punto en $\left[0,a\right]$: suponga que $N\left(\left[0,a\right]\right)=1$. Luego, para $0<s<a$:
+	\begin{align*}
+		\mathds{P}\left(X_{1}\le s\mid N\left(\left[0,a\right]\right)=1\right)
+		&=\frac{\mathds{P}\left(X_{1}\le s,N\left(\left[0,a\right]\right)=1\right)}{\mathds{P}\left(N\left(\left[0,a\right]\right)=1\right)}\\
+		&=\frac{\mathds{P}\left(N\left(\left[0,s\right]\right)=1,N\left(\left(s,a\right]\right)=0\right)}{\mathds{P}\left(N\left(\left[0,a\right]\right)=1\right)}\\
+		&=\frac{\lambda se^{-\lambda s}e^{-\lambda\left(a-s\right)}}{\lambda ae^{-\lambda a}}\\
+		&=\frac{s}{a}.
+	\end{align*}
+	Encontramos que condicionar el evento $\left\{N\left(\left[0,a\right]\right)=1\right\}$, la variable aleatoria $X_{1}$ está uniformemente distribuida sobre el intervalo $\left[0,a\right]$. Supongamos ahora que hay dos puntos en $\left[0,a\right]\colon N\left(\left[0,a\right]\right)=2$. De una manera similar a lo que hicimos para un punto, podemos mostrar que
+	\[
+		\mathds{P}\left(X_{1}\le s, X_{2}\le t\mid N\left(\left[0,a\right]=2\right)\right)=\frac{t^{2}-{\left(t-s\right)}^{2}}{a^{2}}.
+	\]
+	Ahora, recuerde el resultado del ejercicio%TODO 9.17
+	si $U_{1}$ y $U_{2}$ son dos variables aleatorias independientes, ambas distribuidas uniformemente sobre $\left[0,a\right]$, entonces la función de distribución conjunta de $V=\min\left(U_{1},U_{2}\right)$ y $Z=\max\left(U_{1},U_{2}\right)$ está dado por
+	\[
+		\mathds{P}\left(V\le s, Z\le t\right)=\frac{t^{2}-{\left(t-s\right)}^{2}}{a^{2}}\quad\text{para }0\le s\le t\le a.
+	\]
+	Por lo tanto, hemos encontrado que, si olvidamos su orden, los dos puntos $\left[0,a\right]$ son independientes y se distribuyen uniformemente sobre $\left[0,a\right]$. Con algo más de trabajo, esto se generaliza a un número arbitrario de puntos, y llegamos a la siguiente propiedad:
+	\begin{definition}[\textsc{Ubicación de los puntos, dado su número}]
+		Dado que el proceso de Poisson tiene $n$ puntos en el intervalo $\left[a,b\right]$, las ubicaciones de estos puntos son independientemente distribuidas, cada una con una distribución uniforme en $\left[a,b\right]$.
+	\end{definition}
+
+\subsection{Procesos de Poisson multidimensionales}
+
+	Nuestra definición del procesos de Poisson unidimensional, que comienza con los tiempos de llegadas, no se generaliza fácilmente, porque se basa en el ordenamiento de los números reales. Sin embargo, podemos ampliar fácilmente los supuestos de independencia, homogeneidad y la propiedad de la distribución de Poisson. Para hacer esto necesitamos una versión de mayor dimensión del concepto de longitud. Denotamos el volumen $k$--dimensional de un conjunto $A$ en un espacio $k$--dimensional por $\mathrm{m}\left(A\right)$ es el volumen de $A$.
+	\begin{definition}
+		El \textit{proceso de Poisson} $k$--dimensional con intensidad $\lambda$ es una colección de puntos aleatorios $X_{1}, X_{2}, X_{3},\ldots$ que tienen la propiedad que si $N\left(A\right)$ denota el número de puntos en el conjunto $A$, entonces
+		\begin{description}
+			\item[Homogeneidad] La variable aleatoria $N\left(A\right)$ tiene una distribución de Poisson con parámetro $\lambda\mathrm{m}\left(A\right)$.
+			\item[Independencia] Para conjuntos disjuntos $A_{1}, A_{2},\ldots, A_{n}$ las variables aleatorias $N\left(A_{1},\right),N\left(A_{2},\right),\ldots,N\left(A_{n},\right)$ son independientes.
+		\end{description}
+	\end{definition}
+	En la Figura~\ref{fig:7.4}, las ubicaciones de los edificios que el arquitecto quería distribuir en un terreno de \num{100}$\times$\SI{300}{\metre} se generaron mediante un proceso de Poisson bidimensional. Esto se ha hecho de la siguiente manera, Se puede volver a mostrar que dado el número total de puntos en un conjunto, estos puntos se distribuyen uniformemente sobre el conjunto $A$. Esto lleva al siguiente procedimiento: primero se genera un valor $n$ a partir de una distribución de Poisson con el parámetro apropiado $\left(\lambda\cdot\text{área}\right)$, entonces uno genera $n$ veces un punto distribuido uniformemente sobre el rectángulo de \num{100}$\times$\SI{300}{\metre}.
+
+	En realidad, se puede generar un proceso de Poisson de mayor dimensión de una manera muy similar a la forma natural en que se puede hacer para el proceso de una dimensión. Directamente a partir de la definición del proceso unidimensional, vemos que puede obtenerse generando puntos consecutivamente con ``huecos'' distribuidos exponencialmente. Explicaremos un procedimiento similar para la dimensión dos. Para $s>0$, sea
+	\[
+		M_{s}=N\left(C_{s}\right),
+	\]
+	donde $C_{s}$ es la región circular de radio $s$, centrado en el origen. Como la área de $C_{s}$ es $\pi s^{2}$. Sea $R_{i}$ la distancia del $i$--ésimo punto más cerca al origen. Esto es ilustrado en la Figura~\ref{fig:12.2}
+
+
+	Note que $R_{i}$ es el análogo al $i$--ésimo tiempo de llegada para el proceso de Poisson unidimensional: tenemos de hecho que
+	\[
+		R_{i}\le s\qquad\text{si y solo si}\qquad M_{s}\le i.
+	\]
+	En particular, con $i=1$ y $s=\sqrt{t}$,
+	\[
+		\mathds{P}\left(_{1}^{2}\le t\right)=\mathds{P}\left(R_{1\le\sqrt{t}}\right)=\mathds{P}\left(M_{\sqrt{t}}\le i\right).
+	\]
+
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=0.7\paperwidth]{img12_2}
+		\caption{El proceso de Poisson en el plano con dos regiones circulares de los dos puntos más cercanos al origen.}
+		\label{fig:12.2}
+	\end{figure}
+
+	Así,
+	\[
+		\mathds{P}\left(R_{i}^{2}\le t\right)=1-e^{-\lambda\pi t}\sum_{j=0}^{i-1}\frac{{\left(\lambda\pi t\right)}^{j}}{j!},
+	\]
+	lo que significa que $R_{i}^{2}$ tiene una distribución $\mathrm{Gam}\left(i,\lambda\pi\right)$--como se vio en la página 157 %TODO \pageref.
+	Ya que las distribuciones gamma surgen como sumas de distribuciones exponenciales independientes, podemos también escribir
+	\[
+		R_{i}^{2}=R_{i-1}^{2}+T_{i},
+	\]
+	donde los $T_{i}$ son variables aleatorias independientes de $\mathrm{Exp}\left(\lambda\pi\right)$ (y donde $R_{0}=0$). Tenga en cuenta que esto es bastante similar al caso unidimensional. Para similar el proceso de Poisson bidimensional a partir de una sucesión de las variables aleatorias independientes $U_{1},U_{2},\ldots$ de $U\left(0,1\right)$, por lo tanto, se puede proceder de la siguiente manera

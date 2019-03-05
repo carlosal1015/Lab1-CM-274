@@ -1,6 +1,7 @@
 \question
+
 	Sea $X$ una variable aleatorias con una distribución $\mathrm{Pois}\left(\mu\right)$. Muestre lo siguiente. Si $\mu<1$, entonces las probabilidades $\mathds{P}\left(X=k\right)$ son primero crecientes, luego decreciente (confer Figura~\ref{fig:12_1}). ¿Qué ocurre si $\mu=1$?
-	
+
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=0.70\paperwidth]{img12_1}
@@ -10,17 +11,17 @@
 
 	\begin{solutionordottedlines}
 		Definimos las probabilidades
-		\begin{equation*}
-		p_{k}\stackrel{\text{def}}{=}\mathds{P}\left(X=k\right)=\frac{\mu^{k}e^{-\mu}}{k!}\quad\text{para } k=0,1,\ldots
-		\end{equation*}
+		\[
+			p_{k}\stackrel{\text{def}}{=}\mathds{P}\left(X=k\right)=\frac{\mu^{k}e^{-\mu}}{k!}\quad\text{para } k=0,1,\ldots
+		\]
 		Ahora, calculemos el siguiente cociente
-		\begin{equation*}
-		\frac{p_{k+1}}{p_{k}}
-		=\frac{\mathds{P}\left(X=k+1\right)}{\mathds{P}\left(X=k\right)}
-		=\frac{\frac{\mu^{k+1}e^{-\mu}}{\left(k+1\right)!}}{\frac{\mu^{k}e^{-\mu}}{k!}}
-		=\frac{\frac{\cancel{\mu^{k}}\cdot\mu\cdot \cancel{e^{-\mu}}}{\left(k+1\right)\cdot\cancel{ k!}}}{\frac{\cancel{\mu^{k}}\cdot\cancel{e^{-\mu}}}{\cancel{k!}}}
-		=\frac{\mu}{k+1}.
-		\end{equation*}
+		\[
+			\frac{p_{k+1}}{p_{k}}
+			=\frac{\mathds{P}\left(X=k+1\right)}{\mathds{P}\left(X=k\right)}
+			=\frac{\frac{\mu^{k+1}e^{-\mu}}{\left(k+1\right)!}}{\frac{\mu^{k}e^{-\mu}}{k!}}
+			=\frac{\frac{\cancel{\mu^{k}}\cdot\mu\cdot \cancel{e^{-\mu}}}{\left(k+1\right)\cdot\cancel{ k!}}}{\frac{\cancel{\mu^{k}}\cdot\cancel{e^{-\mu}}}{\cancel{k!}}}
+			=\frac{\mu}{k+1}.
+		\]
 		Además, si $p_{k}<p_{k+1}$ o $p_{k}>p_{k+1}$, entonces $\frac{p_{k+1}}{p_{k}}>1$ o $\frac{p_{k+1}}{p_{k}}<1$. De esto se sigue que
 		\begin{itemize}
 			\item Para $\mu<1$, la probabilidad $\mathds{P}\left(X=k\right)$ es decreciente, y
