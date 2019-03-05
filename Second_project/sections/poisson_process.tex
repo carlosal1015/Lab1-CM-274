@@ -97,7 +97,7 @@
 	\[
 		\mathds{P}\left(T_{2}>t\right)=e^{-\lambda t},
 	\]
-	es decir, $T_{2}$ también es una distribución exponencial con parámetro $\lambda$. En realidad, aunque la conclusión es correcta, el método para derivarlo no lo es, porque condicionamos el evento $\left\{T_{1}=s\right\}$ que tiene probabilidad cero, Este problema puede evitarse condicionando el hecho de que el evento $T_{1}$ se encuentra en un pequeño intervalo, pero eso no se hará aquí. Análogamente, se puede mostrar que los $T_{i}$ son independientes y que tienen una distribución $\mathrm{Exp}\left(\lambda\right)$.. Esta bonita propiedad permite dar una definición simple del proceso de Poisson unidimensional.
+	es decir, $T_{2}$ también es una distribución exponencial con parámetro $\lambda$. En realidad, aunque la conclusión es correcta, el método para derivarlo no lo es, porque condicionamos el evento $\left\{T_{1}=s\right\}$ que tiene probabilidad cero, Este problema puede evitarse condicionando el hecho de que el evento $T_{1}$ se encuentra en un pequeño intervalo, pero eso no se hará aquí. Análogamente, se puede mostrar que los $T_{i}$ son independientes y que tienen una distribución $\mathrm{Exp}\left(\lambda\right)$. Esta bonita propiedad permite dar una definición simple del proceso de Poisson unidimensional.
 	\begin{definition}
 		El \textit{proceso de Poisson} unidimensional con intensidad $\lambda$ es una sucesión de variables aleatorias $X_{1},X_{2},X_{3},\ldots$ son variables aleatorias independientes, cada una con una distribución de $\mathrm{Exp}\left(\lambda\right)$.
 	\end{definition}
@@ -137,7 +137,7 @@
 		El \textit{proceso de Poisson} $k$--dimensional con intensidad $\lambda$ es una colección de puntos aleatorios $X_{1}, X_{2}, X_{3},\ldots$ que tienen la propiedad que si $N\left(A\right)$ denota el número de puntos en el conjunto $A$, entonces
 		\begin{description}
 			\item[Homogeneidad] La variable aleatoria $N\left(A\right)$ tiene una distribución de Poisson con parámetro $\lambda\mathrm{m}\left(A\right)$.
-			\item[Independencia] Para conjuntos disjuntos $A_{1}, A_{2},\ldots, A_{n}$ las variables aleatorias $N\left(A_{1},\right),N\left(A_{2},\right),\ldots,N\left(A_{n},\right)$ son independientes.
+			\item[Independencia] Para conjuntos disjuntos $A_{1}, A_{2},\ldots, A_{n}$ las variables aleatorias $N\left(A_{1}\right)$, $N\left(A_{2}\right)$,\ldots,$N\left(A_{n}\right)$ son independientes.
 		\end{description}
 	\end{definition}
 	En la Figura~\ref{fig:7.4}, las ubicaciones de los edificios que el arquitecto quería distribuir en un terreno de \num{100}$\times$\SI{300}{\metre} se generaron mediante un proceso de Poisson bidimensional. Esto se ha hecho de la siguiente manera, Se puede volver a mostrar que dado el número total de puntos en un conjunto, estos puntos se distribuyen uniformemente sobre el conjunto $A$. Esto lleva al siguiente procedimiento: primero se genera un valor $n$ a partir de una distribución de Poisson con el parámetro apropiado $\left(\lambda\cdot\text{área}\right)$, entonces uno genera $n$ veces un punto distribuido uniformemente sobre el rectángulo de \num{100}$\times$\SI{300}{\metre}.
@@ -160,7 +160,7 @@
 
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[width=0.7\paperwidth]{img12_2}
+		\includegraphics[width=0.5\paperwidth]{img12_2}
 		\caption{El proceso de Poisson en el plano con dos regiones circulares de los dos puntos más cercanos al origen.}
 		\label{fig:12.2}
 	\end{figure}

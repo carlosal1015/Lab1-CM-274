@@ -1,28 +1,34 @@
 \documentclass{article}
 \usepackage{amsmath,amssymb}
 \usepackage[demo]{graphicx}
+
 \begin{document}
-\section{PROCESO DE POISSON DE DIMENSIÓN SUPERIOR}
-En lo mostrado hemos visto los procesos de Poisson unidimensional,sin embargo podemos extender supuestos como independencia ,homogeneidad y la propiedad de la distribución de poisson para ello necesitamos una versión dimensional ahora bien denotamos la medida de un conjunto $A$ en una dimensión $k$ por $m(A)$ 
+
+\section{Proceso de Poisson de dimensión superior}
+
+En lo mostrado hemos visto los procesos de Poisson unidimensional, sin embargo, podemos extender supuestos como independencia, homogeneidad y la propiedad de la distribución de Poisson para ello necesitamos una versión dimensional ahora bien denotamos la medida de un conjunto $A$ en una dimensión $k$ por $m(A)$.
+
 \subsection{Definición:}
-El processo de poisson $k$ dimensional con $\lambda$ como parámetro es una colección $X_1,X_2,...,X_n$ de puntos aleatorios que tienen la propiedad de que si la variable aleatoria $N(A)$ representa el número de puntos en el conjunto $A$ entonces cumple:
+El proceso de Poisson $k$ dimensional con $\lambda$ como parámetro es una colección $X_1,X_2,...,X_n$ de puntos aleatorios que tienen la propiedad de que si la variable aleatoria $N(A)$ representa el número de puntos en el conjunto $A$ entonces cumple:
+
 \begin{enumerate}
-    \item La variable aleatoria $N(A)$ tiene distribución de Poisson con parámetro $\lambda m(A)$ es decir $N(A)\sim P(\lambda m(A))$, a ello se le conoce como la propiedad de la homogeneidad para un processo de Poisson multidimensional.
-    \item Sea la colección disjunta $A_1,A_2,A_3,...,A_n$ entonces las variables aleatorias $N(A_1),N(A_2),N(A_3),..., N(A_n)$ son independientes , a ello se le conoce como la propiedad de la independencia para un processo de Poison multidimensional.
+	\item La variable aleatoria $N(A)$ tiene distribución de Poisson con parámetro $\lambda m(A)$ es decir $N(A)\sim P(\lambda m(A))$, a ello se le conoce como la propiedad de la homogeneidad para un proceso de Poisson multidimensional.
+	\item Sea la colección disjunta $A_1,A_2,A_3,...,A_n$ entonces las variables aleatorias $N(A_1),N(A_2),N(A_3),..., N(A_n)$ son independientes , a ello se le conoce como la propiedad de la independencia para un proceso de Poisson multidimensional.
 \end{enumerate}
+
 \subsection{Ejercicio:}
 Supongamos que las ubicaciones de los defectos en un determinado tipo de material siguen el modelo de proceso bidimensional de Poisson. Para este material se sabe que contiene en promedio cinco defectos por metro cuadrado, ¿Cuál es la probabilidad de que  una franja de 2m de largo y 5cm de ancho no tenga defectos?\\\
 {\bf Solución:}\\\\
-Llamaremos $A$ a la región denotada por la franja de tela de 2m de largo y 5cm = $\frac{5}{100}$cm = $\frac{1}{20}$cm luego la medida de $A$ bidimensional es representada por el área es decir $m(A) = (2m)(\frac{1}{20}) = \frac{1}{10}$ , ahora bien llamaremos la variable aleatoria $N(A) =$ Número de puntos defectuosos en la franja $A$ por dato $N(A)$ es un processo de Poisson bidimensional ,además se tiene que $\lambda = 5\frac{defectos}{m^2}$ entonces por el principio de homogeneidad el paramatro del proceso de Poisson de $N(A)$ está dado por $\lambda_1 = \lambda m(A) = (5\frac{defectos}{m^2})(\frac{1}{10}m^2) = \frac{1}{2}m^2$ , luego piden el probabilidad de que no haya puntos defectuosos es decir $P(N(A) =0)$ Se sabe $P(N(A)=0) = \frac{e^{-\lambda_1}{\lambda_1}^{N(A)}}{(N(A))!}$ luego $P(N(A)=0) = e^{-\lambda_1} = e^{-\frac{1}{2}} = 0,60.$\\\\
-Se puede generar un processo de poisson multidimensonal apartir de uno unidimensional generando puntos aleatorios distribuidos exponencialmente para ello veremos que apartir del processo de Poisson multidimensional se puede llegar a uno exponencial unidimensional y viceversa.\\
+Llamaremos $A$ a la región denotada por la franja de tela de 2m de largo y 5cm = $\frac{5}{100}$cm = $\frac{1}{20}$cm luego la medida de $A$ bidimensional es representada por el área es decir $m(A) = (2m)(\frac{1}{20}) = \frac{1}{10}$ , ahora bien llamaremos la variable aleatoria $N(A) =$ Número de puntos defectuosos en la franja $A$ por dato $N(A)$ es un proceso de Poisson bidimensional ,además se tiene que $\lambda = 5\frac{defectos}{m^2}$ entonces por el principio de homogeneidad el parámetro del proceso de Poisson de $N(A)$ está dado por $\lambda_1 = \lambda m(A) = (5\frac{defectos}{m^2})(\frac{1}{10}m^2) = \frac{1}{2}m^2$ , luego piden el probabilidad de que no haya puntos defectuosos es decir $P(N(A) =0)$ Se sabe $P(N(A)=0) = \frac{e^{-\lambda_1}{\lambda_1}^{N(A)}}{(N(A))!}$ luego $P(N(A)=0) = e^{-\lambda_1} = e^{-\frac{1}{2}} = 0,60.$\\\\
+Se puede generar un proceso de Poisson multidimensional a partir de uno unidimensional generando puntos aleatorios distribuidos exponencialmente para ello veremos que apartir del proceso de Poisson multidimensional se puede llegar a uno exponencial unidimensional y viceversa.\\
 Para ello veremos un problema en el caso para un proceso bidimensional
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.70]{poisson}
 \end{figure}
-En dicha figura llamaremos $C_s$ a la región circular de radio $s$ centrada en el origen entonces $C_s$ tiene área $\pi s^2$  y la variable aleatoria $M_s$ como el número de puntos contenidos en la región circular de radio $s$ entonces por el principio de homogeneidad multidimensional de poisson $C_s$ tiene distribución de Poisson con parámetro $\lambda_1 =\lambda m(C_s) = \lambda\pi s^2 $ y llamaremos $R_i$ a la distancia entre el punto $i$ al origen ahora bien según la figura podemos afirmar que $R_i \leq s \leftrightarrow i \leq M_s$.\\
+En dicha figura llamaremos $C_s$ a la región circular de radio $s$ centrada en el origen entonces $C_s$ tiene área $\pi s^2$  y la variable aleatoria $M_s$ como el número de puntos contenidos en la región circular de radio $s$ entonces por el principio de homogeneidad multidimensional de Poisson $C_s$ tiene distribución de Poisson con parámetro $\lambda_1 =\lambda m(C_s) = \lambda\pi s^2 $ y llamaremos $R_i$ a la distancia entre el punto $i$ al origen ahora bien según la figura podemos afirmar que $R_i \leq s \leftrightarrow i \leq M_s$.\\
 En particular para $i=1$ y $s = \sqrt{t}$ ,\\
-$P(R_i\leq s) = P(R_1\leq\sqrt{t}) = P(R^2_1 \leq\sqrt{t})$ lo cual implica que sea igual a $P(1 \leq M_{\sqrt{t}}) = 1-P(M_{\sqrt{t}}<1) = 1-P(M_{\sqrt{t}}=0)$ ahora $M_{\sqrt{t}}$ tiene processo de poisson con  parámetro $\lambda_1 = \lambda\pi s^2 = \lambda\pi t$ entonces $1- P(M_{\sqrt{t}}=0) = 1- e^{-\lambda_1} = 1-e^{-\lambda\pi t} $ entonces $P(R^2_1 \leq\sqrt{t})= 1-e^{-\lambda\pi t}$ ahora bien podemos notar que $ 1-e^{-\lambda\pi t} = F(t)-F(0)$ donde $F(t) = -e^{-\lambda\pi t}$ luego $F'(t) = f(t) = \lambda\pi e^{-\lambda\pi t}$ entonces $1-e^{-\lambda\pi t} = \int_{0}^{t}\lambda\pi e^{-\lambda\pi t}dt$ además como $R^2_1\leq t$ entonces podemos afirmar que el proceso multidimensional de poisson lo podemos asociar a una unidimensional exponencial afirmandop que $R^2_1\sim Exp(\lambda\pi)$. \\
+$P(R_i\leq s) = P(R_1\leq\sqrt{t}) = P(R^2_1 \leq\sqrt{t})$ lo cual implica que sea igual a $P(1 \leq M_{\sqrt{t}}) = 1-P(M_{\sqrt{t}}<1) = 1-P(M_{\sqrt{t}}=0)$ ahora $M_{\sqrt{t}}$ tiene proceso de Poisson con  parámetro $\lambda_1 = \lambda\pi s^2 = \lambda\pi t$ entonces $1- P(M_{\sqrt{t}}=0) = 1- e^{-\lambda_1} = 1-e^{-\lambda\pi t} $ entonces $P(R^2_1 \leq\sqrt{t})= 1-e^{-\lambda\pi t}$ ahora bien podemos notar que $ 1-e^{-\lambda\pi t} = F(t)-F(0)$ donde $F(t) = -e^{-\lambda\pi t}$ luego $F'(t) = f(t) = \lambda\pi e^{-\lambda\pi t}$ entonces $1-e^{-\lambda\pi t} = \int_{0}^{t}\lambda\pi e^{-\lambda\pi t}dt$ además como $R^2_1\leq t$ entonces podemos afirmar que el proceso multidimensional de Poisson lo podemos asociar a una unidimensional exponencial afirmando que $R^2_1\sim Exp(\lambda\pi)$. \\
 en general $P(R^2_i \leq t) = P(R_i \leq\sqrt{t}) = P(M_{\sqrt{t}}\geq i)$
 luego generalizando para valores de $i$ se tiene $$ P(R^2_i \leq t) = 1-e^{-\lambda\pi t}\sum_{j=0}^{j=i-1}\frac{{\lambda\pi t}^j}{j!}$$
 \end{document}
